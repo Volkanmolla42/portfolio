@@ -1,0 +1,159 @@
+:root {
+  --primary-color: #8b0000;
+  --secondary-color: #fff;
+  --font-size: 12rem;
+  --text-box-width: 650px;
+}
+
+.my-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-box {
+  width: var(--text-box-width);
+  position: relative;
+  height: 120px;
+  font-family: "Trebuchet MS";
+  color: var(--primary-color);
+  overflow: hidden;
+}
+.letter {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  font-size: var(--font-size);
+}
+
+.gradient {
+  background: linear-gradient(
+    to top,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.V {
+  top: 50px;
+  left: 4px;
+  font-weight: 800;
+  font-size: calc(var(--font-size) + (var(--font-size) / 12));
+}
+
+.O {
+  left: 140px;
+}
+
+.slash {
+  left: 250px;
+}
+
+.slash2 {
+  left: 280px;
+  z-index: 2;
+}
+.slash3 {
+  top: 100px;
+  left: 330px;
+  font-weight: 900;
+  font-size: calc(var(--font-size) - (var(--font-size) / 3));
+  transform: translateY(-50%) rotateX(180deg);
+}
+.slash4 {
+  top: 25px;
+  left: 350px;
+  font-weight: 900;
+  font-size: calc(var(--font-size) - (var(--font-size) / 3));
+  transform: translateY(-50%) rotateZ(30deg);
+}
+.A {
+  left: 385px;
+}
+
+.dot {
+  left: 490px;
+}
+.N {
+  left: 540px;
+}
+
+.infoslider {
+  --gap: 20px;
+  gap: var(--gap);
+  width: var(--text-box-width);
+  font-size: calc(var(--font-size) / 11);
+}
+
+.infoslider ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: scroll 20s linear infinite;
+}
+
+.infoslider:hover ul {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size: 5rem;
+    --text-box-width: 287px;
+  }
+  .text-box {
+    width: var(--text-box-width);
+    height: 50px;
+  }
+  .M {
+    left: 7px;
+  }
+  .V {
+    top: 22px;
+    left: 8px;
+  }
+  .O {
+    left: 62px;
+  }
+  .slash {
+    left: 107px;
+  }
+  .slash2 {
+    left: 120px;
+  }
+  .slash3 {
+    left: 140px;
+    top: 42px;
+  }
+  .slash4 {
+    left: 148px;
+    top: 13px;
+  }
+  .A {
+    left: 165px;
+  }
+  .dot {
+    left: 210px;
+  }
+  .N {
+    left: 230px;
+  }
+}
