@@ -8,22 +8,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   overflow-y: hidden;
   background-color: rgb(24, 24, 41);
   perspective: 1000px;
 }
-html {
-  scroll-behavior: smooth;
-}
+
 .perspective {
   overflow: hidden;
   height: 100vh;
   transform-origin: left;
-  transition: all 0.7s ease-in-out;
+  transition: all 0.5s ease-in-out;
   transform-style: preserve-3d;
 }
+
 .perspective.active {
   border-radius: 30px;
   transform: rotateY(30deg) scale(0.6) translateX(5%);

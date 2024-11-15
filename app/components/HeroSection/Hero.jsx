@@ -25,6 +25,7 @@ const Hero = () => {
             <li> {"~"} Clean variable naming</li>
             <li> {"~"} DOM manipulation</li>
             <li> {"~"} Strategic thinker</li>
+            <li> {"~"} SEO optimization</li>
           </ul>
           <ul>
             <li> {"~"} UI/UX Designer</li>
@@ -34,6 +35,7 @@ const Hero = () => {
             <li> {"~"} Clean variable naming</li>
             <li> {"~"} DOM manipulation</li>
             <li> {"~"} Strategic thinker</li>
+            <li> {"~"} SEO optimization</li>
           </ul>
         </div>
       </div>
