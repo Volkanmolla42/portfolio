@@ -11,16 +11,10 @@
   scroll-behavior: smooth;
 }
 body {
-  overflow-y: hidden;
-  background-color: rgb(24, 24, 41);
   perspective: 1000px;
 }
 
 .perspective {
-  overflow: hidden;
-  height: 100vh;
-  transform-origin: left;
-  transition: all 0.5s ease-in-out;
   transform-style: preserve-3d;
 }
 
@@ -28,48 +22,4 @@ body {
   border-radius: 30px;
   transform: rotateY(30deg) scale(0.6) translateX(5%);
   box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.7), 0 0 50px rgb(211, 1, 1);
-}
-
-.slider-wrapper {
-  position: relative;
-  max-width: 100%;
-  margin: 0 auto;
-  scroll-behavior: smooth;
-}
-
-.slider {
-  scroll-behavior: smooth;
-
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-}
-section {
-  width: 100vw;
-  height: 100vh;
-  flex: 1 0 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  color: white;
-  scroll-snap-align: start;
-  scroll-behavior: smooth;
-}
-
-@media (min-width: 768px) {
-  body {
-    overflow-y: auto;
-  }
-  .slider {
-    display: block;
-    gap: 20px;
-  }
-  section {
-    padding-left: 100px;
-    width: 80vw;
-    margin: 0 auto;
-  }
 }

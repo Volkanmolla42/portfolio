@@ -1,11 +1,24 @@
-import Hero from "@/app/components/HeroSection/Hero";
+"use client";
+import dynamic from "next/dynamic";
+import Section from "@/app/components/Section";
+import { useEffect } from "react";
+
+const Hero = dynamic(() => import("@/app/components/HeroSection/Hero"));
+const About = dynamic(() => import("@/app/components/AboutSection/About"));
 
 export default function Home() {
+  useEffect(() => {
+    window.location.hash = "#home";
+  }, []);
+
   return (
-    <div className="slider-wrapper">
-      <div className="slider">
+    <div className="relative h-full">
+      <Section id="home">
         <Hero />
-      </div>
+      </Section>
+      <Section id="about">
+        <About />
+      </Section>
     </div>
   );
 }

@@ -1,24 +1,48 @@
-"use client";
 import "./globals.css";
 import RightNavBar from "./components/RightNavBar";
-import LeftNavBar from "./components/LeftNavBar";
 import { AppProvider } from "@/app/context/AppContext";
+import LeftNavBar from "./components/LeftNavBar";
+import Head from "next/head";
 
 const RootLayout = ({ children }) => {
   return (
     <AppProvider>
-      <head>
-        <title>Portfolio</title>
-      </head>
       <html lang="en">
-        <body className="bg-zinc-900">
-          <div className={`perspective inactive `}>
-            <header className="text-white fixed bottom-0 md:top-0 md:left-0 md:w-max w-full z-50">
-              <nav className="flex bg-zinc-800 items-center justify-evenly md:flex-col md:h-full">
-                <LeftNavBar />
-              </nav>
-            </header>
-            <main>{children}</main>
+        <head>
+          <title>{"Hi, I'm Volkan"}</title>
+          <meta name="description" content="Volkan's Portfolio" />
+          <meta name="author" content="Volkan" />
+          <meta
+            name="keywords"
+            content="Volkan, Portfolio, Volkan's Portfolio, frontend, developer"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/icons/favicons/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/icons/favicons/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/icons/favicons/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/site.webmanifest" />
+        </head>
+        <body className="bg-zinc-900 h-screen text-white">
+          <div
+            className={`perspective h-full overflow-hidden origin-left duration-500 transition-all ease-in-out inactive`}
+          >
+            <div className="flex flex-col h-screen md:flex-row-reverse">
+              <main className="h-full w-full">{children}</main>
+              <LeftNavBar />
+            </div>
           </div>
           <RightNavBar />
         </body>

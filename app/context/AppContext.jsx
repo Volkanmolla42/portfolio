@@ -1,5 +1,11 @@
 "use client";
-import React, { createContext, useState, useEffect, useContext } from "react";
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  useContext,
+  useCallback,
+} from "react";
 
 export const AppContext = createContext();
 
@@ -31,13 +37,34 @@ export const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    const capitalizeHash = (hash) => {
+      return hash.slice(1, 2).toUpperCase() + hash.slice(2);
+    };
+
+    document.title = "Hi, I'm Volkan - " + capitalizeHash(currentHash);
     handleHashChange();
     window.addEventListener("hashchange", handleHashChange);
 
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
-  }, []);
+  }, [currentHash]);
+
+  const toggleClasses = useCallback(
+    (element, removeClasses, addClasses, delay = 0) => {
+      const targetElement = document.querySelector(element);
+      if (!targetElement) {
+        console.error(`Element ${element} not found`);
+        return;
+      }
+
+      setTimeout(() => {
+        targetElement.classList.remove(...removeClasses);
+        targetElement.classList.add(...addClasses);
+      }, delay);
+    },
+    []
+  );
 
   const value = {
     isMenuOpen,
@@ -45,6 +72,8 @@ export const AppProvider = ({ children }) => {
     currentHash,
     setcurrentHash,
     navLinks,
+    toggleClasses,
+    currentHash,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

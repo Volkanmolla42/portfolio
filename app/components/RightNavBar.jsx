@@ -4,24 +4,8 @@ import { useContext, useEffect, useCallback } from "react";
 import { AppContext } from "../context/AppContext";
 
 export default function RightNavBar() {
-  const { currentHash, navLinks, isMenuOpen, setIsMenuOpen } =
+  const { currentHash, navLinks, isMenuOpen, setIsMenuOpen, toggleClasses } =
     useContext(AppContext);
-
-  const toggleClasses = useCallback(
-    (element, removeClasses, addClasses, delay = 0) => {
-      const targetElement = document.querySelector(element);
-      if (!targetElement) {
-        console.error(`Element ${element} not found`);
-        return;
-      }
-
-      setTimeout(() => {
-        targetElement.classList.remove(...removeClasses);
-        targetElement.classList.add(...addClasses);
-      }, delay);
-    },
-    []
-  );
 
   const moveMiddleBar = useCallback(
     (delay) => {
@@ -34,7 +18,10 @@ export default function RightNavBar() {
 
       setTimeout(() => {
         const { top } = currentLinkElement.getBoundingClientRect();
-        middleBar.style.top = isMenuOpen ? `${top + 10}px` : "50%";
+        middleBar.style.top = isMenuOpen ? `${top + 2 * 24}px` : "50%";
+        middleBar.style.height = isMenuOpen
+          ? `${currentLinkElement.clientHeight}px`
+          : "4px";
       }, delay);
     },
     [currentHash, isMenuOpen]
@@ -51,14 +38,14 @@ export default function RightNavBar() {
       moveMiddleBar(1000);
       toggleClasses(".perspective", ["inactive"], ["active"]);
       toggleClasses(".right-nav", ["w-[2%]"], ["w-[35%]"]);
-      toggleClasses(".right-nav", ["h-6"], ["h-[94vh]"], 500);
+      toggleClasses(".right-nav", ["h-6"], ["h-[92vh]"], 500);
       toggleClasses(".nav-links", ["hidden"], ["flex"], 600);
     } else {
       document
         .querySelector(".perspective")
         .removeEventListener("click", closeMenu);
       moveMiddleBar(0);
-      toggleClasses(".right-nav", ["h-[94vh]"], ["h-6"]);
+      toggleClasses(".right-nav", ["h-[92vh]"], ["h-6"]);
       toggleClasses(".right-nav", ["w-[35%]"], ["w-[2%]"], 500);
       toggleClasses(".perspective", ["active"], ["inactive"], 500);
       toggleClasses(".nav-links", ["flex"], ["hidden"], 400);
@@ -67,35 +54,35 @@ export default function RightNavBar() {
 
   return (
     <div
-      className="right-nav absolute top-6 right-5 select-none cursor-pointer min-w-8 w-[2%] h-6 transition-all duration-500 text-3xl md:text-5xl flex-col overflow-hidden flex text-center text-red-100 items-center justify-center gap-8"
+      className="right-nav fixed top-9 md:top-6 right-5 select-none cursor-pointer min-w-8 h-6 transition-all duration-500 text-3xl md:text-5xl flex-col overflow-hidden flex text-center text-red-100 items-center justify-center gap-8 z-50"
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       {/* Hamburger Bars */}
       {["top-bar", "middle-bar", "bottom-bar"].map((bar, index) => (
         <div
           key={bar}
-          className={`border-2 ${bar} border-red-900 w-full h-0 absolute ${
+          className={`border-none ${bar} bg-red-900 w-full h-1 absolute ${
             index === 0
               ? "top-0"
               : index === 1
-              ? "top-1/2 -translate-y-1/2 z-30"
+              ? "top-1/2 -translate-y-1/2"
               : "bottom-0"
           } left-1/2 -translate-x-1/2 transition-all duration-300`}
         ></div>
       ))}
 
       {/* Navigation Links */}
-      <div className="nav-links hidden flex-col justify-evenly h-full">
+      <nav className="nav-links flex-col w-full h-full items-center hidden  ">
         {navLinks.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            className={`relative transition-colors duration-300 select-none hover:text-red-500 cursor-pointer`}
+            className={`relative h-full flex justify-center items-center   w-full transition-colors duration-300 select-none  hover:text-red-300 cursor-pointer`}
           >
             <span>{link.label}</span>
           </a>
         ))}
-      </div>
+      </nav>
     </div>
   );
 }
