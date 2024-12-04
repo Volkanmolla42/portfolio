@@ -1,23 +1,22 @@
 "use client";
 import { useAppContext } from "../context/AppContext";
-import Image from "next/image";
 import React, { memo } from "react";
 
 const LeftNavBar = memo(() => {
   const { navLinks, currentHash } = useAppContext();
 
   return (
-    <header role="banner">
+    <header role="banner" className="z-50">
       <nav
-        className="flex items-center justify-evenly bg-zinc-800 text-nowrap text-center  md:flex-col md:h-full  "
+        className="flex items-center justify-evenly bg-zinc-800 text-nowrap text-center  md:flex-col md:h-full "
         aria-label="Ana Navigasyon"
       >
         {navLinks.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            className={`flex flex-col justify-center items-center w-full h-14  py-8  gap-1 hover:bg-zinc-700  transition-colors duration-300  md:h-full md:px-3  ${
-              currentHash === link.href ? "bg-zinc-700" : ""
+            className={`flex flex-col justify-center items-center w-full h-14  py-8  gap-1 hover:bg-zinc-900  transition-colors duration-300  md:h-full md:px-3  ${
+              currentHash === link.href ? "bg-zinc-900" : ""
             }`}
             aria-current={currentHash === link.href ? "page" : undefined}
           >

@@ -5,10 +5,16 @@ import { useEffect } from "react";
 
 const Hero = dynamic(() => import("@/app/components/HeroSection/Hero"));
 const About = dynamic(() => import("@/app/components/AboutSection/About"));
+const Projects = dynamic(() =>
+  import("@/app/components/ProjectsSection/Projects")
+);
+const MailMe = dynamic(() => import("@/app/components/MailMeSection/MailMe"));
 
 export default function Home() {
   useEffect(() => {
-    window.location.hash = "#home";
+    if (window.location.hash === "") {
+      window.location.hash = "#home";
+    }
   }, []);
 
   return (
@@ -18,6 +24,12 @@ export default function Home() {
       </Section>
       <Section id="about">
         <About />
+      </Section>
+      <Section id="projects">
+        <Projects />
+      </Section>
+      <Section id="contact">
+        <MailMe />
       </Section>
     </div>
   );

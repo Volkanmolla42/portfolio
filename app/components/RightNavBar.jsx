@@ -1,11 +1,11 @@
 "use client";
 
-import { useContext, useEffect, useCallback } from "react";
-import { AppContext } from "../context/AppContext";
+import { useAppContext } from "../context/AppContext";
+import { useEffect, useCallback } from "react";
 
 export default function RightNavBar() {
   const { currentHash, navLinks, isMenuOpen, setIsMenuOpen, toggleClasses } =
-    useContext(AppContext);
+    useAppContext();
 
   const moveMiddleBar = useCallback(
     (delay) => {
@@ -36,7 +36,7 @@ export default function RightNavBar() {
         .querySelector(".perspective")
         .addEventListener("click", closeMenu);
       moveMiddleBar(1000);
-      toggleClasses(".perspective", ["inactive"], ["active"]);
+      toggleClasses(".perspective", ["inactive"], ["active", "cursor-pointer"]);
       toggleClasses(".right-nav", ["w-[2%]"], ["w-[35%]"]);
       toggleClasses(".right-nav", ["h-6"], ["h-[92vh]"], 500);
       toggleClasses(".nav-links", ["hidden"], ["flex"], 600);
@@ -45,9 +45,9 @@ export default function RightNavBar() {
         .querySelector(".perspective")
         .removeEventListener("click", closeMenu);
       moveMiddleBar(0);
+      toggleClasses(".perspective", ["active", "cursor-pointer"], ["inactive"]);
       toggleClasses(".right-nav", ["h-[92vh]"], ["h-6"]);
       toggleClasses(".right-nav", ["w-[35%]"], ["w-[2%]"], 500);
-      toggleClasses(".perspective", ["active"], ["inactive"], 500);
       toggleClasses(".nav-links", ["flex"], ["hidden"], 400);
     }
   }, [isMenuOpen, currentHash, toggleClasses, moveMiddleBar, setIsMenuOpen]);

@@ -1,0 +1,27 @@
+.preserve3d {
+  transform-style: preserve-3d;
+}
+.paper {
+  perspective: 1000px;
+}
+
+.close {
+  transform: rotateX(-180deg);
+}
+
+.open {
+  transform: rotateX(0deg);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}

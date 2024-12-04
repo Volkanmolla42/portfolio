@@ -2,14 +2,13 @@ import "./globals.css";
 import RightNavBar from "./components/RightNavBar";
 import { AppProvider } from "@/app/context/AppContext";
 import LeftNavBar from "./components/LeftNavBar";
-import Head from "next/head";
 
 const RootLayout = ({ children }) => {
   return (
     <AppProvider>
       <html lang="en">
         <head>
-          <title>{"Hi, I'm Volkan"}</title>
+          <title>{"Hi, I'm Volkan Molla"}</title>
           <meta name="description" content="Volkan's Portfolio" />
           <meta name="author" content="Volkan" />
           <meta

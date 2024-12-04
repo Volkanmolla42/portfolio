@@ -101,7 +101,7 @@
   align-items: center;
   flex-shrink: 0;
   min-width: 100%;
-  animation: scroll 20s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .infoslider:hover ul {

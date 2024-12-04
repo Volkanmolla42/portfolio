@@ -6,8 +6,8 @@ const Section = ({ children, id }) => {
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className={`flex  flex-col items-center justify-center gap-3 absolute inset-0 snap-start scroll-smooth  transition-opacity duration-500  ${
-        currentHash === `#${id}` ? "opacity-100" : "opacity-0"
+      className={` size-full flex flex-col items-center justify-center gap-3 absolute inset-0 transition-opacity duration-500 bg-transparent  ${
+        currentHash === `#${id}` ? "opacity-100 z-50" : "opacity-0 -z-50"
       }`}
     >
       {children}
