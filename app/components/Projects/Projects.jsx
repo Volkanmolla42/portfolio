@@ -62,24 +62,24 @@ export default function ProjectsPage() {
   }, [filter, projects, searchTerm]);
 
   return (
-    <div className="size-full flex flex-col bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white">
+    <div className="size-full flex flex-col bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-red-700 scrollbar-track-gray-800  scroll-smooth">
       {/* Search and Filter Section */}
-      <div className="sticky top-0 z-10 bg-gray-900/80 backdrop-blur-sm py-4">
+      <div className="sticky top-0  z-10 bg-gray-900/80 backdrop-blur-sm py-4 md:py-2 flex flex-col pr-1 pl-6  ">
         <input
           type="text"
           placeholder="Search projects..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="mb-4 w-full ml-4 px-4 py-2 rounded-l-xl bg-zinc-800/50  text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className=" w-full px-6 py-4 md:py-3  my-1  rounded-xl bg-zinc-800/70  text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500"
         />
 
         {/* Category Filter Buttons */}
-        <div className="flex flex-wrap gap-4 px-4">
+        <div className="flex flex-wrap gap-4 pt-4 ml-3 mb-2">
           {categories.map((category) => (
             <motion.button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-4 py-2 font-medium text-sm rounded-full transition-all duration-300 ${
+              className={`px-4 py-2 font-medium text-xs rounded-full transition-all duration-300 ${
                 category === filter
                   ? "bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg shadow-red-500/40"
                   : "bg-zinc-700/80 text-zinc-200 hover:bg-gradient-to-r hover:from-zinc-500 hover:to-zinc-400 hover:text-white"
@@ -94,7 +94,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 overflow-auto p-4 scrollbar-thin scrollbar-thumb-red-700 scrollbar-track-gray-800  scroll-smooth">
+      <div className="flex-1  px-6 py-4 ">
         <AnimatePresence mode="wait">
           {/* Loading Spinner Animation */}
 
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 p-6"
             >
               {/* Individual Project Cards */}
               {filteredProjects.map((project) => (
