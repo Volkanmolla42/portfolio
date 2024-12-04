@@ -1,10 +1,10 @@
 "use client";
-import "@/app/components/MailMeSection/style.css";
+import "@/app/components/MailMe/style.css";
 import React, { useEffect, useRef, useState } from "react";
 import { useAppContext } from "@/app/context/AppContext";
-import SealIcon from "@/app/components/MailMeSection/SealIcon";
+import SealIcon from "@/app/components/MailMe/SealIcon";
 import PlaySound from "@/app/components/utils/PlaySound";
-import AnimateEnvelope from "@/app/components/MailMeSection/animateEnvelope";
+import AnimateEnvelope from "@/app/components/MailMe/animateEnvelope";
 import { sendEmail } from "@/app/components/utils/sendMail";
 
 export default function MailMe() {

@@ -45,8 +45,13 @@ export default function RightNavBar() {
         .querySelector(".perspective")
         .removeEventListener("click", closeMenu);
       moveMiddleBar(0);
-      toggleClasses(".perspective", ["active", "cursor-pointer"], ["inactive"]);
       toggleClasses(".right-nav", ["h-[92vh]"], ["h-6"]);
+      toggleClasses(
+        ".perspective",
+        ["active", "cursor-pointer"],
+        ["inactive"],
+        500
+      );
       toggleClasses(".right-nav", ["w-[35%]"], ["w-[2%]"], 500);
       toggleClasses(".nav-links", ["flex"], ["hidden"], 400);
     }

@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
 .font-old-english {
   font-family: "Old English Text MT", serif;
   letter-spacing: 0.05em;
