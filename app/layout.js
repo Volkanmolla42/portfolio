@@ -35,11 +35,11 @@ const RootLayout = ({ children }) => {
           />
           <link rel="manifest" href="/site.webmanifest" />
         </head>
-        <body className="bg-zinc-900 h-screen text-white">
+        <body className="bg-zinc-900 h-[100svh] text-white">
           <div
             className={`perspective h-full overflow-hidden origin-left duration-500 transition-all ease-in-out inactive`}
           >
-            <div className="flex flex-col h-screen md:flex-row-reverse">
+            <div className="flex flex-col h-full md:flex-row-reverse">
               <main className="h-full w-full">{children}</main>
               <LeftNavBar />
             </div>

@@ -55,13 +55,13 @@ const Quote = ({ text, author }) => (
 // Text Content
 const aboutParagraphs = [
   <>
-    <span className="font-semibold text-white">Hello!</span> I'm{" "}
+    <span className="font-semibold text-white">Hello!</span> I&apos;m{" "}
     <span className="text-red-500 font-bold md:text-2xl">Volkan</span>,{" "}
     <span className="font-medium text-gray-100">a Frontend Developer</span>{" "}
     passionate about building user-friendly and visually appealing web
-    interfaces. I’m enthusiastic about web technologies and design trends, and
-    I’m eager to grow my skills and take on new challenges. I have a solid
-    foundation in{" "}
+    interfaces. I&apos;m enthusiastic about web technologies and design trends,
+    and I&apos;m eager to grow my skills and take on new challenges. I have a
+    solid foundation in{" "}
     <span className="font-medium text-gray-100">HTML, CSS, and JavaScript</span>{" "}
     and am currently improving my knowledge of modern tools like{" "}
     <span className="font-medium text-gray-100">
@@ -82,12 +82,12 @@ const aboutParagraphs = [
     <span className="font-medium text-gray-100">eagerness to learn</span>,{" "}
     <span className="font-medium text-gray-100">problem-solving abilities</span>
     , and <span className="font-medium text-gray-100">teamwork skills</span>.
-    While I’m still early in my career, I’m committed to{" "}
+    While I&apos;m still early in my career, I&apos;m committed to{" "}
     <span className="font-medium text-gray-100">delivering quality</span> and
     growing with every project.
   </>,
   <>
-    I’m deeply dedicated to{" "}
+    I&apos;m deeply dedicated to{" "}
     <span className="font-medium text-gray-100">continuous learning</span>. I
     stay updated with the latest trends in frontend development and strive to
     apply my knowledge to build{" "}
