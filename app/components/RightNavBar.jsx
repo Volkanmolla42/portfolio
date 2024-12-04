@@ -59,7 +59,7 @@ export default function RightNavBar() {
 
   return (
     <div
-      className="right-nav fixed top-9 md:top-6 right-5 select-none cursor-pointer min-w-8 h-6 transition-all duration-500 text-3xl md:text-5xl flex-col overflow-hidden flex text-center text-red-100 items-center justify-center gap-8 z-50"
+      className="right-nav fixed top-9 md:top-6 right-5 select-none cursor-pointer min-w-8 h-6 transition-all duration-500 text-3xl md:text-5xl flex-col overflow-hidden flex text-center text-red-100 items-center justify-center gap-8 z-50 bg-inherit"
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       {/* Hamburger Bars */}
