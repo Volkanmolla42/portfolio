@@ -2,6 +2,7 @@ import "./globals.css";
 import RightNavBar from "./components/RightNavBar";
 import { AppProvider } from "@/app/context/AppContext";
 import LeftNavBar from "./components/LeftNavBar";
+import MailMeLink from "./components/MailMe/MailMeLink";
 
 const RootLayout = ({ children }) => {
   return (

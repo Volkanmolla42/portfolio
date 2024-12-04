@@ -171,7 +171,7 @@ const JumpingCubes = () => {
   };
 
   return (
-    <div className=" flex-col items-center hidden md:flex">
+    <div className=" flex-col items-center flex">
       <div className="scene-container" onClick={handleJump}>
         <div ref={scene}></div>
       </div>

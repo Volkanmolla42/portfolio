@@ -15,14 +15,21 @@ const LeftNavBar = memo(() => {
           <a
             key={link.href}
             href={link.href}
-            className={`flex flex-col justify-center items-center w-full h-14 py-8  gap-1 hover:bg-zinc-900  transition-colors duration-300  md:h-full md:px-3  ${
-              currentHash === link.href
-                ? "bg-zinc-900 opacity-100"
-                : " opacity-70 hover:opacity-100"
-            }`}
+            className={`flex flex-col justify-center items-center w-full h-14 py-8 gap-1
+              hover:bg-zinc-900 transition-colors duration-300
+              md:h-full md:px-3
+              ${
+                currentHash === link.href
+                  ? "bg-zinc-900 opacity-100"
+                  : "opacity-70 hover:opacity-100"
+              }
+              ${
+                link.href === "#contact" && currentHash !== link.href
+                  ? "animate-pulse opacity-100"
+                  : ""
+              }`}
             aria-current={currentHash === link.href ? "page" : undefined}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={link.icon}
               alt={`${link.label} ikonu`}
@@ -34,7 +41,7 @@ const LeftNavBar = memo(() => {
                 currentHash === link.href
                   ? " font-medium  text-destructive"
                   : ""
-              } `}
+              }  `}
             >
               {link.label}
             </span>
