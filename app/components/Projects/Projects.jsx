@@ -94,7 +94,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1  px-6 py-4 ">
+      <div className="flex-1  px-6 pt-2  pb-0 ">
         <AnimatePresence mode="wait">
           {/* Loading Spinner Animation */}
 
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 p-6"
+              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 p-6 pb-4"
             >
               {/* Individual Project Cards */}
               {filteredProjects.map((project) => (

@@ -52,7 +52,7 @@ function ProjectCard({ project }) {
       <CardContent className="flex-grow p-4 space-y-3">
         <CardTitle
           id={`project-title-${title}`}
-          className="text-xl font-semibold tracking-wider text-red-100 group-hover:text-red-400 transition-colors duration-300"
+          className="text-2xl font-semibold tracking-wider text-red-100 group-hover:text-red-400 transition-colors duration-300"
         >
           {title}
         </CardTitle>
