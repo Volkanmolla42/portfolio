@@ -56,7 +56,7 @@ function ProjectCard({ project }) {
         >
           {title}
         </CardTitle>
-        <CardDescription className="text-sm text-zinc-400 line-clamp-3">
+        <CardDescription className="text-sm text-zinc-400 line-clamp-4">
           {description}
         </CardDescription>
       </CardContent>
@@ -82,7 +82,7 @@ function ProjectCard({ project }) {
       )}
 
       {/* Butonlar */}
-      <CardFooter className="flex flex-col md:flex-row gap-2 md:gap-0 p-4">
+      <CardFooter className="flex flex-col md:flex-row gap-2 md:gap-0 px-4 pb-4 ">
         {liveDemoLink && (
           <Button
             asChild

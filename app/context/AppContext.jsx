@@ -55,8 +55,8 @@ export const AppProvider = ({ children }) => {
       {
         id: "1",
         title: "Real-time Chat App",
-        description: "Modern chatapp with real-time messaging",
-
+        description:
+          "Modern chat application offering real-time messaging with a sleek interface. Powered by Firebase for reliable and fast communication.",
         projectImage: "/images/projectImages/chatapp/ss2.jpeg",
         category: "Apps",
         liveDemoLink:
@@ -67,8 +67,8 @@ export const AppProvider = ({ children }) => {
       {
         id: "2",
         title: "Apple.com clone",
-        description: "Apple.com clone with React and Gsap",
-
+        description:
+          "Pixel-perfect clone of Apple's website, featuring immersive animations with GSAP and Three.js for a premium user experience.",
         projectImage: "/images/projectImages/appleWebsite/apple-ss1.png",
         category: "websites",
         liveDemoLink:
@@ -86,8 +86,8 @@ export const AppProvider = ({ children }) => {
       {
         id: "3",
         title: "Amazon.com clone",
-        description: "Amazon.com clone with vanilla html, css & javascript",
-
+        description:
+          "Minimalist replica of Amazon's website built with HTML, CSS, and JavaScript, focusing on essential design and features.",
         projectImage: "/images/projectImages/amazon/amazon-ss.png",
         category: "websites",
         liveDemoLink: "https://volkanmolla42.github.io/Amazon_site/amazon.html",
@@ -97,8 +97,8 @@ export const AppProvider = ({ children }) => {
       {
         id: "4",
         title: "Starbucks.com.tr clone",
-        description: "Starbucks.com.tr clone with html, css & Bootstrap",
-
+        description:
+          "Polished replica of Starbucks Turkey's website built with HTML, CSS, and Bootstrap for a seamless browsing experience.",
         projectImage: "/images/projectImages/starbucks/starbucks-ss.png",
         category: "websites",
         liveDemoLink: "https://volkanmolla42.github.io/Starbucks_site/",
@@ -109,8 +109,7 @@ export const AppProvider = ({ children }) => {
         id: "5",
         title: "Frontend Bootcamp",
         description:
-          "A modern frontend developer bootcamp site designed using HTML, CSS, and Bootstrap. This project features a user-friendly interface and stylish design.",
-
+          "Modern training site for aspiring frontend developers, featuring a stylish interface built with Bootstrap for a responsive experience.",
         projectImage: "/images/projectImages/bootcamp/bootcamp-ss.png",
         category: "websites",
         liveDemoLink: "https://volkanmolla42.github.io/Bootcamp_site/",
@@ -121,8 +120,7 @@ export const AppProvider = ({ children }) => {
         id: "6",
         title: "New Design",
         description:
-          "A sleek and modern platform for web design. Built with HTML, CSS, JavaScript, and Bootstrap to deliver a user-focused experience.",
-
+          "Sleek web design project combining modern aesthetics with user-centered functionality for an impressive digital experience.",
         projectImage: "/images/projectImages/design/design-ss.png",
         category: "websites",
         liveDemoLink: "https://volkanmolla42.github.io/Design_site/",

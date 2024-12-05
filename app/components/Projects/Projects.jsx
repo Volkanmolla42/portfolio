@@ -74,7 +74,7 @@ export default function ProjectsPage() {
         />
 
         {/* Category Filter Buttons */}
-        <div className="flex flex-wrap gap-4 pt-4 ml-3 mb-2">
+        <div className="flex flex-wrap gap-4 py-2 ml-3">
           {categories.map((category) => (
             <motion.button
               key={category}
@@ -94,7 +94,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1  px-6 pt-2  pb-0 ">
+      <div className="flex-1  px-6  pb-0 ">
         <AnimatePresence mode="wait">
           {/* Loading Spinner Animation */}
 
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 p-6 pb-4"
+              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 p-6 pt-4 pb-4"
             >
               {/* Individual Project Cards */}
               {filteredProjects.map((project) => (

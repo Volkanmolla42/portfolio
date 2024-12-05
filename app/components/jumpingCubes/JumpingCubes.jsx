@@ -100,23 +100,25 @@ const JumpingCubes = () => {
       ),
     ];
 
-    const cubeSize = 36;
+    const cubeSize = 40;
     const imagePaths = [
       "/images/atom.png",
-      "/images/bootstrap.png",
-      "/images/css-3.png",
       "/images/html-5.png",
       "/images/js.png",
+      "/images/css-3.png",
+      "/images/bootstrap.png",
+      "/images/git-icon.svg",
+      "/images/gsap-icon.png",
       "/images/nextjs-icon.png",
       "/images/tailwind.svg",
       "/images/mongodb-icon.svg",
       "/images/firebase.svg",
-      "/images/git-icon.svg",
+      "/images/threejs-icon.png",
     ];
 
     // Küplerin başlangıç pozisyonları, çakışmaları önlemek için aralık genişletildi
     const cubes = imagePaths.map((imagePath, index) => {
-      return Matter.Bodies.rectangle(20 + index * 10, 100, cubeSize, cubeSize, {
+      return Matter.Bodies.rectangle(10 + index * 10, 100, cubeSize, cubeSize, {
         restitution: 0.5,
         render: {
           sprite: {
