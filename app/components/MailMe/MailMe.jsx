@@ -6,6 +6,7 @@ import SealIcon from "@/app/components/MailMe/SealIcon";
 import PlaySound from "@/app/components/utils/PlaySound";
 import AnimateEnvelope from "@/app/components/MailMe/animateEnvelope";
 import { sendEmail } from "@/app/components/utils/sendMail";
+import DateComponent from "./DateComponent";
 
 export default function MailMe() {
   const { bokor, toggleClasses } = useAppContext();
@@ -114,7 +115,7 @@ export default function MailMe() {
                 </div>
               </div>
               <span className="absolute top-1 right-2 text-red-900">
-                {new Date().toLocaleDateString()}
+                <DateComponent />
               </span>
             </form>
             <div
