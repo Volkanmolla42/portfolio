@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="container size-full flex flex-col tracking-wider justify-between items-center">
       {/* Main Content Container */}
-      <div className="px-6 md:px-20 md:py-14 flex flex-col md:flex-row text-xs overflow-y-auto scrollbar-thin scrollbar-thumb-red-700 scrollbar-track-gray-800 scroll-smooth size-full gap-4">
+      <div className="px-6 md:px-20 md:py-14 flex flex-col md:flex-row text-xs  size-full gap-4">
         {/* About Me Section */}
         <div className="w-full md:w-10/12">
           <h2 className="text-2xl md:text-5xl mx-4 font-bold text-white my-5 md:my-4">

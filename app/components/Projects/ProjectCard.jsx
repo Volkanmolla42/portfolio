@@ -37,10 +37,11 @@ function ProjectCard({ project }) {
                 ? `${title} project's visual representation`
                 : "Placeholder image for projects"
             }
-            layout="fill"
-            objectFit="cover"
-            className="transition-transform duration-300 group-hover:scale-110"
+            width={300}
+            height={300}
+            className="w-auto h-auto transition-transform duration-300 group-hover:scale-110 object-contain"
           />
+
           <div
             className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"
             aria-hidden="true"

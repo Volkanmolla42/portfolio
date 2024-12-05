@@ -32,7 +32,7 @@ export default function MailMe() {
   }, [status]);
 
   return (
-    <div className="size-full flex justify-center items-center">
+    <div className="size-full flex justify-center items-center overflow-hidden">
       <div className="success absolute opacity-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl transition-all duration-500">
         {status && (
           <p

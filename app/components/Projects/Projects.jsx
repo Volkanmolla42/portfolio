@@ -62,7 +62,7 @@ export default function ProjectsPage() {
   }, [filter, projects, searchTerm]);
 
   return (
-    <div className="size-full flex flex-col bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-red-700 scrollbar-track-gray-800  scroll-smooth">
+    <div className="size-full flex flex-col bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white">
       {/* Search and Filter Section */}
       <div className="sticky top-0  z-10 bg-gray-900/80 backdrop-blur-sm py-4 md:py-2 flex flex-col pr-1 pl-6  ">
         <input
