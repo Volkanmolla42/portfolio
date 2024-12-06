@@ -23,6 +23,12 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [currentHash, setCurrentHash] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    const audio = new Audio("/sounds/paperslide3.mp3");
+    audio.load();
+
+    console.log("Audio loaded on page load");
+  }, []);
 
   const navLinks = useMemo(
     () => [
