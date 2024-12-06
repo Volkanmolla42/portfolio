@@ -150,17 +150,27 @@ export const AppProvider = ({ children }) => {
   }, [currentHash, handleHashChange]);
 
   const toggleClasses = useCallback(
-    (element, removeClasses, addClasses, delay = 0) => {
-      const targetElement = document.querySelector(element);
-      if (!targetElement) {
-        console.error(`Element ${element} not found`);
-        return;
-      }
+    (target, removeClasses = [], addClasses = [], delay = 0) => {
+      const targetElement =
+        typeof target === "string" ? document.querySelector(target) : target;
 
-      setTimeout(() => {
-        targetElement.classList.remove(...removeClasses);
-        targetElement.classList.add(...addClasses);
-      }, delay);
+      if (!targetElement) return;
+
+      const updateClasses = () => {
+        const currentClasses = targetElement.className.split(" ");
+        const filteredClasses = currentClasses.filter(
+          (cls) => !removeClasses.includes(cls)
+        );
+        targetElement.className = [...filteredClasses, ...addClasses].join(" ");
+      };
+
+      if (delay > 0) {
+        setTimeout(() => {
+          requestAnimationFrame(updateClasses);
+        }, delay);
+      } else {
+        requestAnimationFrame(updateClasses);
+      }
     },
     []
   );

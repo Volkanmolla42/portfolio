@@ -8,7 +8,7 @@ const About = () => {
       {/* Main Content Container */}
       <div className="px-6 md:px-20 md:py-14 flex flex-col md:flex-row text-xs  size-full gap-4">
         {/* About Me Section */}
-        <div className="w-full md:w-10/12">
+        <div className="w-full md:w-10/12 ">
           <h2 className="text-2xl md:text-5xl mx-4 font-bold text-white my-5 md:my-4">
             About Me
           </h2>
