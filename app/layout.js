@@ -2,7 +2,6 @@ import "./globals.css";
 import RightNavBar from "./components/RightNavBar";
 import { AppProvider } from "@/app/context/AppContext";
 import LeftNavBar from "./components/LeftNavBar";
-import MailMeLink from "./components/MailMe/MailMeLink";
 
 const RootLayout = ({ children }) => {
   return (
@@ -33,7 +32,6 @@ const RootLayout = ({ children }) => {
             sizes="16x16"
             href="/icons/favicons/favicon-16x16.png"
           />
-          <link rel="manifest" href="/site.webmanifest" />
         </head>
         <body className="bg-zinc-900 h-[100svh] text-white">
           <div

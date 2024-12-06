@@ -9,7 +9,7 @@ import { sendEmail } from "@/app/components/utils/sendMail";
 import DateComponent from "./DateComponent";
 
 export default function MailMe() {
-  const { bokor, toggleClasses } = useAppContext();
+  const { itim, toggleClasses } = useAppContext();
   const textareaRef = useRef(null);
   const formRef = useRef(null);
   const [status, setStatus] = useState(null);
@@ -53,9 +53,9 @@ export default function MailMe() {
             <form
               onSubmit={handleSubmit}
               ref={formRef}
-              className={`paper left-1/2 -translate-x-1/2 -translate-y-[105%]  absolute h-[95%]  mt-2 w-[95%] bg-zinc-100 text-black shadow-md shadow-black border border-dashed border-red-900 rounded transition-all duration-500 ${bokor.className}`}
+              className={`paper left-1/2 -translate-x-1/2 -translate-y-[105%]  absolute h-[95%]  mt-2 w-[95%] bg-zinc-100 text-black shadow-md shadow-black border border-dashed border-red-900 rounded transition-all duration-500 ${itim.className}`}
             >
-              <div className="w-full h-[90%]  flex flex-col relative p-5 tracking-wider">
+              <div className="w-full h-[90%]  flex flex-col relative p-5 tracking-wide">
                 {/* Message input */}
                 <div className="size-full  flex justify-between items-center relative">
                   <textarea

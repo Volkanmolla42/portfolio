@@ -10,8 +10,8 @@ import React, {
 } from "react";
 import localFont from "next/font/local";
 
-const bokor = localFont({
-  src: "../fonts/Bokor-Regular.ttf",
+const itim = localFont({
+  src: "../fonts/Itim-Regular.ttf",
   weight: "400",
   style: "normal",
   subsets: ["khmer"],
@@ -183,7 +183,7 @@ export const AppProvider = ({ children }) => {
       setCurrentHash,
       navLinks,
       toggleClasses,
-      bokor,
+      itim,
       projects,
     }),
     [isMenuOpen, currentHash, navLinks, toggleClasses, projects]
