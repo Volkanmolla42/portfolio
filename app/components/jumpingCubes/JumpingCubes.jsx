@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import Matter from "matter-js";
+import { techIcons } from "../utils/techIcons";
 import "./style.css";
-
 const JumpingCubes = () => {
   const scene = useRef(null);
   const engineRef = useRef(Matter.Engine.create());
   const renderRef = useRef(null);
-  const cubesRef = useRef([]); // Küpler için referans ekledik
-  const jumpIntervalRef = useRef(null); // Zıplama intervali için referans
+  const cubesRef = useRef([]);
 
   useEffect(() => {
     const engine = engineRef.current;
@@ -16,10 +15,9 @@ const JumpingCubes = () => {
     const runner = Matter.Runner.create();
     Matter.Runner.run(runner, engine);
 
-    // Yeni sahne boyutları
-    const sceneWidth = 150; // Genişlik 150px yapıldı
-    const sceneHeight = 250; // Yükseklik 450px yapıldı
-    const wallThickness = 20; // Duvar kalınlığı
+    const sceneWidth = 350;
+    const sceneHeight = 180;
+    const wallThickness = 20;
 
     const render = Matter.Render.create({
       element: scene.current,
@@ -35,25 +33,22 @@ const JumpingCubes = () => {
     renderRef.current = render;
     Matter.Render.run(render);
 
-    // Zemin oluşturma
     const ground = Matter.Bodies.rectangle(
       sceneWidth / 2,
-      sceneHeight - wallThickness / 2,
+      sceneHeight + wallThickness / 2 - 4,
       sceneWidth,
       wallThickness,
       {
         isStatic: true,
         render: {
-          fillStyle: "#00000000",
-          strokeStyle: "#d3d3d3", // Açık gri kenarlık
+          fillStyle: "transparent",
+          strokeStyle: "transparent",
           lineWidth: 1,
         },
       }
     );
 
-    // Sol, Sağ ve Üst Duvarlar
     const walls = [
-      // Sol Duvar
       Matter.Bodies.rectangle(
         -wallThickness / 2,
         sceneHeight / 2,
@@ -62,13 +57,10 @@ const JumpingCubes = () => {
         {
           isStatic: true,
           render: {
-            fillStyle: "#00000000",
-            strokeStyle: "#d3d3d3", // Açık gri kenarlık
             lineWidth: 1,
           },
         }
       ),
-      // Sağ Duvar
       Matter.Bodies.rectangle(
         sceneWidth + wallThickness / 2,
         sceneHeight / 2,
@@ -77,13 +69,10 @@ const JumpingCubes = () => {
         {
           isStatic: true,
           render: {
-            fillStyle: "#00000000",
-            strokeStyle: "#d3d3d3", // Açık gri kenarlık
             lineWidth: 1,
           },
         }
       ),
-      // Üst Duvar
       Matter.Bodies.rectangle(
         sceneWidth / 2,
         -wallThickness / 2,
@@ -92,8 +81,6 @@ const JumpingCubes = () => {
         {
           isStatic: true,
           render: {
-            fillStyle: "#00000000",
-            strokeStyle: "#d3d3d3", // Açık gri kenarlık
             lineWidth: 1,
           },
         }
@@ -101,34 +88,44 @@ const JumpingCubes = () => {
     ];
 
     const cubeSize = 40;
-    const imagePaths = [
-      "/images/atom.png",
-      "/images/html-5.png",
-      "/images/js.png",
-      "/images/css-3.png",
-      "/images/bootstrap.png",
-      "/images/git-icon.svg",
-      "/images/gsap-icon.png",
-      "/images/nextjs-icon.png",
-      "/images/tailwind.svg",
-      "/images/mongodb-icon.svg",
-      "/images/firebase.svg",
-      "/images/threejs-icon.png",
-    ];
 
-    // Küplerin başlangıç pozisyonları, çakışmaları önlemek için aralık genişletildi
-    const cubes = imagePaths.map((imagePath, index) => {
-      return Matter.Bodies.rectangle(10 + index * 10, 100, cubeSize, cubeSize, {
-        restitution: 0.5,
-        render: {
-          sprite: {
-            texture: imagePath, // İlgili resim yolunu atama
-            xScale: 1,
-            yScale: 1,
+    const cubes = techIcons.map((tech, index) => {
+      const cube = Matter.Bodies.rectangle(
+        20 + index * 20,
+        20,
+        cubeSize,
+        cubeSize,
+        {
+          restitution: 0.5,
+          render: {
+            fillStyle: "transparent",
+            strokeStyle: "transparent",
+            lineWidth: 2,
           },
-          strokeStyle: "#FFFFFF", // Beyaz kenarlık rengi
-          lineWidth: 2, // Kenarlık kalınlığı
-        },
+        }
+      );
+
+      const IconComponent = tech.Icon;
+      const iconSvg = IconComponent().props.children[0].props.d;
+
+      const iconBody = Matter.Bodies.circle(
+        cube.position.x,
+        cube.position.y,
+        cubeSize / 4,
+        {
+          isSensor: true,
+          render: {
+            sprite: {
+              texture: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${cubeSize}" height="${cubeSize}" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
+                tech.color
+              )}" d="${encodeURIComponent(iconSvg)}"/></svg>`,
+            },
+          },
+        }
+      );
+
+      return Matter.Body.create({
+        parts: [cube, iconBody],
       });
     });
 
@@ -136,21 +133,6 @@ const JumpingCubes = () => {
 
     Matter.World.add(engine.world, [ground, ...walls, ...cubes]);
 
-    /*jumpIntervalRef.current = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * cubesRef.current.length);
-      const randomCube = cubesRef.current[randomIndex];
-      const forceX = Math.random() * 0.00001;
-      const forceY = -0.03 - Math.random() * 0.03;
-      Matter.Body.applyForce(randomCube, randomCube.position, {
-        x: forceX,
-        y: forceY,
-      });
-    }, 3000);
-
-    const autoJumpInterval = setInterval(() => {
-      handleJump();
-    }, 3000);
-     */
     return () => {
       Matter.Render.stop(render);
       Matter.Runner.stop(runner);
@@ -158,26 +140,23 @@ const JumpingCubes = () => {
       Matter.Engine.clear(engine);
       render.canvas.remove();
       render.textures = {};
-      //clearInterval(jumpIntervalRef.current); // Interval temizlendi
-      //clearInterval(autoJumpInterval);
     };
   }, []);
 
-  // Zıplama fonksiyonu (Buton için)
   const handleJump = () => {
     cubesRef.current.forEach((cube) => {
-      const forceX = (Math.random() - 0.1) * 0.0002;
+      const forceX = (Math.random() - 0.5) * 0.08;
       const forceY = -0.04;
       Matter.Body.applyForce(cube, cube.position, { x: forceX, y: forceY });
     });
   };
 
   return (
-    <div className=" flex-col items-center flex">
-      <div className="scene-container" onClick={handleJump}>
-        <div ref={scene}></div>
-      </div>
-    </div>
+    <div
+      className="transition-all duration-200 relative overflow-hidden rounded-md   backdrop-blur-sm bg-white bg-opacity-10 shadow-md  hover:shadow-sm hover:shadow-zinc-900 shadow-zinc-900 cursor-pointer"
+      onClick={handleJump}
+      ref={scene}
+    ></div>
   );
 };
 
