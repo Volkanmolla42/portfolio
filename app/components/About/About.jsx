@@ -4,15 +4,17 @@ import TechStack from "./TechStack";
 
 const About = () => {
   return (
-    <div className="flex flex-col md:flex-row text-xs  size-full  tracking-wider ">
+    <div className="flex flex-col md:flex-row text-xs size-full tracking-wider">
       {/* About Me Section */}
-      <div className="w-full px-4 md:px-8 pt-4   flex flex-col  justify-center ">
-        <h2 className="text-3xl md:text-5xl  font-bold text-white my-6  md:my-4  ">
+      <div className="w-full px-4 md:px-8 pt-4 flex flex-col justify-center">
+        <h2 className="text-3xl md:text-5xl font-bold text-white my-6 md:my-4">
           About Me
         </h2>
-        <div className=" overflow-y-auto ">
+        {/* Scrollable content for about text */}
+        <div className="overflow-y-auto">
           <AboutText />
         </div>
+        {/* Inspirational quote */}
         <Quote
           text="I have not failed. I've just found 10,000 ways that won't work"
           author="Thomas Edison"
@@ -20,34 +22,34 @@ const About = () => {
       </div>
 
       {/* Technologies Section */}
-      <div className="flex-auto  ">
+      <div className="flex-auto">
         <TechStack />
       </div>
     </div>
   );
 };
 
-// Reusable AboutText Component
+// Component to display about paragraphs
 const AboutText = () => (
   <>
     {aboutParagraphs.map((paragraph, index) => (
-      <p key={index} className="text-gray-300 leading-relaxed px-2  mb-8">
+      <p key={index} className="text-gray-300 leading-relaxed px-2 mb-8">
         ~ {paragraph}
       </p>
     ))}
   </>
 );
 
-// Reusable Quote Component
+// Component to display a quote with author
 const Quote = ({ text, author }) => (
-  <h3 className="text-red-400 py-4 font-mono text-sm italic text-center ">
+  <h3 className="text-red-400 py-4 font-mono text-sm italic text-center">
     {`"${text}"`}
     <br />
     <span className="text-gray-400 font-light">{`- ${author}`}</span>
   </h3>
 );
 
-// Text Content
+// About text paragraphs
 const aboutParagraphs = [
   <>
     <span className="font-semibold text-white">Hello!</span> I&apos;m{" "}
