@@ -50,7 +50,7 @@ const Hero = () => {
         >
           <div className="border-none rounded-full p-[6px] bg-green-500 mr-2 animate-pulse"></div>
           <SiWhatsapp size={18} />
-          <span>Let's Talk</span>
+          <span>Let&apos; s Talk</span>
         </a>
         <a
           href="https://github.com/Volkanmolla42"
