@@ -1,5 +1,6 @@
 import { Download, Github } from "lucide-react";
 import "./style.css";
+import { SiWhatsapp } from "react-icons/si";
 const Hero = () => {
   return (
     <>
@@ -43,13 +44,13 @@ const Hero = () => {
 
       <div className="w-full flex justify-center items-center gap-2 text-xs md:text-base text-center mt-2">
         <a
-          href="/cv.pdf"
+          href="https://wa.me/905418224484"
           target="_blank"
-          download="cv.pdf"
           className="bg-zinc-800 w-36 md:w-48 text-red-300 px-4 py-2 rounded-full hover:bg-zinc-700 transition-colors duration-300 flex items-center justify-center gap-2"
         >
-          <Download />
-          <span>Download CV</span>
+          <div className="border-none rounded-full p-[6px] bg-green-500 mr-2 animate-pulse"></div>
+          <SiWhatsapp size={18} />
+          <span>Let's Talk</span>
         </a>
         <a
           href="https://github.com/Volkanmolla42"

@@ -40,7 +40,7 @@ const AboutText = () => (
 
 // Reusable Quote Component
 const Quote = ({ text, author }) => (
-  <h3 className="text-red-400 py-4 mt-auto font-mono text-sm italic text-center ">
+  <h3 className="text-red-400 py-4 font-mono text-sm italic text-center ">
     {`"${text}"`}
     <br />
     <span className="text-gray-400 font-light">{`- ${author}`}</span>
@@ -79,8 +79,7 @@ const aboutParagraphs = [
     I adapt quickly to new technologies and{" "}
     <span className="font-bold text-red-500">learn effortlessly</span>. I take
     pride in my{" "}
-    <span className="font-bold text-red-500">problem-solving skills</span>,{" "}
-    <span className="font-bold text-red-500">attention to detail</span>, and{" "}
+    <span className="font-bold text-red-500">problem-solving skills</span>, and{" "}
     <span className="font-bold text-red-500">discipline</span>. When faced with
     challenges, I analyze their root causes, strive to solve them independently,
     and consult resources or AI tools when necessary.
