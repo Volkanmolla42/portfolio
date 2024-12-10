@@ -14,9 +14,9 @@ import {
   SiBootstrap,
 } from "react-icons/si";
 import React, { useState, useEffect, useRef } from "react";
-
 import JumpingCubes from "../jumpingCubes/JumpingCubes";
 
+// List of technologies
 const technologies = [
   { name: "React", icon: SiReact, color: "text-[#61DAFB]" },
   {
@@ -31,19 +31,22 @@ const technologies = [
     icon: SiThreedotjs,
     color: "text-[#000000] dark:text-white",
   },
-  { name: "HTML", icon: SiHtml5, color: "text-[#E34F26] " },
-  { name: "CSS", icon: SiCss3, color: "text-[#1572B6] " },
+  { name: "HTML", icon: SiHtml5, color: "text-[#E34F26]" },
+  { name: "CSS", icon: SiCss3, color: "text-[#1572B6]" },
   { name: "JavaScript", icon: SiJavascript, color: "text-[#F7DF1E]" },
   { name: "Bootstrap", icon: SiBootstrap, color: "text-[#6b46c1]" },
-  { name: "Firebase", icon: SiFirebase, color: "text-[#FFCA28] " },
-  { name: "MongoDB", icon: SiMongodb, color: "text-[#47A248] " },
-  { name: "Git", icon: SiGit, color: "text-[#F05032] " },
+  { name: "Firebase", icon: SiFirebase, color: "text-[#FFCA28]" },
+  { name: "MongoDB", icon: SiMongodb, color: "text-[#47A248]" },
+  { name: "Git", icon: SiGit, color: "text-[#F05032]" },
 ];
 
 const TechStack = () => {
+  // State definitions
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const containerRef = useRef(null);
+
+  // Effect for tracking mouse movements
   useEffect(() => {
     const handleMouseMove = (event) => {
       if (containerRef.current) {
@@ -55,38 +58,45 @@ const TechStack = () => {
       }
     };
 
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("mousemove", handleMouseMove);
-      container.addEventListener("mouseenter", () => setIsHovering(true));
-      container.addEventListener("mouseleave", () => setIsHovering(false));
+    const handleMouseEnter = () => setIsHovering(true);
+    const handleMouseLeave = () => setIsHovering(false);
+
+    const containerElement = containerRef.current;
+    if (containerElement) {
+      containerElement.addEventListener("mousemove", handleMouseMove);
+      containerElement.addEventListener("mouseenter", handleMouseEnter);
+      containerElement.addEventListener("mouseleave", handleMouseLeave);
     }
 
     return () => {
-      if (container) {
-        container.removeEventListener("mousemove", handleMouseMove);
-        container.removeEventListener("mouseenter", () => setIsHovering(true));
-        container.removeEventListener("mouseleave", () => setIsHovering(false));
+      if (containerElement) {
+        containerElement.removeEventListener("mousemove", handleMouseMove);
+        containerElement.removeEventListener("mouseenter", handleMouseEnter);
+        containerElement.removeEventListener("mouseleave", handleMouseLeave);
       }
     };
   }, []);
+
   return (
-    <div className=" relative w-full h-lvh overflow-hidden bg-gradient-to-bl from-gray-950 via-purple-950 to-red-900 px-8">
-      <div className=" size-full flex flex-col  items-center justify-center gap-6 md:gap-2">
-        <h3 className="text-3xl self-start font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-8">
+    <div className="relative w-full h-lvh overflow-hidden bg-gradient-to-bl from-gray-950 via-purple-950 to-red-900 px-8">
+      <div className="size-full flex flex-col items-center justify-center">
+        {/* Header */}
+        <h3 className="text-3xl self-start font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-4">
           Technologies I Use
         </h3>
 
+        {/* List of technologies */}
         <motion.div
           ref={containerRef}
-          className="grid grid-cols-3 sm:grid-cols-4 gap-[3px] mb-6 w-full relative overflow-hidden"
+          className="grid grid-cols-3 sm:grid-cols-4 gap-[3px] mb-4 w-full relative overflow-hidden bg-zinc-900 rounded-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
+          {/* Hover effect reflection */}
           {isHovering && (
             <div
-              className="absolute rounded-full bg-blue-800 pointer-events-none"
+              className="absolute rounded-full bg-red-800 pointer-events-none"
               style={{
                 left: `${mousePosition.x}px`,
                 top: `${mousePosition.y}px`,
@@ -96,6 +106,7 @@ const TechStack = () => {
               }}
             />
           )}
+          {/* Technology cards */}
           {technologies.map((tech, index) => (
             <motion.div
               key={tech.name}
@@ -105,7 +116,7 @@ const TechStack = () => {
               className="z-10"
             >
               <div
-                className="flex flex-col items-center justify-center p-2 h-24 w-full bg-gray-800 hover:outline-blue-800 hover:outline hover:bg-gray-900  transition-[background-color]  duration-500 cursor-pointer"
+                className="flex flex-col rounded-sm items-center justify-center p-2 h-24 w-full bg-gray-800 hover:outline-red-800 hover:outline hover:bg-gray-900 transition-[background-color] duration-500 cursor-pointer"
                 title={`I use ${tech.name} in my projects`}
               >
                 <tech.icon className={`text-2xl ${tech.color}`} />
@@ -116,7 +127,9 @@ const TechStack = () => {
             </motion.div>
           ))}
         </motion.div>
-        <div className="w-full relative flex items-center justify-center">
+
+        {/* Bottom section animation */}
+        <div className="w-full relative flex items-center justify-center mb-2">
           <JumpingCubes />
         </div>
       </div>
