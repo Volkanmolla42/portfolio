@@ -7,7 +7,7 @@ const About = () => {
     <div className="flex flex-col md:flex-row text-xs  size-full  tracking-wider ">
       {/* About Me Section */}
       <div className="w-full px-4 md:px-8 pt-4   flex flex-col  justify-center ">
-        <h2 className="text-2xl md:text-5xl  font-bold text-white my-5 md:my-4  ">
+        <h2 className="text-3xl md:text-5xl  font-bold text-white my-6  md:my-4  ">
           About Me
         </h2>
         <div className=" overflow-y-auto ">

@@ -41,9 +41,9 @@ const technologies = [
 
 const TechStack = () => {
   return (
-    <div className="w-full h-svh overflow-hidden bg-gradient-to-bl from-gray-900 via-purple-950 to-red-900 px-8   ">
-      <div className=" size-full flex flex-col  items-center justify-center ">
-        <h3 className="text-3xl self-start font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-6">
+    <div className="w-full h-lvh overflow-hidden bg-gradient-to-bl from-gray-900 via-purple-950 to-red-900 px-8">
+      <div className=" size-full   flex flex-col  items-center justify-center ">
+        <h3 className="text-3xl self-start font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-8">
           Technologies I Use
         </h3>
 
