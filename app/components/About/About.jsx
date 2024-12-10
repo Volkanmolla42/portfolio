@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 import TechStack from "./TechStack";
 
 const About = () => {

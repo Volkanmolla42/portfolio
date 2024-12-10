@@ -112,7 +112,7 @@ const TechStack = () => {
               key={tech.name}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.2 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
               className="z-10"
             >
               <div
