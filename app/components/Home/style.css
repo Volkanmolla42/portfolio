@@ -9,7 +9,6 @@
   --gap: 20px;
   gap: var(--gap);
   width: var(--text-box-width);
-  font-size: calc(var(--font-size) / 11);
 }
 
 .infoslider ul {
@@ -30,7 +29,6 @@
 
 @media (max-width: 768px) {
   :root {
-    --font-size: 5rem;
     --text-box-width: 287px;
   }
 }

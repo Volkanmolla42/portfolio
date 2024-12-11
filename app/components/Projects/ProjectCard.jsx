@@ -10,12 +10,13 @@ import {
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import clsx from "clsx"; // Import clsx for dynamic class management
 
-function ProjectCard({ project }) {
+const ProjectCard = ({ project }) => {
   const {
     title = "Untitled Project",
     description = "No description available",
-    projectImage = "",
+    projectImage = "/placeholder.jpg",
     liveDemoLink,
     gitHubLink,
     techs = [],
@@ -23,33 +24,32 @@ function ProjectCard({ project }) {
 
   return (
     <Card
-      className="group relative flex flex-col h-full bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-lg shadow-lg hover:shadow-red-600/30 transition-all duration-300 ease-in-out  text-red-100"
+      className={clsx(
+        "group relative flex flex-col h-full bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-lg shadow-lg",
+        "hover:shadow-red-600/30 transition-all duration-300 ease-in-out text-red-100"
+      )}
       aria-labelledby={`project-title-${title}`}
       role="article"
     >
-      {/* Görsel */}
+      {/* Image */}
       <CardHeader className="relative overflow-hidden rounded-t-lg p-0">
-        <div className="relative w-full h-48 overflow-hidden">
-          <Image
-            src={projectImage || "/placeholder.jpg"}
-            alt={
-              projectImage
-                ? `${title} project's visual representation`
-                : "Placeholder image for projects"
-            }
-            width={300}
-            height={300}
-            className="w-auto h-auto transition-transform duration-300 group-hover:scale-110 object-contain"
-          />
-
+        <div className="relative w-full overflow-hidden">
           <div
             className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"
             aria-hidden="true"
           ></div>
+          <Image
+            src={projectImage}
+            alt={`${title} project's visual representation`}
+            width={400}
+            height={400}
+            loading="lazy"
+            className=" size-auto transition-transform duration-300 group-hover:scale-110 object-contain"
+          />
         </div>
       </CardHeader>
 
-      {/* Başlık ve Açıklama */}
+      {/* Title and Description */}
       <CardContent className="flex-grow p-4 space-y-3">
         <CardTitle
           id={`project-title-${title}`}
@@ -62,9 +62,9 @@ function ProjectCard({ project }) {
         </CardDescription>
       </CardContent>
 
-      {/* Teknoloji Listesi */}
+      {/* Technology List */}
       {techs.length > 0 && (
-        <div className="px-4 pb-3">
+        <div className="px-4 pb-3 cursor-default">
           <ul
             className="flex flex-wrap gap-2"
             aria-label="Technologies used in the project"
@@ -82,8 +82,8 @@ function ProjectCard({ project }) {
         </div>
       )}
 
-      {/* Butonlar */}
-      <CardFooter className="flex flex-col md:flex-row gap-2 md:gap-0 px-4 pb-4 ">
+      {/* Buttons */}
+      <CardFooter className="flex flex-col md:flex-row gap-2 md:gap-0 px-4 pb-4">
         {liveDemoLink && (
           <Button
             asChild
@@ -107,7 +107,7 @@ function ProjectCard({ project }) {
         {gitHubLink && (
           <Button
             asChild
-            className="md:w-1/4 w-1-3 md:m-2  transition-all duration-300 hover:underline underline-offset-4 text-xs   font-medium bg-zinc-700/50 hover:bg-zinc-600/80 text-zinc-300   hover:shadow-md hover:shadow-zinc-600/30 "
+            className="md:w-1/4 w-1-3 md:m-2 transition-all duration-300 hover:underline underline-offset-4 text-xs font-medium bg-zinc-700/50 hover:bg-zinc-600/80 text-zinc-300 hover:shadow-md hover:shadow-zinc-600/30"
           >
             <a
               href={gitHubLink}
@@ -123,6 +123,6 @@ function ProjectCard({ project }) {
       </CardFooter>
     </Card>
   );
-}
+};
 
 export default ProjectCard;
