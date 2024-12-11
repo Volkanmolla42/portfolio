@@ -1,33 +1,39 @@
 "use client";
+
 import { useAppContext } from "../context/AppContext";
 import React, { memo } from "react";
 
 const LeftNavBar = memo(() => {
   const { navLinks, currentHash } = useAppContext();
 
+  const getLinkClasses = (linkHref) => {
+    const isActive = currentHash === linkHref;
+    const isContact = linkHref === "#contact" && currentHash !== linkHref;
+
+    return [
+      "flex flex-col justify-center items-center w-full h-14 md:h-full py-8 gap-1",
+      isActive ? "bg-zinc-900 opacity-100" : "opacity-70 hover:opacity-100",
+      isContact && "animate-pulse opacity-100",
+    ]
+      .filter(Boolean)
+      .join(" ");
+  };
+
+  const getTextClasses = (linkHref) => {
+    return currentHash === linkHref ? "font-medium text-destructive" : "";
+  };
+
   return (
     <header role="banner" className="z-50 md:w-[10%] lg:w-[5%]">
       <nav
-        className="flex items-center justify-evenly bg-zinc-800 text-nowrap text-center  md:flex-col md:h-full "
+        className="flex items-center justify-evenly bg-zinc-800 text-nowrap text-center md:flex-col md:h-full"
         aria-label="Ana Navigasyon"
       >
         {navLinks.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            className={`flex flex-col justify-center items-center w-full h-14 py-8 gap-1
-              hover:bg-zinc-900 transition-colors duration-300
-              md:h-full md:px-3
-              ${
-                currentHash === link.href
-                  ? "bg-zinc-900 opacity-100"
-                  : "opacity-70 hover:opacity-100"
-              }
-              ${
-                link.href === "#contact" && currentHash !== link.href
-                  ? "animate-pulse opacity-100"
-                  : ""
-              }`}
+            className={getLinkClasses(link.href)}
             aria-current={currentHash === link.href ? "page" : undefined}
           >
             <img
@@ -37,11 +43,7 @@ const LeftNavBar = memo(() => {
               height={20}
             />
             <span
-              className={`hidden md:block  text-xs  ${
-                currentHash === link.href
-                  ? " font-medium  text-destructive"
-                  : ""
-              }  `}
+              className={`hidden md:block text-xs ${getTextClasses(link.href)}`}
             >
               {link.label}
             </span>

@@ -7,7 +7,7 @@ const About = () => {
       {/* About Me Section */}
       <div className="w-full px-4 md:px-8 pt-4 flex flex-col justify-center">
         <h2 className="text-3xl md:text-5xl font-bold text-white my-6 md:my-4">
-          About Me
+          About me
         </h2>
         {/* Scrollable content for about text */}
         <div className="overflow-y-auto">
@@ -53,7 +53,9 @@ const aboutParagraphs = [
   <>
     <span className="font-semibold text-white">Hello!</span> I&apos;m{" "}
     <span className="text-red-500 font-bold md:text-2xl">Volkan</span>,{" "}
-    <span className="font-bold text-red-500">a Frontend Developer</span>{" "}
+    <span className="font-bold text-red-500">
+      a 23-year-old Frontend Developer
+    </span>{" "}
     passionate about creating user-friendly and visually appealing web
     interfaces. Over the past two years — and especially in the past year — I
     have been focusing on web technologies, developing{" "}
@@ -74,7 +76,9 @@ const aboutParagraphs = [
     <span className="font-bold text-red-500">Three.js</span> to create engaging
     animations. Additionally, I have experience developing applications using{" "}
     <span className="font-bold text-red-500">Firebase</span> and{" "}
-    <span className="font-bold text-red-500">MongoDB</span>.
+    <span className="font-bold text-red-500">MongoDB</span>. I studied web
+    design and computer programming in both high school and university, which
+    has greatly contributed to my skill set.
   </>,
   <>
     I adapt quickly to new technologies and{" "}
