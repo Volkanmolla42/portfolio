@@ -27,39 +27,49 @@ export default function RightNavBar() {
     [currentHash, isMenuOpen]
   );
 
-  useEffect(() => {
-    const closeMenu = () => {
-      setIsMenuOpen(false);
-    };
-    if (isMenuOpen) {
-      document
-        .querySelector(".perspective")
-        .addEventListener("click", closeMenu);
-      moveMiddleBar(1000);
-      toggleClasses(".perspective", ["inactive"], ["active", "cursor-pointer"]);
-      toggleClasses(".right-nav", ["w-[2%]"], ["w-[35%]"]);
-      toggleClasses(".right-nav", ["h-6"], ["h-[92vh]"], 500);
-      toggleClasses(".nav-links", ["hidden"], ["flex"], 600);
-    } else {
-      document
-        .querySelector(".perspective")
-        .removeEventListener("click", closeMenu);
-      moveMiddleBar(0);
-      toggleClasses(".right-nav", ["h-[92vh]"], ["h-6"]);
+  const toggleNavMenu = (isOpening) => {
+    const perspectiveElement = document.querySelector(".perspective");
+    const rightNavElement = document.querySelector(".right-nav");
+    const navLinksElement = document.querySelector(".nav-links");
+
+    if (isOpening) {
+      perspectiveElement.addEventListener("click", closeMenu);
       toggleClasses(
-        ".perspective",
+        perspectiveElement,
+        ["inactive"],
+        ["active", "cursor-pointer"]
+      );
+      toggleClasses(rightNavElement, ["w-[2%]"], ["w-[35%]"]);
+      toggleClasses(rightNavElement, ["h-6"], ["h-[92vh]"], 500);
+      toggleClasses(navLinksElement, ["hidden"], ["flex"], 600);
+      moveMiddleBar(1000);
+    } else {
+      perspectiveElement.removeEventListener("click", closeMenu);
+      moveMiddleBar(0);
+
+      toggleClasses(
+        perspectiveElement,
         ["active", "cursor-pointer"],
         ["inactive"],
         500
       );
-      toggleClasses(".right-nav", ["w-[35%]"], ["w-[2%]"], 500);
-      toggleClasses(".nav-links", ["flex"], ["hidden"], 400);
+      toggleClasses(rightNavElement, ["h-[92vh]"], ["h-6"]);
+      toggleClasses(rightNavElement, ["w-[35%]"], ["w-[2%]"], 500);
+      toggleClasses(navLinksElement, ["flex"], ["hidden"], 400);
     }
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    toggleNavMenu(isMenuOpen);
   }, [isMenuOpen, currentHash, toggleClasses, moveMiddleBar, setIsMenuOpen]);
 
   return (
     <div
-      className="right-nav fixed top-8  right-8 select-none cursor-pointer min-w-8 h-6 transition-all duration-500 text-3xl md:text-5xl flex-col overflow-hidden flex text-center text-red-100 items-center justify-center gap-8 z-50 "
+      className="right-nav fixed top-8 right-8 select-none cursor-pointer min-w-8 h-6 transition-all duration-500 text-3xl md:text-5xl flex-col overflow-hidden flex text-center text-red-100 items-center justify-center gap-8 z-50"
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       {/* Hamburger Bars */}
@@ -77,12 +87,12 @@ export default function RightNavBar() {
       ))}
 
       {/* Navigation Links */}
-      <nav className="nav-links flex-col w-full h-full items-center hidden  ">
+      <nav className="nav-links flex-col w-full h-full items-center hidden">
         {navLinks.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            className={`relative h-full flex justify-center items-center   w-full transition-colors duration-300 select-none  hover:text-red-300 cursor-pointer`}
+            className="relative h-full flex justify-center items-center w-full transition-colors duration-300 select-none hover:text-red-300 cursor-pointer"
           >
             <span>{link.label}</span>
           </a>
