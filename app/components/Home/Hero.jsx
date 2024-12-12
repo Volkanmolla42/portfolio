@@ -1,11 +1,10 @@
-import { Github } from "lucide-react";
 import "./style.css";
-import { SiWhatsapp } from "react-icons/si";
+import { SiGithub, SiWhatsapp } from "react-icons/si";
 
 // Hero Component
 const Hero = () => {
   return (
-    <>
+    <div className="size-full flex items-center justify-center flex-col text-xs md:text-base">
       {/* Hero Section */}
       <div className="w-full z-10 flex flex-col justify-center items-center select-none">
         {/* Logo */}
@@ -16,13 +15,13 @@ const Hero = () => {
         />
 
         {/* Scrolling Info Slider */}
-        <div className="infoslider flex overflow-hidden py-1 rounded-full mt-2 bg-zinc-800 text-red-300">
+        <div className="infoslider flex overflow-hidden py-1 rounded-full mt-2 bg-zinc-800 text-red-300 ">
           <InfoSlider />
         </div>
       </div>
 
       {/* Call to Action Buttons */}
-      <div className="w-full flex justify-center items-center gap-2 text-xs md:text-base text-center mt-2">
+      <div className="w-full flex justify-center items-center gap-2 text-center mt-2">
         <ContactButton
           href="https://wa.me/905418224484"
           icon={
@@ -32,11 +31,11 @@ const Hero = () => {
         />
         <ContactButton
           href="https://github.com/Volkanmolla42"
-          icon={<Github className="size-4 md:size-5" />}
+          icon={<SiGithub className="size-4 md:size-5" />}
           text="Github"
         />
       </div>
-    </>
+    </div>
   );
 };
 
@@ -64,7 +63,7 @@ const InfoSlider = () => {
         <ul
           key={index}
           aria-hidden="true"
-          className="list-none flex justify-between items-center flex-shrink-0 min-w-full"
+          className="list-none flex  justify-between items-center flex-shrink-0 min-w-full"
         >
           {items.map((item, idx) => (
             <li key={idx}>

@@ -24,7 +24,7 @@ export const AppProvider = ({ children }) => {
   const [currentHash, setCurrentHash] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
       const audio = new Audio("/sounds/paperslide3.mp3");
       audio.load();
     }, 3000);
