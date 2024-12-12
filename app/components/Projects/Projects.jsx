@@ -24,7 +24,7 @@ const itemVariants = {
   },
 };
 
-export default function ProjectsPage() {
+export default function Projects() {
   // State management hooks
   const { projects } = useAppContext();
   const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
 
   // Initialize loading state with timeout
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 800);
+    const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 

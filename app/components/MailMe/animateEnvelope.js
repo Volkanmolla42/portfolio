@@ -19,7 +19,7 @@ export default function AnimateEnvelope({ status, toggleClasses, PlaySound }) {
 
     // Play sound after a slight delay
     setTimeout(() => {
-      PlaySound({ url: "/sounds/paperslide3.mp3" });
+      PlaySound({ url: "/sounds/paper-slide.mp3" });
     }, 1000);
 
     // Fade in the success message

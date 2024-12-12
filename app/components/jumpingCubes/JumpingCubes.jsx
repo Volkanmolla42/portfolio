@@ -8,7 +8,6 @@ const JumpingCubes = () => {
   const engineRef = useRef(Matter.Engine.create());
   const renderRef = useRef(null);
   const cubesRef = useRef([]);
-
   useEffect(() => {
     const engine = engineRef.current;
     engine.gravity.y = 1; // Set gravity direction
@@ -106,10 +105,16 @@ const JumpingCubes = () => {
         }
       );
 
-      // Get the icon SVG path and create a circle for the icon
-      const IconComponent = tech.Icon;
-      const iconSvg = IconComponent().props.children[0].props.d;
+      // Create a data URL for the SVG using the svgPath
+      const svgString = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="${cubeSize}" height="${cubeSize}" viewBox="0 0 24 24">
+          <path fill="${tech.color}" d="${tech.svgPath}" />
+        </svg>`;
+      const encodedSvg = `data:image/svg+xml;utf8,${encodeURIComponent(
+        svgString
+      )}`;
 
+      // Create a circle body for the icon
       const iconBody = Matter.Bodies.circle(
         cube.position.x,
         cube.position.y,
@@ -118,15 +123,13 @@ const JumpingCubes = () => {
           isSensor: true, // Treat as a sensor (no physical interaction)
           render: {
             sprite: {
-              texture: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${cubeSize}" height="${cubeSize}" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
-                tech.color
-              )}" d="${encodeURIComponent(iconSvg)}"/></svg>`,
+              texture: encodedSvg,
             },
           },
         }
       );
 
-      // Return the cube with the icon attached
+      // Return the composite body with the cube and icon
       return Matter.Body.create({
         parts: [cube, iconBody],
       });

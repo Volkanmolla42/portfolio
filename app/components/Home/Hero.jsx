@@ -1,5 +1,6 @@
+import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 import "./style.css";
-import { SiGithub, SiWhatsapp } from "react-icons/si";
 
 // Hero Component
 const Hero = () => {
@@ -8,10 +9,13 @@ const Hero = () => {
       {/* Hero Section */}
       <div className="w-full z-10 flex flex-col justify-center items-center select-none">
         {/* Logo */}
-        <img
-          src="no-bg-logo.png"
+        <Image
+          src="/main-logo.webp"
           alt="portfolio logo"
-          className="w-[var(--text-box-width)] object-cover"
+          width={500}
+          height={500}
+          className="w-[var(--text-box-width)] h-auto object-cover"
+          priority="true"
         />
 
         {/* Scrolling Info Slider */}
@@ -23,16 +27,16 @@ const Hero = () => {
       {/* Call to Action Buttons */}
       <div className="w-full flex justify-center items-center gap-2 text-center mt-2">
         <ContactButton
-          href="https://wa.me/905418224484"
-          icon={
-            <SiWhatsapp className="size-4 md:size-5 fill-green-600 animate-pulse" />
-          }
           text="Get in Touch"
+          href="https://wa.me/905418224484"
+          icon="/icons/socials-icons/whatsapp-brands-solid.svg"
+          className="size-4 md:size-5 animate-pulse"
         />
         <ContactButton
-          href="https://github.com/Volkanmolla42"
-          icon={<SiGithub className="size-4 md:size-5" />}
           text="Github"
+          href="https://github.com/Volkanmolla42"
+          icon="/icons/socials-icons/github-brands-solid.svg"
+          className="size-4 md:size-5"
         />
       </div>
     </div>
@@ -77,15 +81,16 @@ const InfoSlider = () => {
 };
 
 // Reusable ContactButton Component
-const ContactButton = ({ href, icon, text }) => (
+const ContactButton = ({ href, icon, text, className }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="flex items-center justify-center gap-2 bg-zinc-800 text-nowrap w-36 md:w-48 text-red-300 px-4 py-2 rounded-full hover:bg-zinc-700 transition-colors duration-300"
+    className="flex items-center text-sm justify-center gap-2 bg-zinc-800 text-nowrap w-36 md:w-48 text-red-300 px-4 py-2 rounded-full hover:bg-zinc-700 transition-colors duration-300"
   >
-    {icon}
+    <img src={icon} alt="contact icon" className={className}></img>
     <span>{text}</span>
+    <ExternalLink size={16} />
   </a>
 );
 

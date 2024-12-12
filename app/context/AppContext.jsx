@@ -1,5 +1,4 @@
 "use client";
-
 import React, {
   createContext,
   useState,
@@ -9,7 +8,7 @@ import React, {
   useMemo,
 } from "react";
 import localFont from "next/font/local";
-
+import { techIcons } from "../components/utils/techIcons";
 const itim = localFont({
   src: "../fonts/Itim-Regular.ttf",
   weight: "400",
@@ -23,12 +22,8 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [currentHash, setCurrentHash] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      const audio = new Audio("/sounds/paperslide3.mp3");
-      audio.load();
-    }, 3000);
-  }, []);
+
+  const memoizedTechIcons = useMemo(() => techIcons, []);
 
   const navLinks = useMemo(
     () => [
@@ -63,7 +58,7 @@ export const AppProvider = ({ children }) => {
         title: "Real-time Chat App",
         description:
           "Modern chat application offering real-time messaging with a sleek interface. Powered by Firebase for reliable and fast communication.",
-        projectImage: "/images/projectImages/chatapp/ss2.jpeg",
+        projectImage: "/images/projectImages/chatapp.webp",
         category: "Apps",
         liveDemoLink:
           "https://full-stack-chat-app-git-main-volkanmolla42s-projects.vercel.app/chat",
@@ -75,7 +70,7 @@ export const AppProvider = ({ children }) => {
         title: "Apple.com clone",
         description:
           "Pixel-perfect clone of Apple's website, featuring immersive animations with GSAP and Three.js for a premium user experience.",
-        projectImage: "/images/projectImages/appleWebsite/apple-ss1.png",
+        projectImage: "/images/projectImages/apple.webp",
         category: "websites",
         liveDemoLink:
           "https://apple-website-m5a6uzoiq-volkanmolla42s-projects.vercel.app/",
@@ -94,7 +89,7 @@ export const AppProvider = ({ children }) => {
         title: "Amazon.com clone",
         description:
           "Minimalist replica of Amazon's website built with HTML, CSS, and JavaScript, focusing on essential design and features.",
-        projectImage: "/images/projectImages/amazon/amazon-ss.png",
+        projectImage: "/images/projectImages/amazon.webp",
         category: "websites",
         liveDemoLink: "https://volkanmolla42.github.io/Amazon_site/amazon.html",
         gitHubLink: "https://github.com/Volkanmolla42/Amazon_site",
@@ -105,7 +100,7 @@ export const AppProvider = ({ children }) => {
         title: "Starbucks.com.tr clone",
         description:
           "Polished replica of Starbucks Turkey's website built with HTML, CSS, and Bootstrap for a seamless browsing experience.",
-        projectImage: "/images/projectImages/starbucks/starbucks-ss.png",
+        projectImage: "/images/projectImages/starbucks.webp",
         category: "websites",
         liveDemoLink: "https://volkanmolla42.github.io/Starbucks_site/",
         gitHubLink: "https://github.com/Volkanmolla42/Starbucks_site",
@@ -116,7 +111,7 @@ export const AppProvider = ({ children }) => {
         title: "Frontend Bootcamp",
         description:
           "Modern training site for aspiring frontend developers, featuring a stylish interface built with Bootstrap for a responsive experience.",
-        projectImage: "/images/projectImages/bootcamp/bootcamp-ss.png",
+        projectImage: "/images/projectImages/bootcamp.webp",
         category: "websites",
         liveDemoLink: "https://volkanmolla42.github.io/Bootcamp_site/",
         gitHubLink: "https://github.com/Volkanmolla42/Bootcamp_site",
@@ -127,7 +122,7 @@ export const AppProvider = ({ children }) => {
         title: "New Design",
         description:
           "Sleek web design project combining modern aesthetics with user-centered functionality for an impressive digital experience.",
-        projectImage: "/images/projectImages/design/design-ss.png",
+        projectImage: "/images/projectImages/design.webp",
         category: "websites",
         liveDemoLink: "https://volkanmolla42.github.io/Design_site/",
         gitHubLink: "https://github.com/Volkanmolla42/Design_site",
@@ -191,6 +186,7 @@ export const AppProvider = ({ children }) => {
       toggleClasses,
       itim,
       projects,
+      memoizedTechIcons,
     }),
     [isMenuOpen, currentHash, navLinks, toggleClasses, projects]
   );
