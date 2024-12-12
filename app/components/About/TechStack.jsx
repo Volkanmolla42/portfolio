@@ -1,46 +1,10 @@
 import { motion } from "framer-motion";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiGreensock,
-  SiThreedotjs,
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiFirebase,
-  SiMongodb,
-  SiGit,
-  SiBootstrap,
-} from "react-icons/si";
 import React, { useState, useEffect, useRef } from "react";
 import JumpingCubes from "../jumpingCubes/JumpingCubes";
-
-// List of technologies
-const technologies = [
-  { name: "React", icon: SiReact, color: "text-[#61DAFB]" },
-  {
-    name: "Next.js",
-    icon: SiNextdotjs,
-    color: "text-[#000000] dark:text-white",
-  },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
-  { name: "GSAP", icon: SiGreensock, color: "text-[#88CE02]" },
-  {
-    name: "Three.js",
-    icon: SiThreedotjs,
-    color: "text-[#000000] dark:text-white",
-  },
-  { name: "HTML", icon: SiHtml5, color: "text-[#E34F26]" },
-  { name: "CSS", icon: SiCss3, color: "text-[#1572B6]" },
-  { name: "JavaScript", icon: SiJavascript, color: "text-[#F7DF1E]" },
-  { name: "Bootstrap", icon: SiBootstrap, color: "text-[#6b46c1]" },
-  { name: "Firebase", icon: SiFirebase, color: "text-[#FFCA28]" },
-  { name: "MongoDB", icon: SiMongodb, color: "text-[#47A248]" },
-  { name: "Git", icon: SiGit, color: "text-[#F05032]" },
-];
-
+import { useAppContext } from "@/app/context/AppContext";
 const TechStack = () => {
+  const { memoizedTechIcons } = useAppContext();
+
   // State definitions
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -88,7 +52,7 @@ const TechStack = () => {
         {/* List of technologies */}
         <motion.div
           ref={containerRef}
-          className="grid grid-cols-3 sm:grid-cols-4 gap-[3px] mb-6 w-full relative overflow-hidden bg-zinc-900 rounded-xl"
+          className="grid grid-cols-3  sm:grid-cols-4 gap-[3px] mb-6 w-full relative overflow-hidden bg-zinc-900 rounded-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -107,21 +71,29 @@ const TechStack = () => {
             />
           )}
           {/* Technology cards */}
-          {technologies.map((tech, index) => (
+          {memoizedTechIcons.map((icon, index) => (
             <motion.div
-              key={tech.name}
+              key={index}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
               className="z-10"
             >
               <div
-                className="flex flex-col rounded-sm items-center justify-center p-2 h-24 w-full bg-gray-800 hover:outline-red-800 hover:outline hover:bg-gray-900 transition-[background-color] duration-300 cursor-pointer"
-                title={`I use ${tech.name} in my projects`}
+                className={`flex flex-col rounded-sm items-center justify-center p-2 h-24 w-full bg-gray-800 hover:outline-red-800 hover:outline hover:bg-gray-900 transition-[background-color] duration-300 cursor-pointer text-[${icon.color}]`}
+                title={`I use ${icon.name} in my projects`}
               >
-                <tech.icon className={`text-2xl ${tech.color}`} />
-                <span className="text-xs mt-2 text-center text-white">
-                  {tech.name}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={30}
+                  height={30}
+                  viewBox="0 0 24 24"
+                >
+                  <path fill="currentColor" d={icon.svgPath} />
+                </svg>
+
+                <span className="text-xs mt-2 text-center text-zinc-400">
+                  {icon.name}
                 </span>
               </div>
             </motion.div>
