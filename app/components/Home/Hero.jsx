@@ -12,8 +12,8 @@ const Hero = () => {
         <Image
           src="/main-logo.webp"
           alt="portfolio logo"
-          width={500}
-          height={500}
+          width={700}
+          height={700}
           className="w-[var(--text-box-width)] h-auto object-cover"
           priority="true"
         />
