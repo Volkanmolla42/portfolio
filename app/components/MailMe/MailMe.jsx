@@ -1,6 +1,5 @@
 "use client";
 
-import "@/app/components/MailMe/style.css";
 import React, { useEffect, useRef, useState } from "react";
 import { useAppContext } from "@/app/context/AppContext";
 import SealIcon from "@/app/components/MailMe/SealIcon";
@@ -8,6 +7,7 @@ import PlaySound from "@/app/components/utils/PlaySound";
 import AnimateEnvelope from "@/app/components/MailMe/animateEnvelope";
 import { sendEmail } from "@/app/components/utils/sendMail";
 import DateComponent from "./DateComponent";
+import "@/app/components/MailMe/style.css";
 
 export default function MailMe() {
   const { itim, toggleClasses } = useAppContext(); // Get context values
@@ -17,18 +17,28 @@ export default function MailMe() {
 
   // Handle form submission
   async function handleSubmit(event) {
+    const audio = new Audio("/sounds/paper-slide.mp3");
+
     event.preventDefault();
     setStatus("sending");
 
     const formData = new FormData(event.target); // Collect form data
-    const result = await sendEmail(formData); // Send email
 
-    if (result.success) {
-      setStatus("success"); // Update status on successful email sending
-      setTimeout(() => {
-        event.target.reset(); // Reset form after a delay
-        setStatus(null); // Clear status
-      }, 3000);
+    try {
+      const result = await sendEmail(formData); // Send email
+
+      if (result.success) {
+        setStatus("success"); // Update status on successful email sending
+        setTimeout(() => {
+          event.target.reset(); // Reset form after a delay
+          setStatus(null); // Clear status
+        }, 3000);
+      } else {
+        setStatus("error"); // Set error status if sending failed
+      }
+    } catch (error) {
+      setStatus("error"); // Set error status if an exception occurs
+      console.error(error); // Log the error for debugging
     }
   }
 
