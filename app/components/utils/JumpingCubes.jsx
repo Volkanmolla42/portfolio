@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Matter from "matter-js";
-import { techIcons } from "../utils/techIcons";
+import { techIcons } from "./techIcons";
 
 const JumpingCubes = () => {
   // Refs for engine, render, and cubes

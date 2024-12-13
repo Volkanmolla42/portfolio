@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
-import JumpingCubes from "../jumpingCubes/JumpingCubes";
+import JumpingCubes from "../utils/JumpingCubes";
 import { useAppContext } from "@/app/context/AppContext";
 const TechStack = () => {
   const { memoizedTechIcons } = useAppContext();
@@ -80,8 +80,9 @@ const TechStack = () => {
               className="z-10"
             >
               <div
-                className={`flex flex-col rounded-sm items-center justify-center p-2 h-24 w-full bg-gray-800 hover:outline-red-800 hover:outline hover:bg-gray-900 transition-[background-color] duration-300 cursor-pointer text-[${icon.color}]`}
+                className={`flex flex-col rounded-sm items-center justify-center p-2 h-24 w-full bg-gray-800 hover:outline-red-800 hover:outline hover:bg-gray-900 transition-[background-color] duration-300 cursor-pointer `}
                 title={`I use ${icon.name} in my projects`}
+                style={{ color: icon.color }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
