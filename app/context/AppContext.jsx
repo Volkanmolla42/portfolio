@@ -75,14 +75,7 @@ export const AppProvider = ({ children }) => {
         liveDemoLink:
           "https://apple-website-m5a6uzoiq-volkanmolla42s-projects.vercel.app/",
         gitHubLink: "https://github.com/Volkanmolla42/apple-website",
-        techs: [
-          "React & Vite",
-          "Node.js",
-          "GSAP",
-          "Three.js",
-          "Tailwind CSS",
-          "Vercel",
-        ],
+        techs: ["React & Vite", "GSAP", "Three.js", "Tailwind CSS", "Vercel"],
       },
       {
         id: "3",
