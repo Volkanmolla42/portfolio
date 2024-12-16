@@ -1,0 +1,43 @@
+{
+  "navLinks": [
+    {
+      "href": "#home",
+      "label": "Ana Sayfa",
+      "icon": "/icons/menu-icons/house-solid.svg"
+    },
+    {
+      "href": "#about",
+      "label": "Hakkımda",
+      "icon": "/icons/menu-icons/user-solid.svg"
+    },
+    {
+      "href": "#projects",
+      "label": "Projeler",
+      "icon": "/icons/menu-icons/cubes-solid.svg"
+    },
+    {
+      "href": "#contact",
+      "label": "Bana Ulaşın",
+      "icon": "/icons/menu-icons/envelope-solid.svg"
+    }
+  ],
+  "home": {
+    "whatsapText": "Projelerinizi Konuşalım",
+    "githubText": "GitHub",
+
+    "infoSliderItems": [
+      "UI/UX Tasarımı",
+      "Durum Yönetimi",
+      "Front-End Geliştirme",
+      "Yaratıcı Problem Çözme",
+      "Temiz Kod Prensipleri",
+      "Anlamlı Değişken İsimleri",
+      "DOM Manipülasyonu",
+      "Stratejik Düşünme",
+      "SEO Uyumlu Optimizasyon",
+      "Web Performansı İyileştirme",
+      "Erişilebilirlik Çözümleri",
+      "Responsive (Duyarlı) Tasarım"
+    ]
+  }
+}

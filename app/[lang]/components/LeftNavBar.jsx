@@ -1,10 +1,10 @@
 "use client";
 
 import { useAppContext } from "../context/AppContext";
-import React, { memo } from "react";
+import React from "react";
 
-const LeftNavBar = memo(() => {
-  const { navLinks, currentHash } = useAppContext();
+const LeftNavBar = ({ navLinks }) => {
+  const { currentHash } = useAppContext();
 
   const getLinkClasses = (linkHref) => {
     const isActive = currentHash === linkHref;
@@ -52,7 +52,7 @@ const LeftNavBar = memo(() => {
       </nav>
     </header>
   );
-});
+};
 
 LeftNavBar.displayName = "LeftNavBar";
 

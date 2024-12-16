@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
+import { useAppContext } from "@/app/[lang]/context/AppContext";
 import JumpingCubes from "../utils/JumpingCubes";
-import { useAppContext } from "@/app/context/AppContext";
 const TechStack = () => {
   const { memoizedTechIcons } = useAppContext();
 

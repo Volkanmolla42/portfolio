@@ -1,4 +1,3 @@
-import { Button } from "@/app/components/ui/button";
 import {
   Card,
   CardContent,
@@ -6,11 +5,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/app/components/ui/card";
+} from "../ui/card";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import clsx from "clsx"; // Import clsx for dynamic class management
+import { Button } from "../ui/button";
 
 const ProjectCard = ({ project }) => {
   const {

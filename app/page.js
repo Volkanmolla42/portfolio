@@ -1,26 +1,13 @@
-import dynamic from "next/dynamic";
-import Section from "@/app/components/Section";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
-const Hero = dynamic(() => import("@/app/components/Home/Hero"));
-const About = dynamic(() => import("@/app/components/About/About"));
-const Projects = dynamic(() => import("@/app/components/Projects/Projects"));
-const MailMe = dynamic(() => import("@/app/components/MailMe/MailMe"));
+export default async function Home() {
+  const Headers = await headers();
+  const userLang =
+    Headers.get("accept-language")?.split(",")[0].split("-")[0] || "en";
 
-export default function Home() {
-  return (
-    <div className="relative h-full">
-      <Section id="home">
-        <Hero />
-      </Section>
-      <Section id="about">
-        <About />
-      </Section>
-      <Section id="projects">
-        <Projects />
-      </Section>
-      <Section id="contact">
-        <MailMe />
-      </Section>
-    </div>
-  );
+  const supportedLangs = ["en", "tr"];
+  const lang = supportedLangs.includes(userLang) ? userLang : "en";
+
+  redirect(`/${lang}#home`);
 }

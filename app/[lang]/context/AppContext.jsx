@@ -10,7 +10,7 @@ import React, {
 import localFont from "next/font/local";
 import { techIcons } from "../components/utils/techIcons";
 const itim = localFont({
-  src: "../fonts/Itim-Regular.ttf",
+  src: "../../fonts/Itim-Regular.ttf",
   weight: "400",
   style: "normal",
   subsets: ["khmer"],
@@ -24,37 +24,6 @@ export const AppProvider = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const memoizedTechIcons = useMemo(() => techIcons, []);
-  useEffect(() => {
-    if (window.location.hash === "") {
-      window.location.hash = "#home";
-    }
-  }, []);
-
-  const navLinks = useMemo(
-    () => [
-      {
-        href: "#home",
-        label: "Home",
-        icon: "/icons/menu-icons/house-solid.svg",
-      },
-      {
-        href: "#about",
-        label: "About me",
-        icon: "/icons/menu-icons/user-solid.svg",
-      },
-      {
-        href: "#projects",
-        label: "Projects",
-        icon: "/icons/menu-icons/cubes-solid.svg",
-      },
-      {
-        href: "#contact",
-        label: "Mail Me",
-        icon: "/icons/menu-icons/envelope-solid.svg",
-      },
-    ],
-    []
-  );
 
   const projects = useMemo(
     () => [
@@ -180,13 +149,12 @@ export const AppProvider = ({ children }) => {
       setIsMenuOpen,
       currentHash,
       setCurrentHash,
-      navLinks,
       toggleClasses,
       itim,
       projects,
       memoizedTechIcons,
     }),
-    [isMenuOpen, currentHash, navLinks, toggleClasses, projects]
+    [isMenuOpen, currentHash, toggleClasses, projects]
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

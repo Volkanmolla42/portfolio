@@ -1,6 +1,6 @@
 "use client";
 import React, { useMemo } from "react";
-import { useAppContext } from "@/app/context/AppContext";
+import { useAppContext } from "@/app/[lang]/context/AppContext";
 import clsx from "clsx"; // Using clsx for className management
 
 const Section = ({ children, id }) => {

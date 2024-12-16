@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { useAppContext } from "@/app/context/AppContext";
-import SealIcon from "@/app/components/MailMe/SealIcon";
-import PlaySound from "@/app/components/utils/PlaySound";
-import AnimateEnvelope from "@/app/components/MailMe/animateEnvelope";
-import { sendEmail } from "@/app/components/utils/sendMail";
+import { useAppContext } from "@/app/[lang]/context/AppContext";
+import SealIcon from "@/app/[lang]/components/MailMe/SealIcon";
+import PlaySound from "@/app/[lang]/components/utils/PlaySound";
+import AnimateEnvelope from "@/app/[lang]/components/MailMe/animateEnvelope";
+import { sendEmail } from "@/app/[lang]/components/utils/sendMail";
 import DateComponent from "./DateComponent";
-import "@/app/components/MailMe/style.css";
+import "./style.css";
 
 export default function MailMe() {
   const { itim, toggleClasses } = useAppContext(); // Get context values

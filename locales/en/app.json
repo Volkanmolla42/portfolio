@@ -1,0 +1,42 @@
+{
+  "navLinks": [
+    {
+      "href": "#home",
+      "label": "Home",
+      "icon": "/icons/menu-icons/house-solid.svg"
+    },
+    {
+      "href": "#about",
+      "label": "About Me",
+      "icon": "/icons/menu-icons/user-solid.svg"
+    },
+    {
+      "href": "#projects",
+      "label": "Projects",
+      "icon": "/icons/menu-icons/cubes-solid.svg"
+    },
+    {
+      "href": "#contact",
+      "label": "Mail Me",
+      "icon": "/icons/menu-icons/envelope-solid.svg"
+    }
+  ],
+  "home": {
+    "whatsapText": "Let's Discuss Your Projects",
+    "githubText": "GitHub",
+    "infoSliderItems": [
+      "UI/UX Design",
+      "State Management",
+      "Front-End Development",
+      "Creative Problem Solving",
+      "Clean Code Principles",
+      "Meaningful Variable Names",
+      "DOM Manipulation",
+      "Strategic Thinking",
+      "SEO-Friendly Optimization",
+      "Web Performance Improvement",
+      "Accessibility Solutions",
+      "Responsive Design"
+    ]
+  }
+}

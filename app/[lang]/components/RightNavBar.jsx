@@ -3,8 +3,8 @@
 import { useAppContext } from "../context/AppContext";
 import { useEffect, useCallback } from "react";
 
-export default function RightNavBar() {
-  const { currentHash, navLinks, isMenuOpen, setIsMenuOpen, toggleClasses } =
+export default function RightNavBar({ navLinks }) {
+  const { currentHash, isMenuOpen, setIsMenuOpen, toggleClasses } =
     useAppContext();
 
   const moveMiddleBar = useCallback(
@@ -33,7 +33,7 @@ export default function RightNavBar() {
     const navLinksElement = document.querySelector(".nav-links");
 
     if (isOpening) {
-      perspectiveElement.addEventListener("click", closeMenu);
+      perspectiveElement?.addEventListener("click", closeMenu);
       toggleClasses(
         perspectiveElement,
         ["inactive"],
@@ -44,7 +44,7 @@ export default function RightNavBar() {
       toggleClasses(navLinksElement, ["hidden"], ["flex"], 600);
       moveMiddleBar(1000);
     } else {
-      perspectiveElement.removeEventListener("click", closeMenu);
+      perspectiveElement?.removeEventListener("click", closeMenu);
       moveMiddleBar(0);
 
       toggleClasses(

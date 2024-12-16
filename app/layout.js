@@ -1,7 +1,5 @@
 import "./globals.css";
-import RightNavBar from "./components/RightNavBar";
-import { AppProvider } from "@/app/context/AppContext";
-import LeftNavBar from "./components/LeftNavBar";
+import { AppProvider } from "@/app/[lang]/context/AppContext";
 
 const RootLayout = ({ children }) => {
   return (
@@ -33,16 +31,8 @@ const RootLayout = ({ children }) => {
             href="/icons/favicons/favicon-16x16.png"
           />
         </head>
-        <body className="bg-zinc-900 h-[100svh] text-white">
-          <div
-            className={`perspective h-full overflow-hidden origin-left duration-500 transition-all ease-in-out inactive`}
-          >
-            <div className="flex flex-col h-full md:flex-row-reverse">
-              <main className="h-full w-full">{children}</main>
-              <LeftNavBar />
-            </div>
-          </div>
-          <RightNavBar />
+        <body className="bg-gradient-to-b from-zinc-900 to-gray-800  h-[100svh] text-white">
+          {children}
         </body>
       </html>
     </AppProvider>

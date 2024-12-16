@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useAppContext } from "@/app/context/AppContext";
+import { useAppContext } from "@/app/[lang]/context/AppContext";
 import ProjectCard from "./ProjectCard";
 
 // Animation variants for container animations
