@@ -1,3 +1,4 @@
+"use client";
 import React, { useMemo } from "react";
 import { useAppContext } from "@/app/context/AppContext";
 import clsx from "clsx"; // Using clsx for className management

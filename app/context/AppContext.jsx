@@ -24,6 +24,11 @@ export const AppProvider = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const memoizedTechIcons = useMemo(() => techIcons, []);
+  useEffect(() => {
+    if (window.location.hash === "") {
+      window.location.hash = "#home";
+    }
+  }, []);
 
   const navLinks = useMemo(
     () => [

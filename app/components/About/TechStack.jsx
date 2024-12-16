@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 import JumpingCubes from "../utils/JumpingCubes";
