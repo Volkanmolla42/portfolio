@@ -23,7 +23,7 @@
   ],
   "home": {
     "whatsapText": "Projelerinizi Konuşalım",
-    "githubText": "GitHub",
+    "githubText": "GitHub Profilim",
 
     "infoSliderItems": [
       "UI/UX Tasarımı",
@@ -51,8 +51,88 @@
       "~ Ekibinize katılma fırsatını bulursam, <span class='font-bold text-red-500'>motive ve işbirlikçi bir ekip üyesi</span> olarak katkıda bulunmayı, öğrenmeyi ve ekibinizle birlikte büyümeyi hedefliyorum."
     ],
     "quote": {
-      "text": "Başarısız olmadım. Sadece işe yaramayacak 10.000 yol buldum.",
+      "text": "Başarısız olmadım, sadece işe yaramayan 10.000 yöntem keşfettim",
       "author": "Thomas Edison"
     }
+  },
+
+  "projects": {
+    "projects": [
+      {
+        "id": "1",
+        "title": "Gerçek Zamanlı Sohbet Uygulaması",
+        "description": "Firebase ile desteklenen, hızlı ve güvenilir iletişim sağlayan modern sohbet uygulaması.",
+        "projectImage": "/images/projectImages/chatapp.webp",
+        "category": "uygulamalar",
+        "liveDemoLink": "https://full-stack-chat-app-git-main-volkanmolla42s-projects.vercel.app/chat",
+        "gitHubLink": "https://github.com/Volkanmolla42/fullStack-chat-app",
+        "techs": [
+          "React & Vite",
+          "Node.js",
+          "Firebase",
+          "Vanilla CSS",
+          "Vercel"
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Apple.com Klonu",
+        "description": "GSAP ve Three.js kullanılarak oluşturulan, animasyonlarla zenginleştirilmiş Apple web sitesi klonu.",
+        "projectImage": "/images/projectImages/apple.webp",
+        "category": "web siteleri",
+        "liveDemoLink": "https://apple-website-delta-hazel.vercel.app/",
+        "gitHubLink": "https://github.com/Volkanmolla42/apple-website",
+        "techs": ["React & Vite", "GSAP", "Three.js", "Tailwind CSS", "Vercel"]
+      },
+      {
+        "id": "3",
+        "title": "Amazon.com Klonu",
+        "description": "HTML, CSS ve JavaScript kullanılarak geliştirilen minimalist Amazon web sitesi klonu.",
+        "projectImage": "/images/projectImages/amazon.webp",
+        "category": "web siteleri",
+        "liveDemoLink": "https://volkanmolla42.github.io/Amazon_site/amazon.html",
+        "gitHubLink": "https://github.com/Volkanmolla42/Amazon_site",
+        "techs": ["HTML", "CSS", "JavaScript"]
+      },
+      {
+        "id": "4",
+        "title": "Starbucks.com.tr Klonu",
+        "description": "HTML, CSS ve Bootstrap ile oluşturulan, kusursuz bir Starbucks web sitesi klonu.",
+        "projectImage": "/images/projectImages/starbucks.webp",
+        "category": "web siteleri",
+        "liveDemoLink": "https://volkanmolla42.github.io/Starbucks_site/",
+        "gitHubLink": "https://github.com/Volkanmolla42/Starbucks_site",
+        "techs": ["HTML", "CSS", "Bootstrap"]
+      },
+      {
+        "id": "5",
+        "title": "Frontend Bootcamp",
+        "description": "Bootstrap ile geliştirilen, frontend geliştiricilere yönelik modern eğitim sitesi.",
+        "projectImage": "/images/projectImages/bootcamp.webp",
+        "category": "web siteleri",
+        "liveDemoLink": "https://volkanmolla42.github.io/Bootcamp_site/",
+        "gitHubLink": "https://github.com/Volkanmolla42/Bootcamp_site",
+        "techs": ["HTML", "CSS", "Bootstrap"]
+      },
+      {
+        "id": "6",
+        "title": "Modern Web Tasarımı",
+        "description": "Modern estetik ve kullanıcı odaklı fonksiyonlarla geliştirilmiş şık bir web tasarım projesi.",
+        "projectImage": "/images/projectImages/design.webp",
+        "category": "web siteleri",
+        "liveDemoLink": "https://volkanmolla42.github.io/Design_site/",
+        "gitHubLink": "https://github.com/Volkanmolla42/Design_site",
+        "techs": ["HTML", "CSS", "JavaScript", "Bootstrap"]
+      }
+    ],
+    "allText": "Tüm projeler",
+
+    "searchPlaceholder": "Projelerde Ara...",
+    "projectButtonTexts": {
+      "exploreProject": "Projeyi İncele",
+      "viewGitHub": "GitHub'da Görüntüle"
+    },
+    "notFoundMsg": "Proje bulunamadı",
+    "resetFiltersMsg": "Filtreleri Sıfırla"
   }
 }
