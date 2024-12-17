@@ -107,26 +107,31 @@ export default function Projects({ data }) {
               />
             </motion.div>
           ) : filteredProjects.length > 0 ? (
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 p-6 pt-4 pb-4"
-            >
-              {/* Individual Project Cards */}
-              {filteredProjects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  variants={itemVariants}
-                  whileHover={{ y: -5 }}
-                >
-                  <ProjectCard
-                    project={project}
-                    buttonTexts={data.projectButtonTexts}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
+            <>
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 p-6 pt-4 pb-4"
+              >
+                {/* Individual Project Cards */}
+                {filteredProjects.map((project) => (
+                  <motion.div
+                    key={project.id}
+                    variants={itemVariants}
+                    whileHover={{ y: -5 }}
+                  >
+                    <ProjectCard
+                      project={project}
+                      buttonTexts={data.projectButtonTexts}
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+              <div className="w-full pb-4 text-center italic text-muted-foreground text-lg font-bold">
+                ...to be continued
+              </div>
+            </>
           ) : (
             <motion.div
               key="empty"
