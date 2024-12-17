@@ -31,7 +31,7 @@ const RootLayout = ({ children }) => {
             href="/icons/favicons/favicon-16x16.png"
           />
         </head>
-        <body className="bg-gradient-to-b from-zinc-900 to-gray-800  h-[100svh] text-white">
+        <body className="bg-gradient-to-b from-gray-900 via-black to-gray-900  h-[100svh] text-white">
           {children}
         </body>
       </html>
