@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 import { useAppContext } from "@/app/[lang]/context/AppContext";
 import JumpingCubes from "../utils/JumpingCubes";
-const TechStack = () => {
+const TechStack = ({ t }) => {
   const { memoizedTechIcons } = useAppContext();
 
   // State definitions
@@ -47,7 +47,7 @@ const TechStack = () => {
       <div className="size-full flex flex-col items-center justify-center">
         {/* Header */}
         <h3 className="text-3xl self-start font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-6">
-          Technologies I Use
+          {t.techTitle}
         </h3>
 
         {/* List of technologies */}

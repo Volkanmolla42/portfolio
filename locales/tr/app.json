@@ -39,5 +39,20 @@
       "Erişilebilirlik Çözümleri",
       "Responsive (Duyarlı) Tasarım"
     ]
+  },
+  "about": {
+    "title": "Hakkımda",
+    "techTitle": "Kullandığım Araçlar",
+    "aboutParagraphs": [
+      "~ Merhaba! Ben <span class='text-red-500 font-bold md:text-2xl'>Volkan</span>, <span class='font-bold text-red-500'>23 yaşında bir Frontend Geliştiriciyim</span>. Kullanıcı dostu ve görsel açıdan etkileyici web arayüzleri oluşturma konusunda tutkuluyum. Son iki yıldır — özellikle de son bir yılda — web teknolojilerine odaklanarak, <span class='font-bold text-red-500'>duyarlı</span>, <span class='font-bold text-red-500'>erişilebilir</span> ve <span class='font-bold text-red-500'>kullanıcı odaklı</span> web çözümleri geliştiriyorum.",
+      "~ Yolculuğum <span class='font-bold text-red-500'>HTML, CSS ve JavaScript</span> gibi sağlam bir temel ile başladı ve <span class='font-bold text-red-500'>React, Next.js ve Tailwind CSS</span> gibi modern araçları kullanma konusunda yetkin bir geliştirici olmaya dönüştü. Ayrıca, etkileyici animasyonlar oluşturmak için <span class='font-bold text-red-500'>GSAP</span> ve <span class='font-bold text-red-500'>Three.js</span> ile çalıştım. Ek olarak, <span class='font-bold text-red-500'>Firebase</span> ve <span class='font-bold text-red-500'>MongoDB</span> kullanarak uygulamalar geliştirme deneyimim var. Hem lise hem de üniversitede web tasarımı ve bilgisayar programcılığı eğitimi aldım; bu da yeteneklerime önemli ölçüde katkıda bulundu.",
+      "~ Yeni teknolojilere hızla adapte olur ve <span class='font-bold text-red-500'>kolayca öğrenirim</span>. <span class='font-bold text-red-500'>Problem çözme becerilerim</span> ve <span class='font-bold text-red-500'>disiplinim</span> ile gurur duyarım. Zorluklarla karşılaştığımda, kök nedenlerini analiz eder, bağımsız olarak çözmeye çalışır ve gerektiğinde kaynaklara veya diğer araçlara danışırım.",
+      "~ Henüz profesyonel iş deneyimim olmasa da, kişisel projelerim <span class='font-bold text-red-500'>kalite</span> ve <span class='font-bold text-red-500'>yenilik</span> konusundaki kararlılığımı gösteriyor. Özellikle <span class='font-bold text-red-500'>görsel tasarım</span> ve <span class='font-bold text-red-500'>kullanıcı deneyimi</span> ile ilgileniyorum ve <span class='font-bold text-red-500'>backend geliştirme</span>yi keşfetmekten keyif alıyorum.",
+      "~ Ekibinize katılma fırsatını bulursam, <span class='font-bold text-red-500'>motive ve işbirlikçi bir ekip üyesi</span> olarak katkıda bulunmayı, öğrenmeyi ve ekibinizle birlikte büyümeyi hedefliyorum."
+    ],
+    "quote": {
+      "text": "Başarısız olmadım. Sadece işe yaramayacak 10.000 yol buldum.",
+      "author": "Thomas Edison"
+    }
   }
 }

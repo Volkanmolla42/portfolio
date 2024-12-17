@@ -46,8 +46,7 @@ export const AppProvider = ({ children }) => {
           "Pixel-perfect clone of Apple's website, featuring immersive animations with GSAP and Three.js for a premium user experience.",
         projectImage: "/images/projectImages/apple.webp",
         category: "websites",
-        liveDemoLink:
-          "https://apple-website-m5a6uzoiq-volkanmolla42s-projects.vercel.app/",
+        liveDemoLink: "https://apple-website-delta-hazel.vercel.app/",
         gitHubLink: "https://github.com/Volkanmolla42/apple-website",
         techs: ["React & Vite", "GSAP", "Three.js", "Tailwind CSS", "Vercel"],
       },
