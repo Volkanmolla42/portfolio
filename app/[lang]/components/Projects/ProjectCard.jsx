@@ -6,13 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import clsx from "clsx"; // Import clsx for dynamic class management
 import { Button } from "../ui/button";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, buttonTexts }) => {
   const {
     title = "Untitled Project",
     description = "No description available",
@@ -25,7 +25,7 @@ const ProjectCard = ({ project }) => {
   return (
     <Card
       className={clsx(
-        "group relative flex flex-col h-full bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-lg shadow-lg",
+        "group relative min-h-[420px] flex flex-col h-full bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-lg shadow-lg",
         "hover:shadow-red-600/30 transition-all duration-300 ease-in-out text-red-100"
       )}
       aria-labelledby={`project-title-${title}`}
@@ -44,7 +44,7 @@ const ProjectCard = ({ project }) => {
             width={400}
             height={400}
             loading="lazy"
-            className=" size-auto transition-transform duration-300 group-hover:scale-110 object-contain"
+            className="size-full transition-transform duration-300 group-hover:scale-110 object-contain"
           />
         </div>
       </CardHeader>
@@ -83,43 +83,61 @@ const ProjectCard = ({ project }) => {
       )}
 
       {/* Buttons */}
-      <CardFooter className="flex flex-col md:flex-row gap-2 md:gap-0 px-4 pb-4">
-        {liveDemoLink && (
-          <Button
-            asChild
-            className="w-full hover:underline underline-offset-4 text-sm font-medium bg-red-600/80 hover:bg-red-700 text-white transition-all duration-300 hover:shadow-md hover:shadow-red-600/30 m-2"
-          >
-            <a
-              href={liveDemoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Visit the live demo of ${title}`}
-            >
-              Explore Project
+      <CardFooter className="flex flex-col lg:flex-row gap-1 px-4 pb-4">
+        {[
+          {
+            link: liveDemoLink,
+            label: `Visit the live demo of ${title}`,
+            text: buttonTexts.exploreProject,
+            className:
+              "bg-red-600/80 hover:bg-red-700 text-white hover:shadow-red-600/30",
+            icon: (
               <ExternalLink
                 className="inline-block mr-2"
                 size={16}
-                aria-hidden="true"
+                aria-hidden
               />
-            </a>
-          </Button>
-        )}
-        {gitHubLink && (
-          <Button
-            asChild
-            className="md:w-1/4 w-1-3 md:m-2 transition-all duration-300 hover:underline underline-offset-4 text-xs font-medium bg-zinc-700/50 hover:bg-zinc-600/80 text-zinc-300 hover:shadow-md hover:shadow-zinc-600/30"
-          >
-            <a
-              href={gitHubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View ${title} on GitHub`}
+            ),
+          },
+          {
+            link: gitHubLink,
+            label: `View ${title} on GitHub`,
+            text: buttonTexts.viewGitHub,
+            className:
+              "bg-zinc-700/50 hover:bg-zinc-600/80 text-zinc-300 hover:shadow-zinc-600/30",
+            icon: (
+              <Image
+                src="/icons/socials-icons/github-brands-solid.svg"
+                alt="GitHub icon"
+                width={16}
+                height={16}
+                className="inline-block"
+                aria-hidden
+              />
+            ),
+          },
+        ]
+          .filter(({ link }) => link)
+          .map(({ link, label, text, className, icon }, index) => (
+            <Button
+              asChild
+              key={index}
+              className={clsx(
+                "w-full text-sm font-medium transition-all duration-300 hover:underline underline-offset-4 hover:shadow-md",
+                className
+              )}
             >
-              GitHub
-              <Github className="inline-block" size={16} aria-hidden="true" />
-            </a>
-          </Button>
-        )}
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+              >
+                {text}
+                {icon}
+              </a>
+            </Button>
+          ))}
       </CardFooter>
     </Card>
   );

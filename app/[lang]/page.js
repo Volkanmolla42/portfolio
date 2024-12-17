@@ -14,7 +14,7 @@ const components = {
 export default async function HomePage({ params }) {
   const { lang } = await params;
   const translations = await getTranslations(lang, "app");
-  const { home, about } = translations;
+  const { home, about, projects } = translations;
 
   return (
     <>
@@ -23,13 +23,13 @@ export default async function HomePage({ params }) {
           <main className="h-full w-full" aria-labelledby="main-content">
             <div className="relative h-full">
               <Section id="home">
-                <components.Home t={home} />
+                <components.Home data={home} />
               </Section>
               <Section id="about">
-                <components.About t={about} />
+                <components.About data={about} />
               </Section>
               <Section id="projects">
-                <components.Projects />
+                <components.Projects data={projects} />
               </Section>
               <Section id="contact">
                 <components.MailMe />

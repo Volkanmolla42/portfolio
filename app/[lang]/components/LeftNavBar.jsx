@@ -11,8 +11,10 @@ const LeftNavBar = ({ navLinks }) => {
     const isContact = linkHref === "#contact" && currentHash !== linkHref;
 
     return [
-      "flex flex-col justify-center items-center w-full h-14 md:h-full py-8 gap-1",
-      isActive ? "bg-zinc-900 opacity-100" : "opacity-70 hover:opacity-100",
+      "flex flex-col justify-center items-center w-full h-14 md:h-full p-6  gap-1 transition-all",
+      isActive
+        ? "-translate-y-2 md:-translate-y-0 md:translate-x-2  opacity-100"
+        : "opacity-70 hover:opacity-100",
       isContact && "animate-pulse opacity-100",
     ]
       .filter(Boolean)
@@ -24,9 +26,9 @@ const LeftNavBar = ({ navLinks }) => {
   };
 
   return (
-    <header role="banner" className="z-50 md:w-[10%] lg:w-[5%]">
+    <header role="banner" className="z-50 md:w-[10%] lg:w-[5%] mx-1 ">
       <nav
-        className="flex items-center justify-evenly bg-zinc-800 text-nowrap text-center md:flex-col md:h-full"
+        className="flex  items-center justify-evenly  text-nowrap text-center md:flex-col md:h-full"
         aria-label="Ana Navigasyon"
       >
         {navLinks.map((link) => (

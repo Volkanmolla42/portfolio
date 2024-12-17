@@ -2,13 +2,11 @@
   --primary-color: #8b0000;
   --secondary-color: #fff;
   --font-size: 12rem;
-  --text-box-width: 650px;
 }
 
 .infoslider {
   --gap: 20px;
   gap: var(--gap);
-  width: var(--text-box-width);
 }
 
 .infoslider ul {
@@ -24,11 +22,5 @@
 @keyframes scroll {
   to {
     transform: translateX(calc(-100% - var(--gap)));
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --text-box-width: 287px;
   }
 }

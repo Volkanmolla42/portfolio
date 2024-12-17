@@ -25,79 +25,6 @@ export const AppProvider = ({ children }) => {
 
   const memoizedTechIcons = useMemo(() => techIcons, []);
 
-  const projects = useMemo(
-    () => [
-      {
-        id: "1",
-        title: "Real-time Chat App",
-        description:
-          "Modern chat application offering real-time messaging with a sleek interface. Powered by Firebase for reliable and fast communication.",
-        projectImage: "/images/projectImages/chatapp.webp",
-        category: "Apps",
-        liveDemoLink:
-          "https://full-stack-chat-app-git-main-volkanmolla42s-projects.vercel.app/chat",
-        gitHubLink: "https://github.com/Volkanmolla42/fullStack-chat-app",
-        techs: ["React & Vite", "Node.js", "Firebase", "Vanilla CSS", "Vercel"],
-      },
-      {
-        id: "2",
-        title: "Apple.com clone",
-        description:
-          "Pixel-perfect clone of Apple's website, featuring immersive animations with GSAP and Three.js for a premium user experience.",
-        projectImage: "/images/projectImages/apple.webp",
-        category: "websites",
-        liveDemoLink: "https://apple-website-delta-hazel.vercel.app/",
-        gitHubLink: "https://github.com/Volkanmolla42/apple-website",
-        techs: ["React & Vite", "GSAP", "Three.js", "Tailwind CSS", "Vercel"],
-      },
-      {
-        id: "3",
-        title: "Amazon.com clone",
-        description:
-          "Minimalist replica of Amazon's website built with HTML, CSS, and JavaScript, focusing on essential design and features.",
-        projectImage: "/images/projectImages/amazon.webp",
-        category: "websites",
-        liveDemoLink: "https://volkanmolla42.github.io/Amazon_site/amazon.html",
-        gitHubLink: "https://github.com/Volkanmolla42/Amazon_site",
-        techs: ["HTML", "CSS", "JAVASCRIPT"],
-      },
-      {
-        id: "4",
-        title: "Starbucks.com.tr clone",
-        description:
-          "Polished replica of Starbucks Turkey's website built with HTML, CSS, and Bootstrap for a seamless browsing experience.",
-        projectImage: "/images/projectImages/starbucks.webp",
-        category: "websites",
-        liveDemoLink: "https://volkanmolla42.github.io/Starbucks_site/",
-        gitHubLink: "https://github.com/Volkanmolla42/Starbucks_site",
-        techs: ["HTML", "CSS", "Bootstrap"],
-      },
-      {
-        id: "5",
-        title: "Frontend Bootcamp",
-        description:
-          "Modern training site for aspiring frontend developers, featuring a stylish interface built with Bootstrap for a responsive experience.",
-        projectImage: "/images/projectImages/bootcamp.webp",
-        category: "websites",
-        liveDemoLink: "https://volkanmolla42.github.io/Bootcamp_site/",
-        gitHubLink: "https://github.com/Volkanmolla42/Bootcamp_site",
-        techs: ["HTML", "CSS", "Bootstrap"],
-      },
-      {
-        id: "6",
-        title: "New Design",
-        description:
-          "Sleek web design project combining modern aesthetics with user-centered functionality for an impressive digital experience.",
-        projectImage: "/images/projectImages/design.webp",
-        category: "websites",
-        liveDemoLink: "https://volkanmolla42.github.io/Design_site/",
-        gitHubLink: "https://github.com/Volkanmolla42/Design_site",
-        techs: ["HTML", "CSS", "JAVASCRIPT", "Bootstrap"],
-      },
-    ],
-    []
-  );
-
   const handleHashChange = useCallback(() => {
     setCurrentHash(window.location.hash);
   }, []);
@@ -150,10 +77,9 @@ export const AppProvider = ({ children }) => {
       setCurrentHash,
       toggleClasses,
       itim,
-      projects,
       memoizedTechIcons,
     }),
-    [isMenuOpen, currentHash, toggleClasses, projects]
+    [isMenuOpen, currentHash, toggleClasses]
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

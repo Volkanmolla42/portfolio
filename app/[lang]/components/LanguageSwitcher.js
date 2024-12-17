@@ -15,13 +15,13 @@ export default function LanguageSwitcher() {
   ];
 
   return (
-    <div className="flex justify-center items-center space-x-2 p-2 ">
+    <div className="flex justify-center items-center space-x-2 px-2">
       {languages.map((lang) => (
         <Link
           key={lang.code}
           href={`/${lang.code}${newPathname}`}
           className={`px-4 py-2 rounded-lg font-medium text-xs tracking-wider transition-colors  hover:bg-zinc-800 text-zinc-300 hover:text-white  ${
-            currentLang === lang.code ? "  bg-zinc-800  " : "bg-zinc-900 "
+            currentLang === lang.code ? "  bg-zinc-800  " : "bg-transparent "
           }`}
         >
           {lang.label}

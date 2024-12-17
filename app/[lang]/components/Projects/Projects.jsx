@@ -24,11 +24,11 @@ const itemVariants = {
   },
 };
 
-export default function Projects() {
+export default function Projects({ data }) {
   // State management hooks
-  const { projects } = useAppContext();
+  const { projects } = data;
   const [isLoading, setIsLoading] = useState(true);
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState(data.allText);
   const [searchTerm, setSearchTerm] = useState("");
 
   // Initialize loading state with timeout
@@ -40,7 +40,7 @@ export default function Projects() {
   // Extract unique categories from projects
   const categories = useMemo(() => {
     const uniqueCategories = new Set([
-      "all",
+      data.allText,
       ...projects.map((p) => p.category?.toLowerCase()),
     ]);
     return Array.from(uniqueCategories);
@@ -50,7 +50,8 @@ export default function Projects() {
   const filteredProjects = useMemo(() => {
     return projects.filter(
       (project) =>
-        (filter === "all" || project.category?.toLowerCase() === filter) &&
+        (filter === data.allText ||
+          project.category?.toLowerCase() === filter) &&
         (project.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
           project.description?.toLowerCase().includes(searchTerm.toLowerCase()))
     );
@@ -59,9 +60,9 @@ export default function Projects() {
   return (
     <div className="size-full flex flex-col text-white">
       {/* Search and Filter Section */}
-      <div className="flex flex-col-reverse gap-4 px-3 pb-4 pt-4 md:flex-row border-b md:items-center border-b-gray-700  sticky top-0 z-10 bg-gray-900/80 backdrop-blur-sm ">
+      <div className="flex flex-col-reverse gap-4 px-3 pb-2 pt-4 md:flex-row  md:items-center   sticky top-0 z-10  backdrop-blur-sm ">
         {/*  Filter Section */}
-        <div className="flex  gap-2">
+        <div className="flex  text-nowrap gap-2">
           {categories.map((category) => (
             <motion.button
               key={category}
@@ -69,7 +70,7 @@ export default function Projects() {
               className={`px-5 py-2 font-medium text-xs rounded-full transition-all duration-300 ${
                 category === filter
                   ? "bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg shadow-red-500/40"
-                  : "bg-zinc-700 text-zinc-200 hover:bg-gradient-to-r hover:from-zinc-500 hover:to-zinc-400 hover:text-white"
+                  : "bg-zinc-800 text-zinc-200 hover:bg-gradient-to-r hover:from-zinc-700 hover:to-zinc-600 hover:text-white"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -80,10 +81,10 @@ export default function Projects() {
         </div>
         <input
           type="text"
-          placeholder="Search projects..."
+          placeholder={data.searchPlaceholder}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full px-5 py-3  my-1 rounded-xl bg-zinc-700/80 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="w-full px-5 py-3  my-1 rounded-xl bg-zinc-800 text-white placeholder-zinc-00 focus:outline-none focus:ring-2 focus:ring-red-500"
         />
       </div>
 
@@ -119,7 +120,10 @@ export default function Projects() {
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
                 >
-                  <ProjectCard project={project} />
+                  <ProjectCard
+                    project={project}
+                    buttonTexts={data.projectButtonTexts}
+                  />
                 </motion.div>
               ))}
             </motion.div>
@@ -144,16 +148,16 @@ export default function Projects() {
                   d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <p className="text-lg font-medium">No projects found</p>
+              <p className="text-lg font-medium">{data.notFoundMsg} </p>
               {/* Reset Filters Button */}
               <button
                 className="mt-4 px-6 py-2 bg-gradient-to-r from-red-500 to-orange-500 text-white font-medium rounded-full shadow-lg hover:shadow-red-500/40"
                 onClick={() => {
-                  setFilter("all");
+                  setFilter(data.allText);
                   setSearchTerm("");
                 }}
               >
-                Reset Filters
+                {data.resetFiltersMsg}
               </button>
             </motion.div>
           )}

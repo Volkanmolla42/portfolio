@@ -5,43 +5,43 @@ import LanguageSwitcher from "../LanguageSwitcher";
 import InfoSlider from "./InfoSlider";
 
 // Home Component
-const Home = ({ t }) => {
+const Home = ({ data }) => {
   return (
-    <div className="size-full flex items-center justify-center flex-col text-xs md:text-base ">
+    <div className="size-full flex items-center justify-center flex-col ">
       {/* Home Section */}
-      <div className="w-full z-10 flex flex-col justify-center items-center select-none">
+      <div className="w-full z-10 flex flex-col justify-center items-center select-none px-4">
         {/* Logo */}
         <Image
           src="/main-logo.webp"
           alt="portfolio logo"
-          width={700}
-          height={300}
-          className="w-[var(--text-box-width)] h-auto object-cover"
+          width={800}
+          height={600}
+          className="w-full sm:w-4/6 lg:w-3/6   object-cover"
           priority="true"
         />
 
         {/* Scrolling Info Slider */}
-        <div className="infoslider flex overflow-hidden py-3 rounded-full mt-2 bg-zinc-800 text-red-300 ">
-          <InfoSlider items={t.infoSliderItems} />
+        <div className="infoslider flex overflow-hidden text-xs md:text-sm   py-2 rounded-full mt-1 bg-zinc-900 text-red-200 w-full sm:w-4/6 lg:w-3/6 ">
+          <InfoSlider items={data.infoSliderItems} />
         </div>
       </div>
 
       {/* Call to Action Buttons */}
-      <div className="w-full flex justify-center items-center gap-2 text-center mt-2">
+      <div className="w-full flex flex-col sm:flex-row justify-center items-center gap-2 text-center mt-2 ">
         <ContactButton
-          text={t.whatsapText}
+          text={data.whatsapText}
           href="https://wa.me/905418224484"
           icon="/icons/socials-icons/whatsapp-brands-solid.svg"
-          className="size-4 md:size-5 animate-pulse"
+          className="animate-pulse aspect-square"
         />
         <ContactButton
-          text={t.githubText}
+          text={data.githubText}
           href="https://github.com/Volkanmolla42"
           icon="/icons/socials-icons/github-brands-solid.svg"
-          className="size-4 md:size-5"
+          className="aspect-square"
         />
       </div>
-      <div className=" absolute top-0 left-4 flex">
+      <div className=" absolute top-6 left-4 flex">
         <LanguageSwitcher />
       </div>
     </div>
