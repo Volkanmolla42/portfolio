@@ -9,8 +9,8 @@ import { sendEmail } from "@/app/[lang]/components/utils/sendMail";
 import DateComponent from "./DateComponent";
 import "./style.css";
 
-export default function MailMe() {
-  const { itim, toggleClasses } = useAppContext(); // Get context values
+export default function MailMe({ data }) {
+  const { itimFont, toggleClasses } = useAppContext(); // Get context values
   const textareaRef = useRef(null); // Reference to the textarea element
   const formRef = useRef(null); // Reference to the form element
   const [status, setStatus] = useState(null); // Track the status of the form submission
@@ -56,8 +56,8 @@ export default function MailMe() {
             className={status === "success" ? "text-green-600" : "text-red-600"}
           >
             {status === "success"
-              ? "Success!"
-              : "Something went wrong, please try again."}
+              ? `${data.mailSuccessText}`
+              : `${data.mailErrorText}`}
           </p>
         )}
       </div>
@@ -68,11 +68,11 @@ export default function MailMe() {
           className={`envelope size-full flex justify-center items-center transition-all duration-500 translate-y-3/4`}
         >
           {/* Envelope Design */}
-          <div className="size-full bg-zinc-500 shadow-inner shadow-black transition-all duration-500">
+          <div className="size-full bg-zinc-500 shadow-inner shadow-black transition-all duration-500 ">
             <form
               onSubmit={handleSubmit}
               ref={formRef}
-              className={`paper left-1/2 -translate-x-1/2 -translate-y-[105%] absolute h-[95%] mt-2 w-[95%] bg-zinc-100 text-black shadow-md shadow-black border border-dashed border-red-900 rounded transition-all duration-500 ${itim.className}`}
+              className={`paper left-1/2 -translate-x-1/2 -translate-y-[105%] absolute h-[95%] mt-2 w-[95%] bg-zinc-100 text-black shadow-md shadow-black border-[3px] border-dashed border-red-900 rounded transition-all duration-500 ${itimFont.className}`}
             >
               {/* Form Inputs */}
               <div className="w-full h-[90%] flex flex-col relative p-5 tracking-wide">
@@ -97,7 +97,7 @@ export default function MailMe() {
                 {/* Email and Name inputs */}
                 <div className="h-1/3 flex gap-5 md:gap-10 text-sm justify-between items-center">
                   <div className="w-1/2">
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="name">{data.nameText}: </label>
                     <input
                       type="text"
                       id="name"
@@ -115,7 +115,7 @@ export default function MailMe() {
                     />
                   </div>
                   <div className="w-1/2">
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email">{data.emailText}:</label>
                     <input
                       type="email"
                       id="email"

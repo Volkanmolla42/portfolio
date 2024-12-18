@@ -14,7 +14,7 @@ const components = {
 export default async function HomePage({ params }) {
   const { lang } = await params;
   const translations = await getTranslations(lang, "app");
-  const { home, about, projects } = translations;
+  const { home, about, projects, mailMe } = translations;
 
   return (
     <>
@@ -32,7 +32,7 @@ export default async function HomePage({ params }) {
                 <components.Projects data={projects} />
               </Section>
               <Section id="contact">
-                <components.MailMe />
+                <components.MailMe data={mailMe} />
               </Section>
             </div>
           </main>

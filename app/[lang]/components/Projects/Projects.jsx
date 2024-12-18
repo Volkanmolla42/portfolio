@@ -129,7 +129,7 @@ export default function Projects({ data }) {
                 ))}
               </motion.div>
               <div className="w-full pb-4 text-center italic text-muted-foreground text-lg font-bold">
-                ...to be continued
+                {data.toBeContinuedMsg}
               </div>
             </>
           ) : (
