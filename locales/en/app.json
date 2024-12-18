@@ -130,6 +130,13 @@
       "viewGitHub": "View on Github"
     },
     "notFoundMsg": "No projects found",
-    "resetFiltersMsg": "Reset Filters"
+    "resetFiltersMsg": "Reset Filters",
+    "toBeContinuedMsg": "...to be continued"
+  },
+  "mailMe": {
+    "nameText": "Name",
+    "emailText": "Email Address",
+    "mailSuccessText": "Email sent successfully!",
+    "mailErrorText": "An error occurred while sending the email, please try again."
   }
 }

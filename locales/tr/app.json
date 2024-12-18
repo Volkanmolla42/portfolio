@@ -133,6 +133,13 @@
       "viewGitHub": "GitHub'da Görüntüle"
     },
     "notFoundMsg": "Proje bulunamadı",
-    "resetFiltersMsg": "Filtreleri Sıfırla"
+    "resetFiltersMsg": "Filtreleri Sıfırla",
+    "toBeContinuedMsg": "Devam edecek..."
+  },
+  "mailMe": {
+    "nameText": "Adınız",
+    "emailText": "E-posta Adresiniz",
+    "mailSuccessText": "E-posta başarıyla gönderildi!",
+    "mailErrorText": "E-posta gönderirken bir hata oluştu, lütfen tekrar deneyin."
   }
 }

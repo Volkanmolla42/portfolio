@@ -9,7 +9,7 @@ import React, {
 } from "react";
 import localFont from "next/font/local";
 import { techIcons } from "../components/utils/techIcons";
-const itim = localFont({
+const itimFont = localFont({
   src: "../../fonts/Itim-Regular.ttf",
   weight: "400",
   style: "normal",
@@ -76,7 +76,7 @@ export const AppProvider = ({ children }) => {
       currentHash,
       setCurrentHash,
       toggleClasses,
-      itim,
+      itimFont,
       memoizedTechIcons,
     }),
     [isMenuOpen, currentHash, toggleClasses]
