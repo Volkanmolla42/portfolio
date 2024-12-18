@@ -22,7 +22,7 @@ const LeftNavBar = ({ navLinks }) => {
   };
 
   const getTextClasses = (linkHref) => {
-    return currentHash === linkHref ? "font-medium text-destructive" : "";
+    return currentHash === linkHref ? "font-medium text-red-500" : "";
   };
 
   return (
