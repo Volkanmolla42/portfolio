@@ -38,7 +38,7 @@ const AboutText = memo(({ data }) => (
   </>
 ));
 
-AboutText.displayName = "AboutText"; // displayName ekledik
+AboutText.displayName = "AboutText";
 
 // Component to display a quote with author
 const Quote = ({ text, author }) => (
@@ -49,6 +49,6 @@ const Quote = ({ text, author }) => (
   </h3>
 );
 
-About.displayName = "About"; // displayName ekledik
+About.displayName = "About";
 
 export default About;
