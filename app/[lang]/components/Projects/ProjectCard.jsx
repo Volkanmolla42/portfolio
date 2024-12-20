@@ -43,7 +43,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
             alt={`${title} project's visual representation`}
             width={400}
             height={400}
-            loading="lazy"
+            priority
             className="size-full transition-transform duration-300 group-hover:scale-110 object-contain"
           />
         </div>
@@ -111,33 +111,31 @@ const ProjectCard = ({ project, buttonTexts }) => {
                 alt="GitHub icon"
                 width={16}
                 height={16}
-                className="inline-block"
+                className="inline-block aspect-square"
                 aria-hidden
               />
             ),
           },
-        ]
-          .filter(({ link }) => link)
-          .map(({ link, label, text, className, icon }, index) => (
-            <Button
-              asChild
-              key={index}
-              className={clsx(
-                "w-full text-sm font-medium transition-all duration-300 hover:underline underline-offset-4 hover:shadow-md",
-                className
-              )}
+        ].map(({ link, label, text, className, icon }, index) => (
+          <Button
+            asChild
+            key={index}
+            className={clsx(
+              "w-full text-sm font-medium transition-all duration-300 hover:underline underline-offset-4 hover:shadow-md",
+              className
+            )}
+          >
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
             >
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-              >
-                {text}
-                {icon}
-              </a>
-            </Button>
-          ))}
+              {text}
+              {icon}
+            </a>
+          </Button>
+        ))}
       </CardFooter>
     </Card>
   );
