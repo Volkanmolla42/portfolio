@@ -2,6 +2,7 @@ import "./globals.css";
 import { AppProvider } from "@/app/[lang]/context/AppContext";
 
 export const metadata = {
+  metadataBase: new URL("https://portfolio-volkanmolla42s-projects.vercel.app"),
   title: "Hi, I'm Volkan Molla",
   description:
     "Welcome to Volkan Molla's portfolio. Explore my projects, skills, and experiences as a frontend developer.",
@@ -28,7 +29,7 @@ export const metadata = {
     siteName: "Volkan Molla Portfolio",
     images: [
       {
-        url: "/images/app-ss.webp",
+        url: "https://portfolio-volkanmolla42s-projects.vercel.app/images/app-ss.webp",
         width: 1200,
         height: 630,
         alt: "Portfolio Thumbnail",
@@ -40,11 +41,14 @@ export const metadata = {
     card: "summary_large_image",
     title: "Hi, I'm Volkan Molla",
     description: "Explore my projects and skills as a frontend developer.",
-    images: ["/images/app-ss.webp"],
+    images: [
+      "https://portfolio-volkanmolla42s-projects.vercel.app/images/app-ss.webp",
+    ],
   },
   icons: {
-    icon: "/icons/favicons/favicon-32x32.png",
-    apple: "/icons/favicons/apple-touch-icon.png",
+    icon: "https://portfolio-volkanmolla42s-projects.vercel.app/icons/favicons/favicon-32x32.png",
+    apple:
+      "https://portfolio-volkanmolla42s-projects.vercel.app/icons/favicons/apple-touch-icon.png",
   },
 };
 
