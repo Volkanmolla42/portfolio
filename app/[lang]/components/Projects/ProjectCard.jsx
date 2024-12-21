@@ -26,7 +26,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
     <Card
       className={clsx(
         "group relative min-h-[420px] flex flex-col h-full bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-lg shadow-lg",
-        "hover:shadow-red-600/30 transition-all duration-300 ease-in-out text-red-100"
+        "hover:shadow-red-600/30 transition-all duration-200 ease-in-out text-red-100"
       )}
       aria-labelledby={`project-title-${title}`}
       role="article"
@@ -35,7 +35,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
       <CardHeader className="relative overflow-hidden rounded-t-lg p-0">
         <div className="relative w-full overflow-hidden">
           <div
-            className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"
+            className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-200"
             aria-hidden="true"
           ></div>
           <Image
@@ -44,7 +44,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
             width={400}
             height={400}
             priority
-            className="size-full transition-transform duration-300 group-hover:scale-110 object-contain"
+            className="size-full transition-transform duration-200 group-hover:scale-110 object-contain"
           />
         </div>
       </CardHeader>
@@ -53,7 +53,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
       <CardContent className="flex-grow p-4 space-y-3">
         <CardTitle
           id={`project-title-${title}`}
-          className="text-2xl font-semibold tracking-wider text-red-100 group-hover:text-red-400 transition-colors duration-300"
+          className="text-2xl font-semibold tracking-wider text-red-100 group-hover:text-red-400 transition-colors duration-200"
         >
           {title}
         </CardTitle>
@@ -72,7 +72,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
             {techs.map((tech) => (
               <li
                 key={tech}
-                className="px-2 py-1 text-[10px] font-medium tracking-wider text-zinc-300 bg-zinc-700/50 rounded-full transition-all duration-300 hover:bg-red-600/30 hover:text-red-100"
+                className="px-2 py-1 text-[10px] font-medium tracking-wider text-zinc-300 bg-zinc-700/50 rounded-full transition-all duration-200 hover:bg-red-600/30 hover:text-red-100"
                 role="listitem"
               >
                 {tech}
@@ -121,7 +121,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
             asChild
             key={index}
             className={clsx(
-              "w-full text-sm font-medium transition-all duration-300 hover:underline underline-offset-4 hover:shadow-md",
+              "w-full text-sm font-medium transition-all duration-200 hover:underline underline-offset-4 hover:shadow-md",
               className
             )}
           >

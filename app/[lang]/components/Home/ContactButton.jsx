@@ -6,7 +6,7 @@ const ContactButton = ({ href, icon, text, className }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center text-sm justify-center gap-1 w-[280px] sm:w-max bg-zinc-800 text-nowrap text-gray-200 px-4 py-2 rounded-full hover:bg-zinc-700 transition-colors duration-300 hover:underline hover:underline-offset-4"
+      className="flex items-center text-sm justify-center gap-1 w-[280px] sm:w-max bg-zinc-800 text-nowrap text-gray-200 px-4 py-2 rounded-full hover:bg-zinc-700 transition-colors duration-200 hover:underline hover:underline-offset-4"
     >
       <Image
         width={24}
