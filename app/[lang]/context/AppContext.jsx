@@ -7,15 +7,7 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
-import localFont from "next/font/local";
 import { techIcons } from "../components/utils/techIcons";
-const itimFont = localFont({
-  src: "../../fonts/Itim-Regular.ttf",
-  weight: "400",
-  style: "normal",
-  subsets: ["khmer"],
-  display: "swap",
-});
 
 const AppContext = createContext();
 
@@ -76,7 +68,6 @@ export const AppProvider = ({ children }) => {
       currentHash,
       setCurrentHash,
       toggleClasses,
-      itimFont,
       memoizedTechIcons,
     }),
     [isMenuOpen, currentHash, toggleClasses]

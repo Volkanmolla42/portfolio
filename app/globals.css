@@ -2,20 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.font-old-english {
-  font-family: "Old English Text MT", serif;
-  letter-spacing: 0.05em;
-}
-
-.font-itim-regular {
-  font-family: "Itim", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
 body {
   perspective: 1000px;
 }
+
+.font-trebuchet-ms {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
 span {
   padding-left: 3px;
   padding-right: 3px;

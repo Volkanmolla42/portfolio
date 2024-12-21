@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
   return (
     <AppProvider>
       <html lang="en">
-        <body className="bg-gradient-to-b from-gray-900 via-black to-gray-900 h-[100svh] text-white dark overflow-hidden">
+        <body className="bg-gradient-to-b from-gray-900 via-black to-gray-900 h-[100svh] text-white dark overflow-hidden font-trebuchet-ms">
           {children}
         </body>
       </html>

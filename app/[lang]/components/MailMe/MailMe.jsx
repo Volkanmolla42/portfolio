@@ -10,7 +10,7 @@ import DateComponent from "./DateComponent";
 import "./style.css";
 
 export default function MailMe({ data }) {
-  const { itimFont, toggleClasses } = useAppContext(); // Get context values
+  const { toggleClasses } = useAppContext(); // Get context values
   const textareaRef = useRef(null); // Reference to the textarea element
   const formRef = useRef(null); // Reference to the form element
   const [status, setStatus] = useState(null); // Track the status of the form submission
@@ -72,7 +72,7 @@ export default function MailMe({ data }) {
             <form
               onSubmit={handleSubmit}
               ref={formRef}
-              className={`paper left-1/2 -translate-x-1/2 -translate-y-[105%] absolute h-[95%] mt-2 w-[95%] bg-zinc-100 text-black shadow-md shadow-black border-[3px] border-dashed border-red-900 rounded transition-all duration-500 ${itimFont.className}`}
+              className={`paper left-1/2 -translate-x-1/2 -translate-y-[105%] absolute h-[95%] mt-2 w-[95%] bg-zinc-100 text-black shadow-md shadow-black border-[3px] border-dashed border-red-900 rounded transition-all duration-500`}
             >
               {/* Form Inputs */}
               <div className="w-full h-[90%] flex flex-col relative p-5 tracking-wide">
