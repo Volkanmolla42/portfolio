@@ -89,7 +89,7 @@ export default function Projects({ data }) {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 py-4  md:px-6 pb-0 bg-gradient-to-b from-gray-900 via-black to-gray-900 bg-fixed">
+      <div className="flex-1 py-4  md:px-6 pb-0 ">
         <AnimatePresence mode="wait">
           {/* Loading Spinner Animation */}
           {isLoading ? (

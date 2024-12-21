@@ -18,7 +18,7 @@ export default function RightNavBar({ navLinks }) {
 
       setTimeout(() => {
         const { top } = currentLinkElement.getBoundingClientRect();
-        middleBar.style.top = isMenuOpen ? `${top + 2 * 24}px` : "50%";
+        middleBar.style.top = isMenuOpen ? `${top + 2 * 18}px` : "50%";
         middleBar.style.height = isMenuOpen
           ? `${currentLinkElement.clientHeight}px`
           : "4px";
@@ -39,8 +39,8 @@ export default function RightNavBar({ navLinks }) {
         ["inactive"],
         ["active", "cursor-pointer"]
       );
-      toggleClasses(rightNavElement, ["w-[2%]"], ["w-[35%]"]);
-      toggleClasses(rightNavElement, ["h-6"], ["h-[92vh]"], 500);
+      toggleClasses(rightNavElement, ["w-[2%]"], ["w-[30%]"]);
+      toggleClasses(rightNavElement, ["h-6"], ["h-[90svh]"], 500);
       toggleClasses(navLinksElement, ["hidden"], ["flex"], 600);
       moveMiddleBar(1000);
     } else {
@@ -53,8 +53,8 @@ export default function RightNavBar({ navLinks }) {
         ["inactive"],
         500
       );
-      toggleClasses(rightNavElement, ["h-[92vh]"], ["h-6"]);
-      toggleClasses(rightNavElement, ["w-[35%]"], ["w-[2%]"], 500);
+      toggleClasses(rightNavElement, ["h-[90svh]"], ["h-6"]);
+      toggleClasses(rightNavElement, ["w-[30%]"], ["w-[2%]"], 500);
       toggleClasses(navLinksElement, ["flex"], ["hidden"], 400);
     }
   };
@@ -69,7 +69,7 @@ export default function RightNavBar({ navLinks }) {
 
   return (
     <div
-      className="right-nav fixed top-8 right-8 select-none cursor-pointer min-w-8 h-6 transition-all duration-500 text-3xl md:text-5xl flex-col overflow-hidden flex text-center text-red-100 items-center justify-center gap-8 z-50"
+      className="right-nav  fixed top-8 right-8 select-none cursor-pointer min-w-8 h-6 transition-all duration-500 text-2xl md:text-3xl flex-col overflow-hidden flex text-center text-red-100 items-center justify-center gap-8 z-50  "
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       {/* Hamburger Bars */}
@@ -92,7 +92,9 @@ export default function RightNavBar({ navLinks }) {
           <a
             key={link.href}
             href={link.href}
-            className="relative h-full flex justify-center items-center w-full transition-colors duration-300 select-none hover:text-red-300 cursor-pointer"
+            className={`relative h-full flex justify-center items-center w-full transition-all duration-300 select-none cursor-pointer  hover:-translate-y-2 ${
+              currentHash === link.href ? "" : "hover:text-red-900"
+            } `}
           >
             <span>{link.label}</span>
           </a>

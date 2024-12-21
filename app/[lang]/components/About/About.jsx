@@ -10,7 +10,7 @@ const About = ({ data }) => {
           {data.title}
         </h2>
         {/* Scrollable content for about text */}
-        <div className="overflow-y-auto">
+        <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-red-700 scrollbar-track-gray-800 scroll-smooth">
           <AboutText data={data} />
         </div>
         {/* Inspirational quote */}
@@ -31,7 +31,7 @@ const AboutText = memo(({ data }) => (
     {data.aboutParagraphs.map((paragraph, index) => (
       <p
         key={index}
-        className="text-gray-300 leading-relaxed px-2 mb-6"
+        className="text-gray-300 leading-relaxed px-2 mb-6 "
         dangerouslySetInnerHTML={{ __html: paragraph }}
       />
     ))}

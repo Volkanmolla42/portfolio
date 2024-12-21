@@ -43,14 +43,14 @@ const TechStack = ({ data }) => {
   }, []);
 
   return (
-    <div className="relative w-full h-lvh overflow-hidden bg-gradient-to-bl from-gray-950 via-purple-950 to-red-900 px-8">
-      <div className="size-full flex flex-col items-center justify-center">
+    <div className="relative w-full h-full py-16 md:py-0 px-4 overflow-hidden bg-gradient-to-bl from-gray-950 via-purple-950 to-red-900">
+      <div className="size-full flex flex-col items-center justify-center gap-8  md:gap-6">
         {/* Header */}
-        <h3 className="text-3xl self-start font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-6">
+        <h3 className="text-3xl  md:self-start font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
           {data.techTitle}
         </h3>
         {/* Bottom section animation */}
-        <div className="w-full relative flex items-center justify-center mb-6 ">
+        <div className="w-full relative flex items-center justify-center ">
           <JumpingCubes />
         </div>
         {/* List of technologies */}
@@ -81,7 +81,7 @@ const TechStack = ({ data }) => {
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="z-10"
+              className="z-10 h-min"
             >
               <div
                 className={`flex flex-col rounded-sm items-center justify-center p-2 h-24 w-full bg-gray-800 hover:outline-red-800 hover:outline hover:bg-gray-900 transition-[background-color] duration-300 cursor-pointer `}

@@ -1,13 +1,13 @@
 import dynamic from "next/dynamic";
 import Section from "./components/Section";
 import { getTranslations } from "@/lib/getTranslations";
-import LeftNavBar from "./components/LeftNavBar";
-import RightNavBar from "./components/RightNavBar";
+import About from "./components/About/About";
+import Projects from "./components/Projects/Projects";
 
 const components = {
   Home: dynamic(() => import("./components/Home/Home")),
-  About: dynamic(() => import("./components/About/About")),
-  Projects: dynamic(() => import("./components/Projects/Projects")),
+  LeftNavBar: dynamic(() => import("./components/LeftNavBar")),
+  RightNavBar: dynamic(() => import("./components/RightNavBar")),
   MailMe: dynamic(() => import("./components/MailMe/MailMe")),
 };
 
@@ -26,20 +26,20 @@ export default async function HomePage({ params }) {
                 <components.Home data={home} />
               </Section>
               <Section id="about">
-                <components.About data={about} />
+                <About data={about} />
               </Section>
               <Section id="projects">
-                <components.Projects data={projects} />
+                <Projects data={projects} />
               </Section>
               <Section id="contact">
                 <components.MailMe data={mailMe} />
               </Section>
             </div>
           </main>
-          <LeftNavBar navLinks={translations.navLinks} />
+          <components.LeftNavBar navLinks={translations.navLinks} />
         </div>
       </div>
-      <RightNavBar navLinks={translations.navLinks} />
+      <components.RightNavBar navLinks={translations.navLinks} />
     </>
   );
 }

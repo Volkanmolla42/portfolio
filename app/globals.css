@@ -27,12 +27,12 @@ span {
 .perspective.active {
   border-radius: 30px;
   transform: rotateY(30deg) scale(0.6) translateX(5%);
-  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.7), 0 0 50px rgba(211, 1, 1, 0.9);
+  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.7), 0 0 60px rgba(211, 1, 1, 0.9);
 }
 
 .perspective.active:hover {
-  transform: rotateY(30deg) scale(0.6) translateX(5%) translateY(-10%);
-  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.7), 0 0 100px rgba(211, 1, 1, 1);
+  transform: rotateY(30deg) scale(0.6) translateX(5%) translateY(-5%);
+  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.7), 0 0 80px rgba(211, 1, 1, 1);
 }
 
 @layer utilities {
