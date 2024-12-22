@@ -40,6 +40,12 @@ const Home = ({ data }) => {
           icon="/icons/socials-icons/github-brands-solid.svg"
           className="aspect-square"
         />
+        <ContactButton
+          text={data.linkedinText}
+          href="https://www.linkedin.com/in/volkan-molla-b851a3308/"
+          icon="/icons/socials-icons/linkedin-in-brands-solid.svg"
+          className="aspect-square"
+        />
       </div>
       <div className=" absolute top-6 left-4 flex">
         <LanguageSwitcher />

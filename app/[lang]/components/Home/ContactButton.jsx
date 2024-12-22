@@ -9,8 +9,8 @@ const ContactButton = ({ href, icon, text, className }) => {
       className="flex items-center text-sm justify-center gap-1 w-[280px] sm:w-max bg-zinc-800 text-nowrap text-gray-200 px-4 py-2 rounded-full hover:bg-zinc-700 transition-colors duration-200 hover:underline hover:underline-offset-4"
     >
       <Image
-        width={24}
-        height={24}
+        width={20}
+        height={20}
         src={icon}
         alt={`${text} icon`}
         className={`aspect-square  ${className}`}
