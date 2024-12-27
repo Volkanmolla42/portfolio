@@ -21,7 +21,7 @@ const Home = ({ data }) => {
         />
 
         {/* Scrolling Info Slider */}
-        <div className="infoslider flex overflow-hidden text-xs md:text-sm   py-2 rounded-full mt-1 bg-zinc-900 text-red-200 w-full sm:w-4/6 lg:w-3/6 ">
+        <div className="infoslider flex overflow-hidden text-xs md:text-sm  py-2 rounded-full mt-1 bg-zinc-800 text-red-200 w-full sm:w-4/6 lg:w-3/6  ">
           <InfoSlider items={data.infoSliderItems} />
         </div>
       </div>
