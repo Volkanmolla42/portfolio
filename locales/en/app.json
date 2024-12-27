@@ -34,6 +34,7 @@
     }
   ],
   "home": {
+    "aboutText": "Hello! I'm a 23-year-old Front End Developer. I create modern web applications using Next.js and React.",
     "whatsapText": "Let's Discuss Your Projects",
     "githubText": "My GitHub",
     "linkedinText": "My LinkedIn",
@@ -54,13 +55,14 @@
   },
   "about": {
     "title": "About me",
-    "techTitle": "Technologies I Use",
+    "techTitle": "My Tech Stack",
+    "aboutTitle": "Hi, my name is ",
     "aboutParagraphs": [
-      "~ Hello! I'm <span class='text-red-500 font-bold md:text-2xl'>Volkan</span>, <span class='font-bold text-red-500'>a 23-year-old Frontend Developer</span> passionate about creating user-friendly and visually appealing web interfaces. Over the past two years — and especially in the past year — I have been focusing on web technologies, developing <span class='font-bold text-red-500'>responsive</span>, <span class='font-bold text-red-500'>accessible</span>, and <span class='font-bold text-red-500'>user-centered</span> web solutions.",
-      "~ My journey began with a strong foundation in <span class='font-bold text-red-500'>HTML, CSS, and JavaScript</span> and has evolved into becoming a proficient developer experienced in using modern tools like <span class='font-bold text-red-500'>React, Next.js, and Tailwind CSS</span>. I've also worked with <span class='font-bold text-red-500'>GSAP</span> and <span class='font-bold text-red-500'>Three.js</span> to create engaging animations. Additionally, I have experience developing applications using <span class='font-bold text-red-500'>Firebase</span> and <span class='font-bold text-red-500'>MongoDB</span>. I studied web design and computer programming in both high school and university, which has greatly contributed to my skill set.",
-      "~ I adapt quickly to new technologies and <span class='font-bold text-red-500'>learn effortlessly</span>. I take pride in my <span class='font-bold text-red-500'>problem-solving skills</span>, and <span class='font-bold text-red-500'>discipline</span>. When faced with challenges, I analyze their root causes, strive to solve them independently, and consult resources or other tools when necessary.",
-      "~ Although I don't have professional work experience yet, my personal projects demonstrate my commitment to <span class='font-bold text-red-500'>quality</span> and <span class='font-bold text-red-500'>innovation</span>. I have a particular interest in <span class='font-bold text-red-500'>visual design</span> and <span class='font-bold text-red-500'>user experience</span> and enjoy exploring <span class='font-bold text-red-500'>backend development</span>.",
-      "~ If I have the opportunity to join your team, I aim to contribute as a <span class='font-bold text-red-500'>motivated and collaborative team member</span>, eager to learn and grow alongside your team."
+      "~ I am a <span class='font-bold text-blue-400'>23 year old</span> front-end developer. Over the past two years — and especially in the past year — I have been focusing on web technologies, developing <span class='font-bold text-blue-400'>responsive</span>, <span class='font-bold text-blue-400'>accessible</span>, and <span class='font-bold text-blue-400'>user-centered</span> web sites.",
+      "~ My journey began with a strong foundation in <span class='font-bold text-blue-400'>HTML, CSS, and JavaScript</span> and has evolved into becoming a proficient developer experienced in using modern tools like <span class='font-bold text-blue-400'>React, Next.js, and Tailwind CSS</span>. I've also worked with <span class='font-bold text-blue-400'>GSAP</span> and <span class='font-bold text-blue-400'>Three.js</span> to create engaging animations. Additionally, I have experience developing applications using <span class='font-bold text-blue-400'>Firebase</span> and <span class='font-bold text-blue-400'>MongoDB</span>.",
+      "~ <span class='font-bold text-blue-400'> I studied web design and computer programming</span> in both high school and university, which significantly contributed to my skills",
+      "~ Although I don’t have professional work experience yet, I adapt quickly to new technologies and <span class='font-bold text-blue-400'>learn with ease</span>.I also enjoy exploring  <span class='font-bold text-blue-400'>backend development</span>.",
+      "~ If I have the opportunity to join your team, I aim to contribute as a <span class='font-bold text-blue-400'>motivated and collaborative team member</span>, eager to learn and grow alongside your team."
     ],
     "quote": {
       "text": "I have not failed. I've just found 10,000 ways that won't work",
@@ -148,7 +150,7 @@
   },
   "mailMe": {
     "nameText": "Name",
-    "emailText": "Email Address",
+    "emailText": "Email",
     "mailSuccessText": "Email sent successfully!",
     "mailErrorText": "An error occurred while sending the email, please try again."
   }

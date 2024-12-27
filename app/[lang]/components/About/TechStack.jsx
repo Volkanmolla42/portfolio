@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 import { useAppContext } from "@/app/[lang]/context/AppContext";
-import JumpingCubes from "../utils/JumpingCubes";
+import JumpingCubes from "./JumpingCubes";
 const TechStack = ({ data }) => {
   const { memoizedTechIcons } = useAppContext();
 
@@ -43,10 +43,10 @@ const TechStack = ({ data }) => {
   }, []);
 
   return (
-    <div className="relative w-full h-full py-16 md:py-0 px-4 overflow-hidden bg-gradient-to-bl from-gray-950 via-purple-950 to-red-900">
+    <div className="relative w-full h-full py-16 md:py-0 px-4 overflow-hidden">
       <div className="size-full flex flex-col items-center justify-center gap-8  md:gap-6">
         {/* Header */}
-        <h3 className="text-3xl  md:self-start font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+        <h3 className="text-3xl  md:self-start md:ms-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-cyan-500 to-yellow-400 tracking-wider">
           {data.techTitle}
         </h3>
         {/* Bottom section animation */}

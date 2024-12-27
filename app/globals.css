@@ -10,6 +10,9 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
+.font-verdana {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 span {
   padding-left: 3px;

@@ -25,8 +25,8 @@ const ProjectCard = ({ project, buttonTexts }) => {
   return (
     <Card
       className={clsx(
-        "group relative min-h-[420px] flex flex-col h-full bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-lg shadow-lg",
-        "hover:shadow-red-600/30 transition-all duration-200 ease-in-out text-red-100"
+        "group relative min-h-[420px] flex flex-col h-full bg-zinc-800 backdrop-blur-sm border border-zinc-700/50 rounded-lg shadow-lg",
+        "hover:shadow-red-600/30 transition-all duration-200 ease-in-out"
       )}
       aria-labelledby={`project-title-${title}`}
       role="article"
@@ -57,7 +57,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
         >
           {title}
         </CardTitle>
-        <CardDescription className="text-sm text-zinc-400 line-clamp-4">
+        <CardDescription className="text-sm text-zinc-400 group-hover:text-white line-clamp-4">
           {description}
         </CardDescription>
       </CardContent>

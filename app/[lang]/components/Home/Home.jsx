@@ -1,13 +1,13 @@
 import Image from "next/image";
 import "./style.css";
 import ContactButton from "./ContactButton";
-import LanguageSwitcher from "../LanguageSwitcher";
+import LanguageSwitcher from "../utils/LanguageSwitcher";
 import InfoSlider from "./InfoSlider";
 
 // Home Component
 const Home = ({ data }) => {
   return (
-    <div className="size-full flex items-center justify-center flex-col ">
+    <div className="size-full flex items-center justify-center flex-col">
       {/* Home Section */}
       <div className="w-full z-10 flex flex-col justify-center items-center select-none px-4">
         {/* Logo */}

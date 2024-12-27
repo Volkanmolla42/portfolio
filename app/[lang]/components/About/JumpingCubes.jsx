@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Matter from "matter-js";
-import { techIcons } from "./techIcons";
+import { techIcons } from "../utils/techIcons";
 
 const JumpingCubes = () => {
   // Refs for engine, render, and cubes
@@ -162,11 +162,15 @@ const JumpingCubes = () => {
   };
 
   return (
-    <div
-      className="transition-all duration-200 relative overflow-hidden rounded-md backdrop-blur-sm bg-white bg-opacity-10 shadow-md hover:shadow-sm hover:shadow-zinc-900 shadow-zinc-900 cursor-pointer"
-      onClick={handleJump} // Trigger jump on click
-      ref={scene}
-    ></div>
+    <div className="relative group">
+      <div
+        className="group-active:translate-y-2  relative overflow-hidden rounded-t-md backdrop-blur-sm bg-white bg-opacity-10 shadow-md hover:shadow-sm hover:shadow-zinc-900 shadow-zinc-900 cursor-pointer"
+        onClick={handleJump} // Trigger jump on click
+        ref={scene}
+      ></div>
+      <div className="absolute -bottom-4 -left-4 -z-50  size-4  border-l border-b border-white  group-hover:-bottom-4 group-hover:-left-2 group-hover:size-3  transition-all duration-300 "></div>
+      <div className="absolute -bottom-4 -right-4 -z-50  size-4 border-r border-b border-white  group-hover:-bottom-4 group-hover:-right-2 group-hover:size-3  transition-all duration-300"></div>
+    </div>
   );
 };
 
