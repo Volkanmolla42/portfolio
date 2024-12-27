@@ -1,6 +1,6 @@
 import "./globals.css";
 import { AppProvider } from "@/app/[lang]/context/AppContext";
-
+import { Analytics } from "@vercel/analytics/react";
 export const metadata = {
   metadataBase: new URL("https://portfolio-volkanmolla42s-projects.vercel.app"),
   title: "Hi, I'm Volkan Molla",

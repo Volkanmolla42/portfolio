@@ -168,7 +168,7 @@ const JumpingCubes = () => {
         onClick={handleJump} // Trigger jump on click
         ref={scene}
       ></div>
-      <div className="absolute -bottom-4 -left-4 -z-50  size-4  border-l border-b border-white  group-hover:-bottom-4 group-hover:-left-2 group-hover:size-3  transition-all duration-300 "></div>
+      <div className="absolute -bottom-4 -left-4 -z-50  size-4  border-l border-b border-white  group-hover:-bottom-4 group-hover:-left-2 group-hover:size-3  transition-all duration-300"></div>
       <div className="absolute -bottom-4 -right-4 -z-50  size-4 border-r border-b border-white  group-hover:-bottom-4 group-hover:-right-2 group-hover:size-3  transition-all duration-300"></div>
     </div>
   );

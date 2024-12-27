@@ -9,10 +9,10 @@ const About = ({ data }) => {
         <div className="text-3xl text-zinc-200 md:text-4xl font-bold mb-2  mx-4">
           <h2>
             {data.aboutTitle}{" "}
-            <span className="text-blue-500 text-nowrap">Volkan Molla</span>
+            <span className="text-blue-500 text-nowrap">Volkan Molla.</span>
           </h2>
           <h2 className="text-xl md:text-1xl">
-            <span className="text-muted-foreground">Front-end Developer</span>
+            <span className="text-muted-foreground">Frontend Developer.</span>
           </h2>
         </div>
         {/* Scrollable content for about text */}

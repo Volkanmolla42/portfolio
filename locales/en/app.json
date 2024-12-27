@@ -56,14 +56,15 @@
   "about": {
     "title": "About me",
     "techTitle": "My Tech Stack",
-    "aboutTitle": "Hi, my name is ",
+    "aboutTitle": "Hi, I'm ",
     "aboutParagraphs": [
-      "~ I am a <span class='font-bold text-blue-400'>23 year old</span> front-end developer. Over the past two years — and especially in the past year — I have been focusing on web technologies, developing <span class='font-bold text-blue-400'>responsive</span>, <span class='font-bold text-blue-400'>accessible</span>, and <span class='font-bold text-blue-400'>user-centered</span> web sites.",
-      "~ My journey began with a strong foundation in <span class='font-bold text-blue-400'>HTML, CSS, and JavaScript</span> and has evolved into becoming a proficient developer experienced in using modern tools like <span class='font-bold text-blue-400'>React, Next.js, and Tailwind CSS</span>. I've also worked with <span class='font-bold text-blue-400'>GSAP</span> and <span class='font-bold text-blue-400'>Three.js</span> to create engaging animations. Additionally, I have experience developing applications using <span class='font-bold text-blue-400'>Firebase</span> and <span class='font-bold text-blue-400'>MongoDB</span>.",
-      "~ <span class='font-bold text-blue-400'> I studied web design and computer programming</span> in both high school and university, which significantly contributed to my skills",
-      "~ Although I don’t have professional work experience yet, I adapt quickly to new technologies and <span class='font-bold text-blue-400'>learn with ease</span>.I also enjoy exploring  <span class='font-bold text-blue-400'>backend development</span>.",
-      "~ If I have the opportunity to join your team, I aim to contribute as a <span class='font-bold text-blue-400'>motivated and collaborative team member</span>, eager to learn and grow alongside your team."
+      "~ I am a <span class='font-bold text-blue-500'>23-year-old</span> frontend developer passionate about creating <span class='font-bold text-blue-500'>responsive</span>, <span class='font-bold text-blue-500'>accessible</span>, and <span class='font-bold text-blue-500'>user-centered</span> web experiences. Over the past two years — especially in the past year — I have focused on honing my skills in modern web technologies.",
+      "~ My journey started with a solid foundation in <span class='font-bold text-blue-500'>HTML, CSS, and JavaScript</span>, and has grown to include expertise in tools like <span class='font-bold text-blue-500'>React, Next.js, and Tailwind CSS</span>. I have also utilized <span class='font-bold text-blue-500'>GSAP</span> and <span class='font-bold text-blue-500'>Three.js</span> to craft engaging animations, as well as developed applications using <span class='font-bold text-blue-500'>Firebase</span> and <span class='font-bold text-blue-500'>MongoDB</span>.",
+      "~ <span class='font-bold text-blue-500'>Studying web design and computer programming</span> in both high school and university has been instrumental in building my technical skills and deepening my understanding of development principles.",
+      "~ While I have not yet had the opportunity to gain professional work experience, I have cultivated a strong ability to <span class='font-bold text-blue-500'>adapt quickly to new technologies</span> and learn with ease. Additionally, I enjoy exploring <span class='font-bold text-blue-500'>backend development</span>, which complements my frontend expertise.",
+      "~ If given the opportunity to join your team, I aim to bring a <span class='font-bold text-blue-500'>proactive, motivated, and collaborative attitude</span>. I am eager to contribute to your projects, learn from experienced colleagues, and grow alongside your team."
     ],
+
     "quote": {
       "text": "I have not failed. I've just found 10,000 ways that won't work",
       "author": "Thomas Edison"
