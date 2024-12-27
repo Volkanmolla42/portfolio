@@ -155,6 +155,7 @@ export default function MailMe({ data }) {
                 type="submit"
                 onClick={() => formRef.current.requestSubmit()}
                 disabled={status === "success"}
+                aria-description="seal button"
                 className={`hover:scale-[70%] scale-[65%] w-32 h-32 rounded-full border-none outline-none shadow-none hover:shadow-[0_0_20px_rgba(0,0,0,1)] transition-all duration-200 ${
                   status === "sending"
                     ? "spin shadow-none"
