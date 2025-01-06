@@ -4,12 +4,28 @@ import { getTranslations } from "@/lib/getTranslations";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 
+// Dinamik bileşenleri optimize edilmiş şekilde yüklüyoruz
 const components = {
-  Home: dynamic(() => import("./components/Home/Home")),
-  LeftNavBar: dynamic(() => import("./components/LeftNavBar")),
-  RightNavBar: dynamic(() => import("./components/RightNavBar")),
-  MailMe: dynamic(() => import("./components/MailMe/MailMe")),
+  Home: dynamic(() => import("./components/Home/Home"), {
+    loading: () => null,
+    ssr: true
+  }),
+  LeftNavBar: dynamic(() => import("./components/LeftNavBar"), {
+    loading: () => null,
+    ssr: true
+  }),
+  RightNavBar: dynamic(() => import("./components/RightNavBar"), {
+    loading: () => null,
+    ssr: true
+  }),
+  MailMe: dynamic(() => import("./components/MailMe/MailMe"), {
+    loading: () => null,
+    ssr: true
+  })
 };
+
+// Route cache'leme
+export const revalidate = 3600; // 1 saat
 
 export default async function HomePage({ params }) {
   const { lang } = await params;
