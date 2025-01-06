@@ -1,7 +1,6 @@
 "use client";
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useAppContext } from "@/app/[lang]/context/AppContext";
 import ProjectCard from "./ProjectCard";
 
 // Animation variants for container animations
@@ -39,15 +38,17 @@ export default function Projects({ data }) {
 
   // Extract unique categories from projects
   const categories = useMemo(() => {
+    if (!data?.allText || !projects) return [];
     const uniqueCategories = new Set([
       data.allText,
       ...projects.map((p) => p.category?.toLowerCase()),
     ]);
     return Array.from(uniqueCategories);
-  }, [projects]);
+  }, [projects, data?.allText]);
 
   // Filter projects based on selected category and search term
   const filteredProjects = useMemo(() => {
+    if (!data?.allText || !projects) return [];
     return projects.filter(
       (project) =>
         (filter === data.allText ||
@@ -55,7 +56,7 @@ export default function Projects({ data }) {
         (project.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
           project.description?.toLowerCase().includes(searchTerm.toLowerCase()))
     );
-  }, [filter, projects, searchTerm]);
+  }, [filter, projects, searchTerm, data?.allText]);
 
   return (
     <div className="size-full flex flex-col text-white">

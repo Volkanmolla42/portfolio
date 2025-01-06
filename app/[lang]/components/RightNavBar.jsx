@@ -63,9 +63,13 @@ export default function RightNavBar({ navLinks }) {
     setIsMenuOpen(false);
   };
 
-  useEffect(() => {
+  const toggleNavMenuCallback = useCallback(() => {
     toggleNavMenu(isMenuOpen);
-  }, [isMenuOpen, currentHash, toggleClasses, moveMiddleBar, setIsMenuOpen]);
+  }, [isMenuOpen, toggleNavMenu]);
+
+  useEffect(() => {
+    toggleNavMenuCallback();
+  }, [isMenuOpen, currentHash, toggleNavMenuCallback, setIsMenuOpen, moveMiddleBar, toggleClasses]);
 
   return (
     <div
