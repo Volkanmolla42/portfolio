@@ -137,8 +137,49 @@
         "liveDemoLink": "https://volkanmolla42.github.io/Design_site/",
         "gitHubLink": "https://github.com/Volkanmolla42/Design_site",
         "techs": ["HTML", "CSS", "JAVASCRIPT", "Bootstrap"]
+      },
+      {
+        "id": "7",
+        "title": "Smart Kitchen Assistant",
+        "description": "AI-powered assistant that suggests smart recipes based on selected ingredients, making life easier in the kitchen.",
+        "projectImage": "/images/projectImages/smart-kitchen.jpeg",
+        "category": "apps",
+        "liveDemoLink": "https://smart-kitchen-assistant-one.vercel.app/",
+        "gitHubLink": "https://github.com/Volkanmolla42/Smart-Kitchen-Assistant",
+        "techs": ["React", "Tailwind CSS", "Firebase", "Vercel"]
+      },
+      {
+        "id": "8",
+        "title": "Giftify",
+        "description": "A creative platform that allows users to design personalized gift cards with style.",
+        "projectImage": "/images/projectImages/giftfy.jpeg",
+        "category": "apps",
+        "liveDemoLink": "https://giftify-three.vercel.app/",
+        "gitHubLink": "https://github.com/Volkanmolla42/Giftify",
+        "techs": ["React", "Tailwind CSS", "Vercel"]
+      },
+      {
+        "id": "9",
+        "title": "GameSounds",
+        "description": "Modern web app that generates unique sound effects for games using ElevenLabs AI.",
+        "projectImage": "/images/projectImages/gamesounds.png",
+        "category": "apps",
+        "liveDemoLink": "https://gamesounds.vercel.app/",
+        "gitHubLink": "https://github.com/Volkanmolla42/gamesounds",
+        "techs": ["React", "Tailwind CSS", "ElevenLabs API", "Vercel"]
+      },
+      {
+        "id": "10",
+        "title": "QR Menu Platform",
+        "description": "Practical platform enabling restaurants to create customizable and fast QR menus.",
+        "projectImage": "/images/projectImages/qr-menu.png",
+        "category": "apps",
+        "liveDemoLink": "https://qr-menu-platform-ten.vercel.app/",
+        "gitHubLink": "https://github.com/Volkanmolla42/qr_menu_platform",
+        "techs": ["Next.js", "Tailwind CSS", "Firebase", "Vercel"]
       }
     ],
+    
     "allText": "All projects",
     "searchPlaceholder": "Search projects...",
     "projectButtonTexts": {
