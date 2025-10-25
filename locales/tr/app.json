@@ -73,18 +73,45 @@
   },
 
   "projects": {
-    "projects": [{
-      "id": "1",
-      "title": "LocaFit Studio Web Sitesi",
-      "description": "LocaFit Studio spor salonuna özel hazırlanmış, modern ve kullanıcı dostu bir tanıtım web sitesi.",
-      "projectImage": "/images/projectImages/loca.png",
-      "category": "web siteleri",
-      "liveDemoLink": "https://locafitstudio.com",
-      "gitHubLink": null,
-      "techs": ["Next.js", "React", "Tailwind CSS", "Vercel"]
-    },
+    "projects": [
+      {
+        "id": "1",
+        "title": "LocaFit Studio Web Sitesi",
+        "description": "LocaFit Studio spor salonuna özel hazırlanmış, modern ve kullanıcı dostu bir tanıtım web sitesi.",
+        "projectImage": "/images/projectImages/loca.png",
+        "category": "web siteleri",
+        "liveDemoLink": "https://locafitstudio.com",
+        "gitHubLink": null,
+        "techs": ["Next.js", "React", "Tailwind CSS", "Vercel"]
+      },
       {
         "id": "2",
+        "title": "Gerçek Zamanlı Sohbet Uygulaması",
+        "description": "Güvenilir ve hızlı iletişim için Firebase destekli, şık arayüzlü modern sohbet uygulaması.",
+        "projectImage": "/images/projectImages/chatapp.webp",
+        "category": "uygulamalar",
+        "liveDemoLink": "https://full-stack-chat-app-git-main-volkanmolla42s-projects.vercel.app/chat",
+        "gitHubLink": "https://github.com/Volkanmolla42/fullStack-chat-app",
+        "techs": [
+          "React & Vite",
+          "Node.js",
+          "Firebase",
+          "Vanilla CSS",
+          "Vercel"
+        ]
+      },
+      {
+        "id": "3",
+        "title": "Apple.com Klonu",
+        "description": "GSAP ve Three.js kullanılarak oluşturulan, animasyonlarla zenginleştirilmiş Apple web sitesi klonu.",
+        "projectImage": "/images/projectImages/apple.webp",
+        "category": "web siteleri",
+        "liveDemoLink": "https://apple-website-delta-hazel.vercel.app/",
+        "gitHubLink": "https://github.com/Volkanmolla42/apple-website",
+        "techs": ["React & Vite", "GSAP", "Three.js", "Tailwind CSS", "Vercel"]
+      },
+      {
+        "id": "4",
         "title": "Amazon.com Klonu",
         "description": "HTML, CSS ve JavaScript kullanılarak geliştirilen minimalist Amazon web sitesi klonu.",
         "projectImage": "/images/projectImages/amazon.webp",
@@ -94,7 +121,7 @@
         "techs": ["HTML", "CSS", "JavaScript"]
       },
       {
-        "id": "3",
+        "id": "5",
         "title": "Starbucks.com.tr Klonu",
         "description": "HTML, CSS ve Bootstrap ile oluşturulan, kusursuz bir Starbucks web sitesi klonu.",
         "projectImage": "/images/projectImages/starbucks.webp",
@@ -104,7 +131,7 @@
         "techs": ["HTML", "CSS", "Bootstrap"]
       },
       {
-        "id": "4",
+        "id": "6",
         "title": "Frontend Bootcamp",
         "description": "Bootstrap ile geliştirilen, frontend geliştiricilere yönelik modern eğitim sitesi.",
         "projectImage": "/images/projectImages/bootcamp.webp",
@@ -114,7 +141,7 @@
         "techs": ["HTML", "CSS", "Bootstrap"]
       },
       {
-        "id": "5",
+        "id": "7",
         "title": "Modern Web Tasarımı",
         "description": "Modern estetik ve kullanıcı odaklı fonksiyonlarla geliştirilmiş şık bir web tasarım projesi.",
         "projectImage": "/images/projectImages/design.webp",
@@ -124,7 +151,7 @@
         "techs": ["HTML", "CSS", "JavaScript", "Bootstrap"]
       },
       {
-        "id": "6",
+        "id": "8",
         "title": "Smart Kitchen Assistant",
         "description": "Malzeme seçimine göre akıllı yemek tarifleri öneren, mutfakta hayatı kolaylaştıran yapay zeka destekli asistan.",
         "projectImage": "/images/projectImages/smart-kitchen.jpeg",
@@ -134,7 +161,7 @@
         "techs": ["React", "Tailwind CSS", "Firebase", "Vercel"]
       },
       {
-        "id": "7",
+        "id": "9",
         "title": "Giftify",
         "description": "Kullanıcıların kişisel hediyelik kartlar tasarlamasına imkan tanıyan, yaratıcı ve şık bir hediye platformu.",
         "projectImage": "/images/projectImages/giftfy.jpeg",
@@ -144,7 +171,7 @@
         "techs": ["React", "Tailwind CSS", "Vercel"]
       },
       {
-        "id": "8",
+        "id": "10",
         "title": "GameSounds",
         "description": "ElevenLabs yapay zekasıyla oyunlar için özgün ses efektleri üreten modern bir web uygulaması.",
         "projectImage": "/images/projectImages/gamesounds.png",
@@ -154,7 +181,7 @@
         "techs": ["React", "Tailwind CSS", "ElevenLabs API", "Vercel"]
       },
       {
-        "id": "10",
+        "id": "11",
         "title": "QR Menü Platform",
         "description": "Restoranlara özel, özelleştirilebilir ve hızlı QR menü oluşturma imkanı sunan pratik platform.",
         "projectImage": "/images/projectImages/qr-menu.png",
@@ -162,15 +189,6 @@
         "liveDemoLink": "https://qr-menu-platform-ten.vercel.app/",
         "gitHubLink": "https://github.com/Volkanmolla42/qr_menu_platform",
         "techs": ["Next.js", "Tailwind CSS", "Convex", "Vercel"]
-      },{
-        "id": "2",
-        "title": "Apple.com Klonu",
-        "description": "GSAP ve Three.js kullanılarak oluşturulan, animasyonlarla zenginleştirilmiş Apple web sitesi klonu.",
-        "projectImage": "/images/projectImages/apple.webp",
-        "category": "web siteleri",
-        "liveDemoLink": "https://apple-website-delta-hazel.vercel.app/",
-        "gitHubLink": "https://github.com/Volkanmolla42/apple-website",
-        "techs": ["React & Vite", "GSAP", "Three.js", "Tailwind CSS", "Vercel"]
       }
     ],
     "allText": "Tüm projeler",

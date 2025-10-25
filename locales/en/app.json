@@ -74,6 +74,21 @@
     "projects": [
       {
         "id": "1",
+        "title": "LocaFit Studio Website",
+        "description": "Modern and user-friendly promotional website specially designed for LocaFit Studio gym.",
+        "projectImage": "/images/projectImages/loca.png",
+        "category": "websites",
+        "liveDemoLink": "https://locafitstudio.com",
+        "gitHubLink": null,
+        "techs": [
+          "Next.js",
+          "React",
+          "Tailwind CSS",
+          "Vercel"
+        ]
+      },
+      {
+        "id": "2",
         "title": "Real-time Chat App",
         "description": "Modern chat application offering real-time messaging with a sleek interface. Powered by Firebase for reliable and fast communication.",
         "projectImage": "/images/projectImages/chatapp.webp",
@@ -89,7 +104,7 @@
         ]
       },
       {
-        "id": "2",
+        "id": "3",
         "title": "Apple.com clone",
         "description": "Pixel-perfect clone of Apple's website, featuring immersive animations with GSAP and Three.js for a premium user experience.",
         "projectImage": "/images/projectImages/apple.webp",
@@ -99,7 +114,7 @@
         "techs": ["React & Vite", "GSAP", "Three.js", "Tailwind CSS", "Vercel"]
       },
       {
-        "id": "3",
+        "id": "4",
         "title": "Amazon.com clone",
         "description": "Minimalist replica of Amazon's website built with HTML, CSS, and JavaScript, focusing on essential design and features.",
         "projectImage": "/images/projectImages/amazon.webp",
@@ -109,7 +124,7 @@
         "techs": ["HTML", "CSS", "JAVASCRIPT"]
       },
       {
-        "id": "4",
+        "id": "5",
         "title": "Starbucks.com.tr clone",
         "description": "Polished replica of Starbucks Turkey's website built with HTML, CSS, and Bootstrap for a seamless browsing experience.",
         "projectImage": "/images/projectImages/starbucks.webp",
@@ -119,7 +134,7 @@
         "techs": ["HTML", "CSS", "Bootstrap"]
       },
       {
-        "id": "5",
+        "id": "6",
         "title": "Frontend Bootcamp",
         "description": "Modern training site for aspiring frontend developers, featuring a stylish interface built with Bootstrap for a responsive experience.",
         "projectImage": "/images/projectImages/bootcamp.webp",
@@ -129,7 +144,7 @@
         "techs": ["HTML", "CSS", "Bootstrap"]
       },
       {
-        "id": "6",
+        "id": "7",
         "title": "New Design",
         "description": "Sleek web design project combining modern aesthetics with user-centered functionality for an impressive digital experience.",
         "projectImage": "/images/projectImages/design.webp",
@@ -139,7 +154,7 @@
         "techs": ["HTML", "CSS", "JAVASCRIPT", "Bootstrap"]
       },
       {
-        "id": "7",
+        "id": "8",
         "title": "Smart Kitchen Assistant",
         "description": "AI-powered assistant that suggests smart recipes based on selected ingredients, making life easier in the kitchen.",
         "projectImage": "/images/projectImages/smart-kitchen.jpeg",
@@ -149,7 +164,7 @@
         "techs": ["React", "Tailwind CSS", "Firebase", "Vercel"]
       },
       {
-        "id": "8",
+        "id": "9",
         "title": "Giftify",
         "description": "A creative platform that allows users to design personalized gift cards with style.",
         "projectImage": "/images/projectImages/giftfy.jpeg",
@@ -159,7 +174,7 @@
         "techs": ["React", "Tailwind CSS", "Vercel"]
       },
       {
-        "id": "9",
+        "id": "10",
         "title": "GameSounds",
         "description": "Modern web app that generates unique sound effects for games using ElevenLabs AI.",
         "projectImage": "/images/projectImages/gamesounds.png",
@@ -169,7 +184,7 @@
         "techs": ["React", "Tailwind CSS", "ElevenLabs API", "Vercel"]
       },
       {
-        "id": "10",
+        "id": "11",
         "title": "QR Menu Platform",
         "description": "Practical platform enabling restaurants to create customizable and fast QR menus.",
         "projectImage": "/images/projectImages/qr-menu.png",
