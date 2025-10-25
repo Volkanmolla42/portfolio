@@ -25,7 +25,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
   return (
     <Card
       className={clsx(
-        "group relative min-h-[420px] flex flex-col h-full bg-zinc-800 backdrop-blur-sm border border-zinc-700/50 rounded-lg shadow-lg",
+        "group relative min-h-[420px] flex flex-col h-full bg-zinc-800 backdrop-blur-xs border border-zinc-700/50 rounded-lg shadow-lg",
         "hover:shadow-red-600/30 transition-all duration-200 ease-in-out"
       )}
       aria-labelledby={`project-title-${title}`}
@@ -35,7 +35,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
       <CardHeader className="relative overflow-hidden rounded-t-lg p-0">
         <div className="relative w-full overflow-hidden">
           <div
-            className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-200"
+            className="absolute inset-0 bg-linear-to-t from-zinc-900 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-200"
             aria-hidden="true"
           ></div>
           <Image
@@ -50,7 +50,7 @@ const ProjectCard = ({ project, buttonTexts }) => {
       </CardHeader>
 
       {/* Title and Description */}
-      <CardContent className="flex-grow p-4 space-y-3">
+      <CardContent className="grow p-4 space-y-3">
         <CardTitle
           id={`project-title-${title}`}
           className="text-2xl font-semibold tracking-wider text-red-100 group-hover:text-red-400 transition-colors duration-200"

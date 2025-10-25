@@ -1,53 +1,123 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-body {
-  perspective: 1000px;
+@plugin 'tailwindcss-animate';
+@plugin 'tailwind-scrollbar';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
-.font-trebuchet-ms {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-.font-verdana {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-span {
-  padding-left: 3px;
-  padding-right: 3px;
-}
-.perspective {
-  transform-style: preserve-3d;
+@utility clip-triangle {
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
 }
 
-.perspective.active {
-  border-radius: 30px;
-  transform: rotateY(30deg) scale(0.6) translateX(5%);
-  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.7), 0 0 60px rgba(211, 1, 1, 0.9);
+@utility clip-triangle2 {
+  clip-path: polygon(50% 50%, 0 100%, 100% 100%);
 }
 
-.perspective.active:hover {
-  transform: rotateY(30deg) scale(0.6) translateX(5%) translateY(-5%);
-  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.7), 0 0 80px rgba(211, 1, 1, 1);
+@utility clip-triangle3 {
+  clip-path: polygon(50% 50%, 0 100%, 100% 100%);
+}
+
+@utility -rotate-x-180 {
+  transform: rotateX(-180deg);
+}
+
+@utility rotate-x-180 {
+  transform: rotateX(180deg);
 }
 
 @layer utilities {
-  .clip-triangle {
-    clip-path: polygon(0 0, 0 100%, 100% 50%);
+  body {
+    perspective: 1000px;
   }
-  .clip-triangle2 {
-    clip-path: polygon(50% 50%, 0 100%, 100% 100%);
+
+  .font-trebuchet-ms {
+    font-family:
+      'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
+      Arial, sans-serif;
   }
-  .clip-triangle3 {
-    clip-path: polygon(50% 50%, 0 100%, 100% 100%);
+  .font-verdana {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  .-rotate-x-180 {
-    transform: rotateX(-180deg);
+
+  span {
+    padding-left: 3px;
+    padding-right: 3px;
   }
-  .rotate-x-180 {
-    transform: rotateX(180deg);
+  .perspective {
+    transform-style: preserve-3d;
+  }
+
+  .perspective.active {
+    border-radius: 30px;
+    transform: rotateY(30deg) scale(0.6) translateX(5%);
+    box-shadow:
+      -10px 10px 20px rgba(0, 0, 0, 0.7),
+      0 0 60px rgba(211, 1, 1, 0.9);
+  }
+
+  .perspective.active:hover {
+    transform: rotateY(30deg) scale(0.6) translateX(5%) translateY(-5%);
+    box-shadow:
+      -10px 10px 20px rgba(0, 0, 0, 0.7),
+      0 0 80px rgba(211, 1, 1, 1);
   }
 }
 

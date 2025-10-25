@@ -96,7 +96,7 @@ export default function RootLayout({ children }) {
    
        
       <html lang="en" className={inter.className}>
-        <body className="bg-zinc-900 h-[100svh] text-white dark overflow-hidden font-trebuchet-ms">
+        <body className="bg-zinc-900 h-svh text-white dark overflow-hidden font-trebuchet-ms">
         <AppProvider>
           {children}
           </AppProvider>

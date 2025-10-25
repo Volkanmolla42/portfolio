@@ -51,7 +51,7 @@ const Home = ({ data }) => {
           {/* Right: Portrait */}
           <div className="md:col-span-5 relative">
             {/* Glow Background */}
-            <div className="absolute -inset-6 bg-gradient-to-br from-red-700/30 via-fuchsia-500/20 to-indigo-500/20 blur-3xl rounded-3xl" aria-hidden="true" />
+            <div className="absolute -inset-6 bg-linear-to-br from-red-700/30 via-fuchsia-500/20 to-indigo-500/20 blur-3xl rounded-3xl" aria-hidden="true" />
             <div className="relative mx-auto w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
               <Image
                 src="/images/177041753.jpg"

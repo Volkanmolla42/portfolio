@@ -9,7 +9,7 @@ export default function Error({ error, reset }) {
   }, [error]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-4">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

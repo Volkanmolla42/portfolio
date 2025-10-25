@@ -8,7 +8,7 @@ const InfoSlider = ({ items }) => {
         <ul
           key={index}
           aria-hidden="true"
-          className="list-none flex justify-between items-center flex-shrink-0 min-w-full"
+          className="list-none flex justify-between items-center shrink-0 min-w-full"
         >
           {items.map((item, idx) => (
             <li key={idx}>{item}</li>

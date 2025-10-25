@@ -46,7 +46,7 @@ const TechStack = ({ data }) => {
     <div className="relative w-full h-full py-16 md:py-0 px-4 overflow-hidden">
       <div className="size-full flex flex-col items-center justify-center gap-8  md:gap-6">
         {/* Header */}
-        <h3 className="text-3xl  md:self-start md:ms-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-cyan-500 to-yellow-400 tracking-wider">
+        <h3 className="text-3xl  md:self-start md:ms-4 font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-500 via-cyan-500 to-yellow-400 tracking-wider">
           {data.techTitle}
         </h3>
         {/* Bottom section animation */}
@@ -84,7 +84,7 @@ const TechStack = ({ data }) => {
               className="z-10 h-min"
             >
               <div
-                className={`flex flex-col rounded-sm items-center justify-center p-2 h-24 w-full bg-gray-800 hover:outline-red-800 hover:outline hover:bg-gray-900 transition-[background-color] duration-300 cursor-pointer `}
+                className={`flex flex-col rounded-sm items-center justify-center p-2 h-24 w-full bg-gray-800 hover:outline-red-800 hover:outline-solid hover:bg-gray-900 transition-[background-color] duration-300 cursor-pointer `}
                 title={`I use ${icon.name} in my projects`}
                 style={{ color: icon.color }}
               >

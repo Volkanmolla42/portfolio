@@ -164,7 +164,7 @@ const JumpingCubes = () => {
   return (
     <div className="relative group">
       <div
-        className="group-active:translate-y-2  relative overflow-hidden rounded-t-md backdrop-blur-sm bg-white bg-opacity-10 shadow-md hover:shadow-sm hover:shadow-zinc-900 shadow-zinc-900 cursor-pointer"
+        className="group-active:translate-y-2  relative overflow-hidden rounded-t-md backdrop-blur-xs bg-white bg-opacity-10 shadow-md hover:shadow-xs hover:shadow-zinc-900 shadow-zinc-900 cursor-pointer"
         onClick={handleJump} // Trigger jump on click
         ref={scene}
       ></div>

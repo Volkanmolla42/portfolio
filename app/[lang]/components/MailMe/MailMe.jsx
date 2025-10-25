@@ -83,7 +83,7 @@ export default function MailMe({ data }) {
                     id="message"
                     name="message"
                     required
-                    className="w-full h-full p-1 resize-none text-lg bg-transparent border-none outline-none"
+                    className="w-full h-full p-1 resize-none text-lg bg-transparent border-none outline-hidden"
                     autoCorrect="off"
                     spellCheck="false"
                     autoComplete="off"
@@ -103,7 +103,7 @@ export default function MailMe({ data }) {
                       id="name"
                       name="name"
                       required
-                      className="w-full border-dashed border-2 p-1 bg-transparent outline-none text-center border-red-900"
+                      className="w-full border-dashed border-2 p-1 bg-transparent outline-hidden text-center border-red-900"
                       autoCorrect="off"
                       spellCheck="false"
                       autoComplete="off"
@@ -121,7 +121,7 @@ export default function MailMe({ data }) {
                       id="email"
                       name="email"
                       required
-                      className="w-full border-dashed border-2 p-1 bg-transparent outline-none text-center border-red-900"
+                      className="w-full border-dashed border-2 p-1 bg-transparent outline-hidden text-center border-red-900"
                       autoComplete="off"
                       autoCorrect="off"
                       spellCheck="false"
@@ -156,7 +156,7 @@ export default function MailMe({ data }) {
                 onClick={() => formRef.current.requestSubmit()}
                 disabled={status === "success"}
                 aria-description="seal button"
-                className={`hover:scale-[70%] scale-[65%] w-32 h-32 rounded-full border-none outline-none shadow-none hover:shadow-[0_0_20px_rgba(0,0,0,1)] transition-all duration-200 ${
+                className={`hover:scale-[70%] scale-[65%] w-32 h-32 rounded-full border-none outline-hidden shadow-none hover:shadow-[0_0_20px_rgba(0,0,0,1)] transition-all duration-200 ${
                   status === "sending"
                     ? "spin shadow-none"
                     : " shadow-[0_0_20px_rgba(0,0,0,1)]"
