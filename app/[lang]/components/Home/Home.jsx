@@ -7,7 +7,7 @@ import InfoSlider from "./InfoSlider";
 // Home Component
 const Home = ({ data }) => {
   return (
-    <div className="relative size-full flex flex-col items-center">
+    <div className="relative size-full flex flex-col items-center justify-center">
       {/* Language Switcher - top left */}
       <div className="absolute top-6 left-4 z-20">
         <LanguageSwitcher />
