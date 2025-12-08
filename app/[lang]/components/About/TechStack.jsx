@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 import { useAppContext } from "@/app/[lang]/context/AppContext";
-import JumpingCubes from "./JumpingCubes";
+
 const TechStack = ({ data }) => {
   const { memoizedTechIcons } = useAppContext();
 
@@ -43,68 +43,63 @@ const TechStack = ({ data }) => {
   }, []);
 
   return (
-    <div className="relative w-full h-full py-16 md:py-0 px-4 overflow-hidden">
-      <div className="size-full flex flex-col items-center justify-center gap-8  md:gap-6">
-        {/* Header */}
-        <h3 className="text-3xl  md:self-start md:ms-4 font-extrabold text-transparent bg-clip-text bg-linear-to-r from-orange-500 via-cyan-500 to-yellow-400 tracking-wider">
-          {data.techTitle}
-        </h3>
-        {/* Bottom section animation */}
-        <div className="w-full relative flex items-center justify-center ">
-          <JumpingCubes />
-        </div>
-        {/* List of technologies */}
-        <motion.div
-          ref={containerRef}
-          className="grid grid-cols-3  sm:grid-cols-4 gap-[3px]  w-full relative overflow-hidden bg-zinc-900 rounded-xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {/* Hover effect reflection */}
-          {isHovering && (
-            <div
-              className="absolute rounded-full bg-red-800 pointer-events-none"
-              style={{
-                left: `${mousePosition.x}px`,
-                top: `${mousePosition.y}px`,
-                width: "200px",
-                height: "200px",
-                transform: "translate(-50%, -50%)",
-              }}
-            />
-          )}
-          {/* Technology cards */}
-          {memoizedTechIcons.map((icon, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.6 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="z-10 h-min"
-            >
-              <div
-                className={`flex flex-col rounded-sm items-center justify-center p-2 h-24 w-full bg-gray-800 hover:outline-red-800 hover:outline-solid hover:bg-gray-900 transition-[background-color] duration-300 cursor-pointer `}
-                title={`I use ${icon.name} in my projects`}
-                style={{ color: icon.color }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={30}
-                  height={30}
-                  viewBox="0 0 24 24"
-                >
-                  <path fill="currentColor" d={icon.svgPath} />
-                </svg>
+    <div className="w-full h-full flex flex-col gap-6">
+      {/* Header */}
+      <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500">
+        {data.techTitle}
+      </h3>
 
-                <span className="text-xs mt-2 text-center text-zinc-400">
-                  {icon.name}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+      {/* List of technologies */}
+      <motion.div
+        ref={containerRef}
+        className="grid grid-cols-3 sm:grid-cols-4 gap-2 w-full relative overflow-hidden bg-card border border-border rounded-xl p-2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        {/* Hover effect reflection */}
+        {isHovering && (
+          <div
+            className="absolute rounded-full bg-primary/10 pointer-events-none blur-xl"
+            style={{
+              left: `${mousePosition.x}px`,
+              top: `${mousePosition.y}px`,
+              width: "200px",
+              height: "200px",
+              transform: "translate(-50%, -50%)",
+            }}
+          />
+        )}
+        {/* Technology cards */}
+        {memoizedTechIcons.map((icon, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, delay: index * 0.05 }}
+            className="relative z-10"
+          >
+            <div
+              className="flex flex-col items-center justify-center p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors duration-200 cursor-pointer h-24"
+              title={`I use ${icon.name} in my projects`}
+              style={{ color: icon.color }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={32}
+                height={32}
+                viewBox="0 0 24 24"
+              >
+                <path fill="currentColor" d={icon.svgPath} />
+              </svg>
+
+              <span className="text-xs mt-2 text-center text-muted-foreground font-medium">
+                {icon.name}
+              </span>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
 };

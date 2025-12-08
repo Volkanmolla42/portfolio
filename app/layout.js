@@ -93,13 +93,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-   
-       
-      <html lang="en" className={inter.className}>
-        <body className="bg-zinc-900 h-svh text-white dark overflow-hidden font-trebuchet-ms">
+    <html lang="en" className={inter.className} suppressHydrationWarning>
+      <body className="bg-background text-foreground dark min-h-screen">
         <AppProvider>
           {children}
-          </AppProvider>
+        </AppProvider>
       </body>
     </html>
   );

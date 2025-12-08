@@ -1,31 +1,20 @@
 "use client";
-import React, { useMemo } from "react";
-import { useAppContext } from "@/app/[lang]/context/AppContext";
-import clsx from "clsx"; // Using clsx for className management
+import React from "react";
+import clsx from "clsx";
 
-const Section = ({ children, id }) => {
-  const { currentHash } = useAppContext();
-
-  // useMemo ensures the className is recalculated only when currentHash or id changes
-  const sectionClassName = useMemo(
-    () =>
-      clsx(
-        "size-full flex flex-col items-center justify-center gap-3 absolute inset-0 transition-opacity duration-300 bg-transparent overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-red-700 scrollbar-track-gray-800 scroll-smooth",
-        {
-          "opacity-100 z-50": currentHash === `#${id}`,
-          "opacity-0 -z-50": currentHash !== `#${id}`,
-        }
-      ),
-    [currentHash, id]
-  ); // Dependencies: currentHash and id
-
+const Section = ({ children, id, className }) => {
   return (
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className={sectionClassName}
+      className={clsx(
+        "min-h-screen w-full flex flex-col justify-center py-16 px-4 md:px-8",
+        className
+      )}
     >
-      {children}
+      <div className="max-w-4xl mx-auto w-full">
+        {children}
+      </div>
     </section>
   );
 };
