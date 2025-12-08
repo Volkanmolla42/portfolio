@@ -59,19 +59,24 @@ export default function Projects({ data }) {
   }, [filter, projects, searchTerm, data?.allText]);
 
   return (
-    <div className="size-full flex flex-col text-white">
+    <div className="w-full flex flex-col space-y-8">
+      <div className="space-y-2 text-center md:text-left">
+        <h2 className="text-3xl font-bold">Projects</h2>
+        <p className="text-muted-foreground">Check out some of my recent work</p>
+      </div>
+
       {/* Search and Filter Section */}
-      <div className="flex flex-col-reverse gap-4 px-3 pb-2 pt-4 md:flex-row  md:items-center   sticky top-0 z-10  backdrop-blur-xs ">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center justify-between sticky top-0 z-10 bg-background/80 backdrop-blur-md py-4 -mx-4 px-4 md:mx-0 md:px-0">
         {/*  Filter Section */}
-        <div className="flex  text-nowrap gap-2">
+        <div className="flex overflow-x-auto pb-2 md:pb-0 gap-2 scrollbar-none">
           {categories.map((category) => (
             <motion.button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-5 py-2 font-medium text-xs rounded-full transition-all duration-300 ${
+              className={`px-4 py-2 font-medium text-sm rounded-full transition-all whitespace-nowrap ${
                 category === filter
-                  ? "bg-linear-to-r from-red-600 to-red-800 text-white shadow-lg shadow-red-500/40"
-                  : "bg-zinc-800 text-zinc-200 hover:bg-linear-to-r hover:from-zinc-700 hover:to-zinc-600 hover:text-white"
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "bg-muted text-muted-foreground hover:bg-muted/80"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -85,12 +90,12 @@ export default function Projects({ data }) {
           placeholder={data.searchPlaceholder}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full px-5 py-3  my-1 rounded-xl bg-zinc-800 text-white placeholder-zinc-00 focus:outline-hidden focus:ring-2 focus:ring-red-500"
+          className="w-full md:w-64 px-4 py-2 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
         />
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 py-4  md:px-6 pb-0 ">
+      <div className="min-h-[500px]">
         <AnimatePresence mode="wait">
           {/* Loading Spinner Animation */}
           {isLoading ? (
@@ -101,48 +106,40 @@ export default function Projects({ data }) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <motion.div
-                className="w-16 h-16 rounded-full border-t-4 border-red-500 border-l-4"
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-              />
+              <div className="w-12 h-12 rounded-full border-4 border-primary border-t-transparent animate-spin" />
             </motion.div>
           ) : filteredProjects.length > 0 ? (
-            <>
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 p-6 pt-4 pb-4"
-              >
-                {/* Individual Project Cards */}
-                {filteredProjects.map((project) => (
-                  <motion.div
-                    key={project.id}
-                    variants={itemVariants}
-                    whileHover={{ y: -5 }}
-                  >
-                    <ProjectCard
-                      project={project}
-                      buttonTexts={data.projectButtonTexts}
-                    />
-                  </motion.div>
-                ))}
-              </motion.div>
-              <div className="w-full pb-4 text-center italic text-muted-foreground text-lg font-bold">
-                {data.toBeContinuedMsg}
-              </div>
-            </>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6"
+            >
+              {/* Individual Project Cards */}
+              {filteredProjects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  variants={itemVariants}
+                  whileHover={{ y: -5 }}
+                  className="h-full"
+                >
+                  <ProjectCard
+                    project={project}
+                    buttonTexts={data.projectButtonTexts}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
           ) : (
             <motion.div
               key="empty"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col items-center justify-center h-64 text-zinc-400"
+              className="flex flex-col items-center justify-center h-64 text-muted-foreground"
             >
               <svg
-                className="w-16 h-16 mb-4 text-red-500"
+                className="w-16 h-16 mb-4 text-muted-foreground/50"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -154,10 +151,10 @@ export default function Projects({ data }) {
                   d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <p className="text-lg font-medium">{data.notFoundMsg} </p>
+              <p className="text-lg font-medium">{data.notFoundMsg}</p>
               {/* Reset Filters Button */}
               <button
-                className="mt-4 px-6 py-2 bg-linear-to-r from-red-500 to-orange-500 text-white font-medium rounded-full shadow-lg hover:shadow-red-500/40"
+                className="mt-4 px-6 py-2 bg-primary text-primary-foreground font-medium rounded-full shadow-lg hover:bg-primary/90 transition-colors"
                 onClick={() => {
                   setFilter(data.allText);
                   setSearchTerm("");
@@ -168,6 +165,12 @@ export default function Projects({ data }) {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {!isLoading && filteredProjects.length > 0 && (
+          <div className="w-full pt-12 text-center italic text-muted-foreground font-medium">
+            {data.toBeContinuedMsg}
+          </div>
+        )}
       </div>
     </div>
   );

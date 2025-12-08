@@ -5,7 +5,6 @@ import React, {
   useState,
   useEffect,
   useContext,
-  useCallback,
   useMemo,
   useRef,
 } from "react";
@@ -21,28 +20,26 @@ export const AppProvider = ({ children }) => {
   const [currentHash, setCurrentHash] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Refs for cleanup
-  const cleanupRef = useRef();
-
   // Memoized values
   const memoizedTechIcons = useMemo(() => techIcons, []);
 
   // Initialize state after mount
   useEffect(() => {
     setMounted(true);
-    setCurrentHash(window.location.hash);
+    setCurrentHash(window.location.hash || "#home");
   }, []);
 
-  const handleHashChange = useCallback(() => {
+  const handleHashChange = () => {
     setCurrentHash(window.location.hash);
-  }, []);
+  };
 
   // Title update effect
   useEffect(() => {
     if (!mounted || !currentHash) return;
 
     const capitalizeHash = (hash) => {
-      return hash.slice(1, 2).toUpperCase() + hash.slice(2);
+      const cleanHash = hash.replace("#", "");
+      return cleanHash.charAt(0).toUpperCase() + cleanHash.slice(1);
     };
 
     document.title = `${TITLE_PREFIX} ${capitalizeHash(currentHash)}`;
@@ -53,41 +50,10 @@ export const AppProvider = ({ children }) => {
     if (!mounted) return;
 
     window.addEventListener("hashchange", handleHashChange);
-    cleanupRef.current = () => {
+    return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
-
-    return () => cleanupRef.current?.();
-  }, [handleHashChange, mounted]);
-
-  const toggleClasses = useCallback(
-    (target, removeClasses = [], addClasses = [], delay = 0) => {
-      if (!mounted) return;
-
-      const targetElement =
-        typeof target === "string" ? document.querySelector(target) : target;
-
-      if (!targetElement) {
-        console.warn(`Target element not found: ${target}`);
-        return;
-      }
-
-      const updateClasses = () => {
-        removeClasses.forEach(cls => targetElement.classList.remove(cls));
-        addClasses.forEach(cls => targetElement.classList.add(cls));
-      };
-
-      if (delay > 0) {
-        const timeoutId = setTimeout(() => {
-          requestAnimationFrame(updateClasses);
-        }, delay);
-        return () => clearTimeout(timeoutId);
-      } else {
-        requestAnimationFrame(updateClasses);
-      }
-    },
-    [mounted]
-  );
+  }, [mounted]);
 
   const contextValue = useMemo(
     () => ({
@@ -95,14 +61,12 @@ export const AppProvider = ({ children }) => {
       setIsMenuOpen,
       currentHash,
       setCurrentHash,
-      toggleClasses,
       memoizedTechIcons,
       mounted,
     }),
     [
       isMenuOpen,
       currentHash,
-      toggleClasses,
       memoizedTechIcons,
       mounted,
     ]
