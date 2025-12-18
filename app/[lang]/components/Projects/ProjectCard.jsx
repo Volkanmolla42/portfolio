@@ -8,8 +8,7 @@ import {
 } from "../ui/card";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
-import React from "react";
-import clsx from "clsx"; // Import clsx for dynamic class management
+import clsx from "clsx";
 import { Button } from "../ui/button";
 
 const ProjectCard = ({ project, buttonTexts }) => {

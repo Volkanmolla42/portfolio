@@ -1,15 +1,19 @@
 "use client";
 
-import React from "react";
+import { useState, useEffect } from "react";
 
 const DateComponent = () => {
-  // Get the current date formatted in Turkish (tr-TR) locale
-  const formattedDate = new Intl.DateTimeFormat("tr-TR").format(new Date());
+  const [formattedDate, setFormattedDate] = useState("");
 
-  return (
-    // Render the formatted date inside a div
-    <div>{formattedDate}</div>
-  );
+  // Client-side only date formatting to prevent hydration mismatch
+  useEffect(() => {
+    setFormattedDate(new Intl.DateTimeFormat("tr-TR").format(new Date()));
+  }, []);
+
+  // Show empty during SSR, date after hydration
+  if (!formattedDate) return null;
+
+  return <div>{formattedDate}</div>;
 };
 
 export default DateComponent;

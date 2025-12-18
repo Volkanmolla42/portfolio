@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from "react";
+"use client";
+
+import { useEffect, useRef } from "react";
 import Matter from "matter-js";
 import { techIcons } from "../utils/techIcons";
 

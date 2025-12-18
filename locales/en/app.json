@@ -34,10 +34,20 @@
     }
   ],
   "home": {
-    "aboutText": "Hello! I'm a 23-year-old Front End Developer. I create modern web applications using Next.js and React.",
+    "heroTitle": "Volkan Molla",
+    "heroSubtitle": "Full Stack Developer",
+    "valueProposition": "Modern, High-Performance & User-Centered Web Solutions",
+    "aboutText": "Hello! I'm a 23-year-old Full Stack Developer. I create modern, accessible, and performant web applications using Next.js and React.",
+    "primaryCTA": "🚀 Let's Discuss Your Project",
+    "secondaryCTA": "📁 View My Work",
     "whatsapText": "Let's Discuss Your Projects",
     "githubText": "My GitHub",
     "linkedinText": "My LinkedIn",
+    "trustIndicators": {
+      "projects": "11+ Successful Projects",
+      "satisfaction": "100% Client Satisfaction",
+      "response": "24h Response Time"
+    },
     "infoSliderItems": [
       "UI/UX Design",
       "State Management",
@@ -58,11 +68,11 @@
     "techTitle": "My Tech Stack",
     "aboutTitle": "Hi, I'm ",
     "aboutParagraphs": [
-      "~ I am a <span class='font-bold text-blue-500'>23-year-old</span> frontend developer passionate about creating <span class='font-bold text-blue-500'>responsive</span>, <span class='font-bold text-blue-500'>accessible</span>, and <span class='font-bold text-blue-500'>user-centered</span> web experiences. Over the past two years — especially in the past year — I have focused on honing my skills in modern web technologies.",
-      "~ My journey started with a solid foundation in <span class='font-bold text-blue-500'>HTML, CSS, and JavaScript</span>, and has grown to include expertise in tools like <span class='font-bold text-blue-500'>React, Next.js, and Tailwind CSS</span>. I have also utilized <span class='font-bold text-blue-500'>GSAP</span> and <span class='font-bold text-blue-500'>Three.js</span> to craft engaging animations, as well as developed applications using <span class='font-bold text-blue-500'>Firebase</span> and <span class='font-bold text-blue-500'>MongoDB</span>.",
-      "~ <span class='font-bold text-blue-500'>Studying web design and computer programming</span> in both high school and university has been instrumental in building my technical skills and deepening my understanding of development principles.",
-      "~ While I have not yet had the opportunity to gain professional work experience, I have cultivated a strong ability to <span class='font-bold text-blue-500'>adapt quickly to new technologies</span> and learn with ease. Additionally, I enjoy exploring <span class='font-bold text-blue-500'>backend development</span>, which complements my frontend expertise.",
-      "~ If given the opportunity to join your team, I aim to bring a <span class='font-bold text-blue-500'>proactive, motivated, and collaborative attitude</span>. I am eager to contribute to your projects, learn from experienced colleagues, and grow alongside your team."
+      "~ When bringing your web projects to life, I don't just write code—I create <span class='font-bold text-blue-500'>your brand's digital identity</span>. Using modern web technologies, I craft <span class='font-bold text-blue-500'>unforgettable experiences</span> for your users.",
+      "~ Projects I develop with <span class='font-bold text-blue-500'>Next.js, React, and Tailwind CSS</span> not only <span class='font-bold text-blue-500'>rank high on Google</span> but also <span class='font-bold text-blue-500'>convert your visitors into customers</span>. Animations powered by GSAP and Three.js set your site apart from competitors.",
+      "~ Every project comes with guaranteed <span class='font-bold text-blue-500'>fast loading times</span>, <span class='font-bold text-blue-500'>mobile responsiveness</span>, and <span class='font-bold text-blue-500'>SEO optimization</span>. With Firebase and MongoDB integrations, I deliver dynamic and scalable solutions.",
+      "~ I offer you not just a website, but <span class='font-bold text-blue-500'>a digital platform to grow your business</span>. With my proactive approach and quick learning ability, I'm by your side through every stage of your project.",
+      "~ With <span class='font-bold text-blue-500'>clean code</span>, <span class='font-bold text-blue-500'>modern technologies</span>, and <span class='font-bold text-blue-500'>user-centered design</span>, your website won't just look beautiful—it will <span class='font-bold text-blue-500'>deliver results</span>."
     ],
 
     "quote": {
@@ -205,10 +215,103 @@
     "resetFiltersMsg": "Reset Filters",
     "toBeContinuedMsg": "...to be continued"
   },
+  "services": {
+    "title": "Services I Offer",
+    "subtitle": "Professional web solutions tailored to your needs",
+    "packages": [
+      {
+        "id": "web-development",
+        "title": "Website Development",
+        "description": "Modern, responsive, and SEO-friendly websites for businesses and individuals",
+        "features": [
+          "Responsive Design",
+          "SEO Optimization",
+          "Fast Loading Speed",
+          "Modern UI/UX"
+        ],
+        "techs": ["Next.js", "React", "Tailwind CSS"],
+        "cta": "Get Started"
+      },
+      {
+        "id": "fullstack-apps",
+        "title": "Full-Stack Applications",
+        "description": "Complete web applications with backend integration and database management",
+        "features": [
+          "Custom Backend",
+          "Database Design",
+          "API Integration",
+          "Real-time Features"
+        ],
+        "techs": ["Next.js", "Firebase", "MongoDB"],
+        "cta": "Get Started"
+      },
+      {
+        "id": "ui-animations",
+        "title": "UI/UX & Animations",
+        "description": "Engaging user experiences with stunning animations and interactive elements",
+        "features": [
+          "Custom Animations",
+          "3D Graphics",
+          "Micro-interactions",
+          "Premium Design"
+        ],
+        "techs": ["GSAP", "Three.js", "Framer Motion"],
+        "cta": "Get Started"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Clients Say",
+    "subtitle": "Don't just take my word for it",
+    "cta": "Be the Next Happy Client!",
+    "items": [
+      {
+        "id": 1,
+        "name": "LocaFit Studio",
+        "role": "Fitness Center",
+        "comment": "Volkan created a modern and user-friendly website for our gym. The design perfectly represents our brand and our members love it!",
+        "project": "Business Website",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "name": "Tech Startup",
+        "role": "Software Company",
+        "comment": "Fast, reliable, and professional. Volkan delivered our chat application on time with excellent code quality.",
+        "project": "Real-time Chat App",
+        "rating": 5
+      },
+      {
+        "id": 3,
+        "name": "Restaurant Owner",
+        "role": "Food & Beverage",
+        "comment": "The QR menu platform is exactly what we needed. Easy to use and our customers appreciate the modern approach.",
+        "project": "QR Menu Platform",
+        "rating": 5
+      }
+    ]
+  },
   "mailMe": {
+    "title": "Let's Bring Your Project to Life!",
+    "subtitle": "24-hour response guarantee",
     "nameText": "Name",
     "emailText": "Email",
-    "mailSuccessText": "Email sent successfully!",
-    "mailErrorText": "An error occurred while sending the email, please try again."
+    "quickContact": "Quick Contact",
+    "responseTime": "Usually responds within 24 hours",
+    "mailSuccessText": "Email sent successfully! I'll get back to you within 24 hours.",
+    "mailErrorText": "An error occurred while sending the email, please try again.",
+    "alternativeContact": "Or reach me directly via WhatsApp for faster response"
+  },
+  "floatingCTA": {
+    "tooltip": "Get in Touch Now",
+    "ariaLabel": "Contact via WhatsApp"
+  },
+  "ctaTexts": {
+    "startProject": "Start Your Project",
+    "getQuote": "Get a Quote",
+    "viewWork": "View My Work",
+    "contactMe": "Contact Me",
+    "learnMore": "Learn More",
+    "wantThisProject": "I Want a Project Like This"
   }
 }

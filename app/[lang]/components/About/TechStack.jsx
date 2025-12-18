@@ -1,8 +1,16 @@
 "use client";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useAppContext } from "@/app/[lang]/context/AppContext";
-import JumpingCubes from "./JumpingCubes";
+
+// Lazy load JumpingCubes - Matter.js is a heavy library (~78KB)
+const JumpingCubes = dynamic(() => import("./JumpingCubes"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-[350px] h-[180px] rounded-t-md bg-zinc-800/50 animate-pulse" />
+  ),
+});
 const TechStack = ({ data }) => {
   const { memoizedTechIcons } = useAppContext();
 

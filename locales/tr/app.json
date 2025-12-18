@@ -34,11 +34,20 @@
     }
   ],
   "home": {
-    "aboutText": "Merhaba! 23 yaşında bir Front End Developer'ım. Next.js ve React ile modern web uygulamaları geliştiriyorum.",
+    "heroTitle": "Volkan Molla",
+    "heroSubtitle": "Full Stack Developer",
+    "valueProposition": "Modern, Performanslı ve Kullanıcı Odaklı Web Çözümleri",
+    "aboutText": "Merhaba! 23 yaşında bir Full Stack Developer'ım. Next.js ve React ile modern, erişilebilir ve performanslı web uygulamaları geliştiriyorum.",
+    "primaryCTA": "🚀 Projenizi Konuşalım",
+    "secondaryCTA": "📁 Çalışmalarımı İnceleyin",
     "whatsapText": "Projelerinizi Konuşalım",
     "githubText": "GitHub Profilim",
     "linkedinText": "LinkedIn Profilim",
-
+    "trustIndicators": {
+      "projects": "11+ Başarılı Proje",
+      "satisfaction": "%100 Müşteri Memnuniyeti",
+      "response": "24 Saat İçinde Yanıt"
+    },
     "infoSliderItems": [
       "UI/UX Tasarımı",
       "Durum Yönetimi",
@@ -60,11 +69,11 @@
     "aboutTitle": "Merhaba, ben",
 
     "aboutParagraphs": [
-      "~ 23 yaşında, <span class='font-bold text-blue-500'>duyarlı</span>, <span class='font-bold text-blue-500'>erişilebilir</span> ve <span class='font-bold text-blue-500'>kullanıcı odaklı</span> web deneyimleri oluşturma konusunda tutkulu bir frontend geliştiricisiyim. Son iki yıldır — özellikle de son bir yılda — modern web teknolojilerinde becerilerimi geliştirmeye odaklandım.",
-      "~ Geliştirici yolculuğum <span class='font-bold text-blue-500'>HTML, CSS ve JavaScript</span> gibi sağlam bir temel ile başladı ve <span class='font-bold text-blue-500'>React, Next.js ve Tailwind CSS</span> gibi modern araçlarda devam etti. Ayrıca, etkileyici animasyonlar oluşturmak için <span class='font-bold text-blue-500'>GSAP</span> ve <span class='font-bold text-blue-500'>Three.js</span> kullandım. Bunun yanı sıra, <span class='font-bold text-blue-500'>Firebase</span> ve <span class='font-bold text-blue-500'>MongoDB</span> kullanarak uygulamalar geliştirme deneyimim var.",
-      "~ Hem lise hem de üniversitede <span class='font-bold text-blue-500'>web tasarımı ve bilgisayar programcılığı</span> eğitimi alarak teknik becerilerimi geliştirdim ve yazılım prensiplerini daha derinlemesine anladım.",
-      "~ Henüz profesyonel iş deneyimim olmasa da, <span class='font-bold text-blue-500'>yeni teknolojilere hızla adapte olma</span> ve kolayca öğrenme konusunda güçlü bir yeteneğim var. Ayrıca, front-end bilgimi tamamlayan <span class='font-bold text-blue-500'>backend geliştirme</span> konusunu keşfetmekten keyif alıyorum.",
-      "~ Ekibinize katılma fırsatını bulursam, <span class='font-bold text-blue-500'>proaktif, motive ve işbirlikçi</span> bir ekip üyesi olarak projelerinize değer katmayı, deneyimli ekip arkadaşlarımdan öğrenmeyi ve ekibinizle birlikte büyümeyi hedefliyorum."
+      "~ Web projelerinizi hayata geçirirken, sadece kod yazmakla kalmıyor, <span class='font-bold text-blue-500'>markanızın dijital yüzünü</span> oluşturuyorum. Modern web teknolojileri kullanarak, kullanıcılarınızın <span class='font-bold text-blue-500'>unutamayacağı deneyimler</span> yaratıyorum.",
+      "~ <span class='font-bold text-blue-500'>Next.js, React ve Tailwind CSS</span> ile geliştirdiğim projeler, hem <span class='font-bold text-blue-500'>Google'da üst sıralarda</span> yer alıyor hem de kullanıcılarınızı <span class='font-bold text-blue-500'>müşteriye dönüştürüyor</span>. GSAP ve Three.js ile eklediğim animasyonlar, sitenizi rakiplerinizden ayırıyor.",
+      "~ Her proje, <span class='font-bold text-blue-500'>hızlı yükleme süreleri</span>, <span class='font-bold text-blue-500'>mobil uyumluluk</span> ve <span class='font-bold text-blue-500'>SEO optimizasyonu</span> garantisiyle geliyor. Firebase ve MongoDB entegrasyonlarıyla, dinamik ve ölçeklenebilir çözümler sunuyorum.",
+      "~ Size sadece bir web sitesi değil, <span class='font-bold text-blue-500'>işinizi büyütecek bir dijital platform</span> sunuyorum. Proaktif yaklaşımım ve hızlı öğrenme yeteneğimle, projelerinizin her aşamasında yanınızdayım.",
+      "~ <span class='font-bold text-blue-500'>Temiz kod</span>, <span class='font-bold text-blue-500'>güncel teknolojiler</span> ve <span class='font-bold text-blue-500'>kullanıcı odaklı tasarım</span> ile web siteniz, sadece güzel görünmekle kalmayacak, aynı zamanda <span class='font-bold text-blue-500'>sonuç üretecek</span>."
     ],
     "quote": {
       "text": "Başarısız olmadım, sadece işe yaramayan 10.000 yöntem keşfettim",
@@ -201,10 +210,103 @@
     "resetFiltersMsg": "Filtreleri Sıfırla",
     "toBeContinuedMsg": "Devam edecek..."
   },
+  "services": {
+    "title": "Sunduğum Hizmetler",
+    "subtitle": "İhtiyaçlarınıza özel profesyonel web çözümleri",
+    "packages": [
+      {
+        "id": "web-development",
+        "title": "Web Sitesi Geliştirme",
+        "description": "İşletmeler ve bireyler için modern, responsive ve SEO uyumlu web siteleri",
+        "features": [
+          "Responsive Tasarım",
+          "SEO Optimizasyonu",
+          "Hızlı Yüklenme",
+          "Modern UI/UX"
+        ],
+        "techs": ["Next.js", "React", "Tailwind CSS"],
+        "cta": "Başlayalım"
+      },
+      {
+        "id": "fullstack-apps",
+        "title": "Full-Stack Uygulamalar",
+        "description": "Backend entegrasyonu ve veritabanı yönetimi ile eksiksiz web uygulamaları",
+        "features": [
+          "Özel Backend",
+          "Veritabanı Tasarımı",
+          "API Entegrasyonu",
+          "Gerçek Zamanlı Özellikler"
+        ],
+        "techs": ["Next.js", "Firebase", "MongoDB"],
+        "cta": "Başlayalım"
+      },
+      {
+        "id": "ui-animations",
+        "title": "UI/UX & Animasyonlar",
+        "description": "Etkileyici animasyonlar ve interaktif elementlerle ilgi çekici kullanıcı deneyimleri",
+        "features": [
+          "Özel Animasyonlar",
+          "3D Grafikler",
+          "Mikro-etkileşimler",
+          "Premium Tasarım"
+        ],
+        "techs": ["GSAP", "Three.js", "Framer Motion"],
+        "cta": "Başlayalım"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Müşteriler Ne Diyor",
+    "subtitle": "Sadece benim sözüme güvenmeyin",
+    "cta": "Bir Sonraki Mutlu Müşteri Siz Olun!",
+    "items": [
+      {
+        "id": 1,
+        "name": "LocaFit Studio",
+        "role": "Spor Salonu",
+        "comment": "Volkan spor salonumuz için modern ve kullanıcı dostu bir web sitesi oluşturdu. Tasarım markamızı mükemmel temsil ediyor ve üyelerimiz çok beğendi!",
+        "project": "Kurumsal Web Sitesi",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "name": "Teknoloji Startup",
+        "role": "Yazılım Şirketi",
+        "comment": "Hızlı, güvenilir ve profesyonel. Volkan sohbet uygulamamızı zamanında ve mükemmel kod kalitesiyle teslim etti.",
+        "project": "Gerçek Zamanlı Sohbet Uygulaması",
+        "rating": 5
+      },
+      {
+        "id": 3,
+        "name": "Restoran Sahibi",
+        "role": "Yiyecek & İçecek",
+        "comment": "QR menü platformu tam da ihtiyacımız olan şeydi. Kullanımı kolay ve müşterilerimiz modern yaklaşımı takdir ediyor.",
+        "project": "QR Menü Platformu",
+        "rating": 5
+      }
+    ]
+  },
   "mailMe": {
+    "title": "Projenizi Hayata Geçirelim!",
+    "subtitle": "24 saat içinde yanıt garantisi",
     "nameText": "Adınız",
     "emailText": "E-posta",
-    "mailSuccessText": "E-posta başarıyla gönderildi!",
-    "mailErrorText": "E-posta gönderirken bir hata oluştu, lütfen tekrar deneyin."
+    "quickContact": "Hızlı İletişim",
+    "responseTime": "Genellikle 24 saat içinde yanıt verilir",
+    "mailSuccessText": "E-posta başarıyla gönderildi! 24 saat içinde size dönüş yapacağım.",
+    "mailErrorText": "E-posta gönderirken bir hata oluştu, lütfen tekrar deneyin.",
+    "alternativeContact": "Veya daha hızlı yanıt için WhatsApp üzerinden doğrudan ulaşın"
+  },
+  "floatingCTA": {
+    "tooltip": "Hemen İletişime Geçin",
+    "ariaLabel": "WhatsApp ile iletişime geç"
+  },
+  "ctaTexts": {
+    "startProject": "Projeye Başla",
+    "getQuote": "Teklif Al",
+    "viewWork": "Çalışmalarımı Gör",
+    "contactMe": "İletişime Geç",
+    "learnMore": "Daha Fazla Bilgi",
+    "wantThisProject": "Böyle Bir Proje İstiyorum"
   }
 }

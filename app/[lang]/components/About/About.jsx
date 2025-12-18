@@ -1,9 +1,9 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import TechStack from "./TechStack";
 
 const About = ({ data }) => {
   return (
-    <div className="flex flex-col md:flex-row md:px-8   text-xs size-full tracking-wide">
+    <div className="flex flex-col md:flex-row md:px-8  size-full tracking-wide">
       {/* About Me Section */}
       <div className="w-full md:w-8/12 px-4 pt-10 flex flex-col">
         <div className="text-3xl text-zinc-200 md:text-4xl font-bold mb-2  mx-4">
