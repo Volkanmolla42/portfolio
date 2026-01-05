@@ -1,17 +1,46 @@
 "use client";
+
 import Image from "next/image";
 import "./style.css";
 import ContactButton from "./ContactButton";
 import LanguageSwitcher from "../utils/LanguageSwitcher";
 import InfoSlider from "./InfoSlider";
+import { useScrollNavigation } from "@/lib/hooks";
+import { CONTACT_INFO, ASSETS } from "@/lib/constants";
+import { CheckCircleIcon } from "../ui/icons";
+import type { HomeTranslations } from "@/lib/types";
 
-// Home Component
-const Home = ({ data }) => {
-  // Scroll to projects section
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById('projects');
-    projectsSection?.scrollIntoView({ behavior: 'smooth' });
-  };
+// ============================================
+// Types
+// ============================================
+
+interface HomeProps {
+  data: HomeTranslations;
+}
+
+// ============================================
+// Sub-Components
+// ============================================
+
+interface TrustIndicatorProps {
+  indicator: string;
+}
+
+function TrustIndicator({ indicator }: TrustIndicatorProps) {
+  return (
+    <div className="flex items-center gap-2 text-sm text-zinc-400">
+      <CheckCircleIcon size={20} />
+      <span className="font-medium">{indicator}</span>
+    </div>
+  );
+}
+
+// ============================================
+// Main Component
+// ============================================
+
+export default function Home({ data }: HomeProps) {
+  const { scrollToProjects } = useScrollNavigation();
 
   return (
     <div className="relative size-full flex flex-col items-center justify-center">
@@ -28,7 +57,7 @@ const Home = ({ data }) => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
               {data.heroTitle || "Volkan Molla"}
             </h1>
-            
+
             <p className="text-lg sm:text-xl text-blue-400 font-semibold">
               {data.heroSubtitle || "Full Stack Developer"}
             </p>
@@ -44,15 +73,18 @@ const Home = ({ data }) => {
             {/* Primary & Secondary CTAs */}
             <div className="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 pt-4">
               <a
-                href="https://wa.me/905418224484"
+                href={CONTACT_INFO.whatsapp.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative px-8 py-4 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-bold rounded-full shadow-lg hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-center"
               >
                 <span className="relative z-10">{data.primaryCTA}</span>
-                <div className="absolute inset-0 rounded-full bg-white/20 blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                <div 
+                  className="absolute inset-0 rounded-full bg-white/20 blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" 
+                  aria-hidden="true"
+                />
               </a>
-              
+
               <button
                 onClick={scrollToProjects}
                 className="px-8 py-4 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold rounded-full border-2 border-zinc-700 hover:border-zinc-600 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
@@ -63,28 +95,24 @@ const Home = ({ data }) => {
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap justify-center md:justify-start items-center gap-6 pt-4">
-              {data.trustIndicators && Object.values(data.trustIndicators).map((indicator, index) => (
-                <div key={index} className="flex items-center gap-2 text-sm text-zinc-400">
-                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="font-medium">{indicator}</span>
-                </div>
-              ))}
+              {data.trustIndicators &&
+                Object.values(data.trustIndicators).map((indicator, index) => (
+                  <TrustIndicator key={index} indicator={indicator} />
+                ))}
             </div>
 
-            {/* Social Links - More Subtle */}
+            {/* Social Links */}
             <div className="flex justify-center md:justify-start items-center gap-3 pt-2">
               <ContactButton
                 text={data.githubText}
-                href="https://github.com/Volkanmolla42"
-                icon="/icons/socials-icons/github-brands-solid.svg"
+                href={CONTACT_INFO.github.url}
+                icon={ASSETS.icons.github}
                 className="aspect-square opacity-70 hover:opacity-100 transition-opacity"
               />
               <ContactButton
                 text={data.linkedinText}
-                href="https://www.linkedin.com/in/volkan-molla-b851a3308/"
-                icon="/icons/socials-icons/linkedin-in-brands-solid.svg"
+                href={CONTACT_INFO.linkedin.url}
+                icon={ASSETS.icons.linkedin}
                 className="aspect-square opacity-70 hover:opacity-100 transition-opacity"
               />
             </div>
@@ -93,10 +121,13 @@ const Home = ({ data }) => {
           {/* Right: Portrait */}
           <div className="md:col-span-5 relative">
             {/* Glow Background */}
-            <div className="absolute -inset-6 bg-gradient-to-br from-red-700/30 via-fuchsia-500/20 to-indigo-500/20 blur-3xl rounded-3xl" aria-hidden="true" />
+            <div
+              className="absolute -inset-6 bg-gradient-to-br from-red-700/30 via-fuchsia-500/20 to-indigo-500/20 blur-3xl rounded-3xl"
+              aria-hidden="true"
+            />
             <div className="relative mx-auto w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
               <Image
-                src="/images/177041753.jpg"
+                src={ASSETS.images.profile}
                 alt="Volkan Molla portrait"
                 fill
                 sizes="(max-width: 640px) 15rem, (max-width: 768px) 18rem, (max-width: 1024px) 20rem, 24rem"
@@ -116,6 +147,4 @@ const Home = ({ data }) => {
       </div>
     </div>
   );
-};
-
-export default Home;
+}
